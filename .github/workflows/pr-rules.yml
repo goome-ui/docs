@@ -1,0 +1,68 @@
+name: pr rules
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, edited]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  check:
+    if: >-
+      github.event.pull_request.state == 'open' &&
+      github.event.pull_request.author_association != 'OWNER' &&
+      github.event.pull_request.author_association != 'MEMBER'
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          BASE: ${{ github.event.pull_request.base.ref }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          why=""
+          if [ "$BASE" != "dev" ]; then
+            why="PRs go to the dev branch, this one is against $BASE."
+          fi
+          gh api "repos/$REPO/pulls/$PR/files?per_page=100" --paginate --jq '.[] | [.filename, (.previous_filename // ""), .status] | @tsv' > files.tsv
+          names=$(cut -f1,2 files.tsv | tr '\t' '\n' | grep -v '^$' || true)
+          if printf '%s\n' "$names" | grep -q '^\.github/'; then
+            why="$why It changes something in .github/, thats CI and these rules so only I change those."
+          fi
+          if printf '%s\n' "$names" | grep -q '^tools/'; then
+            why="$why It changes tools/, those scripts make the API pages so only I touch them."
+          fi
+          if printf '%s\n' "$names" | grep -qE '^(_config\.yml|_layouts/|_includes/|assets/css/|assets/js/)' || printf '%s\n' "$names" | grep -E '^_data/' | grep -qvx '_data/nav\.yml'; then
+            why="$why It changes how the site looks (_config.yml, _layouts, _includes, _data or assets/css and assets/js), only I change those."
+          fi
+          if printf '%s\n' "$names" | grep -q '^builder/'; then
+            why="$why It changes the UI builder in builder/, only I change that. Open an issue for builder bugs."
+          fi
+          if printf '%s\n' "$names" | grep -qE '^(assets/logo|LICENSE$)'; then
+            why="$why It changes the logo or the LICENSE, only I change those."
+          fi
+          if printf '%s\n' "$names" | grep -qE '^(pages/api-[^/]*\.md|api/)'; then
+            why="$why It changes the API reference pages, those get made by tools/apiref.py from goome.h. Fix the note in c-goome's include/goome.h instead."
+          fi
+          big=""
+          while IFS=$'\t' read -r name old status; do
+            [ "$status" = removed ] && continue
+            size=$(gh api "repos/$REPO/contents/$name?ref=$HEAD" --jq '.size' 2>/dev/null || echo 0)
+            if [ "${size:-0}" -gt 1048576 ]; then big="$big $name"; fi
+          done < files.tsv
+          if [ -n "$big" ]; then
+            why="$why It adds files over 1 MB ($big ), keep screenshots small."
+          fi
+          if [ -z "$why" ]; then
+            echo "follows the rules"
+            exit 0
+          fi
+          gh api "repos/$REPO/labels" -f name=rules-closed -f color=b60205 -f description="closed by the pr rules" >/dev/null 2>&1 || true
+          gh api "repos/$REPO/issues/$PR/comments" -f body="Closed automatically, sorry. $why Check [CONTRIBUTING.md](https://github.com/goome-ui/docs/blob/dev/CONTRIBUTING.md), fix it and open a new PR against dev." >/dev/null
+          gh api "repos/$REPO/issues/$PR/labels" -f "labels[]=rules-closed" >/dev/null
+          gh api -X PATCH "repos/$REPO/pulls/$PR" -f state=closed >/dev/null
+          echo "closed: $why"

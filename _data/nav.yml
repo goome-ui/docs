@@ -1,0 +1,97 @@
+- title: Start
+  pages:
+    - { page: index, title: Home }
+    - { page: versions, title: Versions }
+    - { page: start-java, title: Getting started in Java, since: "0.3" }
+    - { page: start-godot, title: Getting started in Godot, since: "0.3" }
+    - { page: start-c, title: Getting started in C }
+    - { page: start-csharp, title: Getting started in C# }
+    - { page: start-python, title: Getting started in Python }
+    - { page: start-unity, title: Getting started in Unity, since: "0.2" }
+    - { page: examples, title: Examples }
+    - { page: downloads, title: Downloads, since: "0.4" }
+    - { page: templates, title: Templates and goome new, since: "0.4" }
+    - { page: compare, title: Compare, since: "0.4" }
+- title: Editors
+  pages:
+    - { page: editor-terminal, title: Plain terminal }
+    - { page: editor-vscode, title: VS Code }
+    - { page: editor-visualstudio, title: Visual Studio }
+    - { page: editor-rider, title: Rider }
+    - { page: editor-clion, title: CLion }
+    - { page: editor-pycharm, title: PyCharm }
+    - { page: editor-intellij, title: IntelliJ IDEA, since: "0.3" }
+    - { page: editor-eclipse, title: Eclipse, since: "0.3" }
+    - { page: editor-unity, title: Unity, since: "0.2" }
+    - { page: editor-godot, title: Godot, since: "0.3" }
+- title: Modes
+  pages:
+    - { page: modes, title: The three modes }
+    - { page: overlay-mode, title: Overlay mode }
+    - { page: window-mode, title: Window mode, since: "0.2" }
+    - { page: offscreen-mode, title: Offscreen mode, since: "0.2" }
+- title: How it works
+  pages:
+    - { page: coords, title: Coords and monitors }
+    - { page: hit-rects, title: Hit rects }
+    - { page: frames, title: Frames, damage and pacing }
+    - { page: events, title: Events }
+    - { page: input-capture, title: Taking input from the game, since: "0.3" }
+- title: Drawing
+  pages:
+    - { page: drawing, title: Shapes and clipping }
+    - { page: images-fonts, title: Images and fonts }
+- title: UI kit
+  pages:
+    - { page: ui, title: How the ui kit works }
+    - { page: ui-layout, title: Windows and layout }
+    - { page: ui-buttons, title: Text and buttons }
+    - { page: ui-switches, title: Checkboxes and toggles }
+    - { page: ui-values, title: Sliders and colors }
+    - { page: ui-text, title: Inputs, combos and lists }
+    - { page: ui-theme, title: Themes }
+    - { page: ui-theme-easy, title: Themes the simple way, since: "0.3" }
+    - { page: ui-icons, title: Icons and skins, since: "0.3" }
+    - { page: ui-app, title: App mode and menus, since: "0.2" }
+    - { page: ui-keyboard, title: Keyboard and focus, since: "0.2" }
+    - { page: ui-tables, title: Tables, trees and editors, since: "0.2" }
+    - { page: ui-more, title: Plots, drag and more, since: "0.2" }
+    - { page: ui-custom, title: Custom everything, since: "0.3" }
+    - { page: ui-anything, title: Change anything, since: "0.3" }
+- title: UI builder
+  pages:
+    - { page: ui-builder, title: How the builder works, since: "0.3" }
+    - { page: builder, title: Open the builder, since: "0.3" }
+- title: Mods and engines
+  pages:
+    - { page: mods, title: How mods work, since: "0.3" }
+    - { page: mods-renderers, title: Renderer backends, since: "0.3" }
+    - { page: mods-platforms, title: Platform backends, since: "0.3" }
+    - { page: mods-native, title: Native DLL mods, since: "0.3" }
+    - { page: mods-unity, title: Unity mods, since: "0.3" }
+    - { page: mods-minecraft, title: Minecraft, since: "0.3" }
+    - { page: mods-godot, title: Godot, since: "0.3" }
+    - { page: mods-engines, title: Other engines, since: "0.3" }
+- title: Other stuff
+  pages:
+    - { page: capture, title: Screen capture }
+    - { page: hotkeys, title: Hotkeys and the control fifo }
+    - { page: platforms, title: Where it works }
+    - { page: testing, title: Testing without a screen }
+    - { page: building, title: One file and building }
+    - { page: faq, title: FAQ }
+    - { page: community, title: Community, since: "0.4" }
+    - { page: contributing, title: Contributing }
+- title: API reference
+  pages:
+    - { page: api-core, title: Open, poll and frames }
+    - { page: api-window, title: Windows and clipboard }
+    - { page: api-capture, title: Capture and hotkeys }
+    - { page: api-input, title: Input capture }
+    - { page: api-draw, title: Drawing }
+    - { page: api-images-fonts, title: Images and fonts }
+    - { page: api-ui, title: UI kit }
+    - { page: api-ui-app, title: UI app and menus }
+    - { page: api-ui-more, title: More UI widgets }
+    - { page: api-ui-custom, title: Styles and custom widgets }
+    - { page: api-types, title: Types and constants }

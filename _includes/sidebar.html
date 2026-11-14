@@ -1,0 +1,11 @@
+<nav class="sidebar" id="sidebar">
+{% for group in site.data.nav %}
+  <h4>{{ group.title }}</h4>
+  <ul>
+  {% for item in group.pages %}
+    {% if item.page == "index" %}{% assign want = '/' %}{% else %}{% assign want = '/' | append: item.page | append: '/' %}{% endif %}
+    <li><a href="{{ want | relative_url }}"{% if page.url == want %} class="here" aria-current="page"{% endif %}>{{ item.title }}</a>{% if item.since %} <kbd>{{ item.since }}</kbd>{% endif %}</li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+</nav>

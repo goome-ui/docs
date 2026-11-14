@@ -1,0 +1,33 @@
+title: goome docs
+description: docs for goome, the see-through overlay and ui library
+url: https://goome-ui.github.io
+baseurl: /docs
+repo: https://github.com/goome-ui/docs
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
+defaults:
+  - scope:
+      path: "pages"
+    values:
+      layout: default
+      permalink: /:basename/
+  - scope:
+      path: "builder"
+    values:
+      render_with_liquid: false
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - tools
+  - api
+  - Gemfile
+  - Gemfile.lock
