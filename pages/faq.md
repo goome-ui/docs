@@ -52,6 +52,10 @@ Yes, thats [window mode](window-mode.md) (0.2). `goome_open_app` and the UI kit'
 
 Ship something made with goome and you share your source too, under GPL-3.0. Keep the credits.
 
+### What does this error mean?
+
+Paste it into the search box, or look it up on [Error messages](errors.md). Every message goome can give you is on there with what to do about it.
+
 ### Something is broken on my desktop
 
 Open an issue on [c-goome](https://github.com/goome-ui/c-goome/issues) with your OS, desktop + version, and what `goome_backend_name` and `goome_caps` say. Those are the bugs I want most.

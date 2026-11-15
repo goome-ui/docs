@@ -80,6 +80,7 @@
     - { page: testing, title: Testing without a screen }
     - { page: building, title: One file and building }
     - { page: faq, title: FAQ }
+    - { page: errors, title: Error messages, since: "0.4" }
     - { page: community, title: Community, since: "0.4" }
     - { page: badges, title: Badges, since: "0.4" }
     - { page: contributing, title: Contributing }
