@@ -28,6 +28,7 @@ BADGES = [
     for style in STYLES
 ] + [
     ("c99", "", "C99", GREEN, GREEN, "flat-square", "c"),
+    ("vscode-190", "VS Code", "1.90+", GREEN, GREEN, "flat-square", None),
     ("c", "", "C", GREEN, GREEN, "flat-square", "c"),
     ("csharp-net8-netstandard21", "C#", ".NET 8+ | netstandard2.1", GREEN, GREEN, "flat-square", "dotnet"),
     ("csharp-net8-plus", "C#", ".NET 8+", GREEN, GREEN, "flat-square", "dotnet"),
