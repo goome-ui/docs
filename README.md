@@ -109,6 +109,7 @@
   - [Testing without a screen](pages/testing.md)
   - [One file and building](pages/building.md)
   - [FAQ](pages/faq.md)
+  - [Error messages](pages/errors.md) <kbd>0.4</kbd>
   - [Community](pages/community.md) <kbd>0.4</kbd>
   - [Badges](pages/badges.md) <kbd>0.4</kbd>
   - [Contributing](pages/contributing.md)
@@ -137,6 +138,12 @@ Found a typo or a sample that doesnt compile? Make A pull request to <b>dev</b>!
 Read <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> first, it has the docs rules and how to preview the site locally.
 </p>
 </details>
+
+<p align="center">
+<b>🫶 Contributors 🫶</b><br>
+Thanks to everyone who helped out!<br> <br>
+<a href="https://github.com/goome-ui/docs/graphs/contributors"><img src="https://contrib.rocks/image?repo=goome-ui/docs" alt="contributors"></a>
+</p>
 
 <details>
 <summary align="center"><b>⚖️ License ⚖️</b></summary>
