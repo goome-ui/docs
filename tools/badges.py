@@ -5,9 +5,13 @@ from xml.sax.saxutils import escape
 DARK = "1b1d22"
 GREEN = "6fdc5f"
 FONT = "Verdana,Geneva,DejaVu Sans,sans-serif"
+SOCIAL_FONT = "Helvetica Neue,Helvetica,Arial,sans-serif"
+STYLES = ["flat", "flat-square", "plastic", "for-the-badge", "social"]
 
 REGULAR = [318, 401, 460, 838, 636, 950, 780, 275, 390, 390, 500, 838, 318, 361, 318, 337, 636, 636, 636, 636, 636, 636, 636, 636, 636, 636, 337, 337, 838, 838, 838, 531, 1000, 684, 686, 698, 770, 632, 575, 775, 752, 295, 295, 656, 557, 863, 748, 787, 603, 787, 695, 635, 611, 732, 684, 989, 685, 611, 685, 390, 337, 390, 838, 500, 500, 613, 635, 550, 635, 615, 352, 635, 634, 278, 278, 579, 278, 974, 634, 612, 635, 635, 411, 521, 392, 634, 592, 818, 592, 592, 525, 636, 337, 636, 838]
 BOLD = [348, 456, 521, 838, 696, 1002, 872, 306, 457, 457, 523, 838, 380, 415, 380, 365, 696, 696, 696, 696, 696, 696, 696, 696, 696, 696, 400, 400, 838, 838, 838, 580, 1000, 774, 762, 734, 830, 683, 683, 821, 837, 372, 372, 775, 637, 995, 837, 850, 733, 850, 770, 720, 682, 812, 774, 1103, 771, 724, 725, 457, 365, 457, 838, 500, 500, 675, 716, 593, 716, 678, 435, 716, 712, 343, 343, 665, 343, 1042, 712, 687, 716, 716, 493, 595, 478, 712, 652, 924, 645, 652, 582, 712, 365, 712, 838]
+
+HELVETICA_BOLD = [278, 333, 474, 556, 556, 889, 722, 238, 333, 333, 389, 584, 278, 333, 278, 278, 556, 556, 556, 556, 556, 556, 556, 556, 556, 556, 333, 333, 584, 584, 584, 611, 975, 722, 722, 722, 722, 667, 611, 778, 722, 278, 556, 722, 611, 833, 722, 778, 667, 778, 722, 667, 611, 722, 667, 944, 667, 667, 611, 333, 278, 333, 584, 556, 333, 556, 611, 556, 611, 556, 333, 611, 611, 278, 278, 556, 278, 889, 611, 611, 611, 611, 389, 556, 333, 611, 556, 778, 556, 556, 500, 389, 280, 389, 584]
 
 ICONS = {
     "c": "M16.5921 9.1962s-.354-3.298-3.627-3.39c-3.2741-.09-4.9552 2.474-4.9552 6.14 0 3.6651 1.858 6.5972 5.0451 6.5972 3.184 0 3.5381-3.665 3.5381-3.665l6.1041.365s.36 3.31-2.196 5.836c-2.552 2.5241-5.6901 2.9371-7.8762 2.9201-2.19-.017-5.2261.034-8.1602-2.97-2.938-3.0101-3.436-5.9302-3.436-8.8002 0-2.8701.556-6.6702 4.047-9.5502C7.444.72 9.849 0 12.254 0c10.0422 0 10.7172 9.2602 10.7172 9.2602z",
@@ -19,7 +23,10 @@ ICONS = {
 
 BADGES = [
     ("made-with-goome", "made with", "goome", GREEN, DARK, "flat-square", None),
-    ("made-with-goome-big", "made with", "goome", GREEN, DARK, "for-the-badge", None),
+] + [
+    (f"made-with-goome-{style}", "made with", "goome", GREEN, DARK, style, None)
+    for style in STYLES
+] + [
     ("c99", "", "C99", GREEN, GREEN, "flat-square", "c"),
     ("c", "", "C", GREEN, GREEN, "flat-square", "c"),
     ("csharp-net8-netstandard21", "C#", ".NET 8+ | netstandard2.1", GREEN, GREEN, "flat-square", "dotnet"),
@@ -46,9 +53,16 @@ BADGES = [
     for team in ["c", "csharp", "python", "java", "godot", "docs", "maintainers"]
 ]
 
+GRADIENTS = {
+    "flat": '<linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/>'
+            '<stop offset="1" stop-opacity=".1"/></linearGradient>',
+    "plastic": '<linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/>'
+               '<stop offset=".1" stop-color="#aaa" stop-opacity=".1"/><stop offset=".9" stop-color="#000" stop-opacity=".3"/>'
+               '<stop offset="1" stop-color="#000" stop-opacity=".5"/></linearGradient>',
+}
 
-def text_width(text, size, bold=False):
-    table = BOLD if bold else REGULAR
+
+def text_width(text, size, table=REGULAR):
     total = 0
     for ch in text:
         code = ord(ch)
@@ -66,22 +80,64 @@ def logo_svg(name, x, y, color):
             f'd="{ICONS[name]}"/>')
 
 
-def text_svg(text, center, baseline, width, size, color, bold):
-    weight = ' font-weight="bold"' if bold else ""
-    return (f'<text x="{center:g}" y="{baseline:g}" fill="#{color}" font-size="{size}"{weight} '
+def text_svg(text, center, baseline, width, color, extra=""):
+    return (f'<text x="{center:g}" y="{baseline:g}" fill="#{color}"{extra} '
             f'textLength="{width:g}">{escape(text)}</text>')
 
 
+def wrap(width, height, title, body):
+    title = escape(title)
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{width:g}" height="{height}" '
+            f'role="img" aria-label="{title}"><title>{title}</title>{body}</svg>\n')
+
+
+def render_social(label, message, logo):
+    label = label[:1].upper() + label[1:]
+    label_w = round(text_width(label, 11, HELVETICA_BOLD), 1)
+    message_w = round(text_width(message, 11, HELVETICA_BOLD), 1)
+    logo_w = 14 + (3 if label else 0) if logo else 0
+    box = round(label_w + logo_w + 10)
+    bubble = round(message_w + 8) if message else 0
+    main_x = box + 6.5
+    width = box + 1 + (bubble + 6 if message else 0)
+    body = ('<linearGradient id="a" x2="0" y2="100%"><stop offset="0" stop-color="#fcfcfc" stop-opacity="0"/>'
+            '<stop offset="1" stop-opacity=".1"/></linearGradient>'
+            f'<g stroke="#d5d5d5"><rect stroke="none" fill="#fcfcfc" x=".5" y=".5" width="{box}" height="19" rx="2"/>')
+    if message:
+        body += (f'<rect x="{main_x:g}" y=".5" width="{bubble}" height="19" rx="2" fill="#fafafa"/>'
+                 f'<rect x="{box + 6}" y="7.5" width=".5" height="5" stroke="#fafafa"/>'
+                 f'<path d="M{main_x:g} 6.5l-3 3v1l3 3" fill="#fafafa"/>')
+    body += (f'</g><rect stroke="#d5d5d5" fill="url(#a)" x=".5" y=".5" width="{box}" height="19" rx="2"/>'
+             f'<g fill="#333" text-anchor="middle" font-family="{SOCIAL_FONT}" text-rendering="geometricPrecision" '
+             'font-weight="700" font-size="11">')
+    if logo:
+        body += logo_svg(logo, 5, 3, "333")
+    if label:
+        center = 5.5 + logo_w + label_w / 2
+        body += text_svg(label, center, 15, label_w, "fff", ' aria-hidden="true"')
+        body += text_svg(label, center, 14, label_w, "333")
+    if message:
+        center = main_x + bubble / 2
+        body += text_svg(message, center, 15, message_w, "fff", ' aria-hidden="true"')
+        body += text_svg(message, center, 14, message_w, "333")
+    body += "</g>"
+    return wrap(width, 20, f"{label}: {message}" if label else message, body)
+
+
 def render(label, message, color, label_color, style, logo):
+    if style == "social":
+        return render_social(label, message, logo)
     big = style == "for-the-badge"
     if big:
         label, message = label.upper(), message.upper()
         size, height, pad, baseline, spacing, gap, logo_x = 10, 28, 12, 17.5, 1.25, 6, 9
+    elif style == "plastic":
+        size, height, pad, baseline, spacing, gap, logo_x = 11, 18, 5, 13, 0, 3, 5
     else:
         size, height, pad, baseline, spacing, gap, logo_x = 11, 20, 5, 14, 0, 3, 5
 
     def measure(text, bold):
-        return round(text_width(text, size, bold) + spacing * max(len(text) - 1, 0), 1)
+        return round(text_width(text, size, BOLD if bold else REGULAR) + spacing * max(len(text) - 1, 0), 1)
 
     label_w = measure(label, False) if label else 0
     message_w = measure(message, big)
@@ -94,26 +150,40 @@ def render(label, message, color, label_color, style, logo):
     else:
         left = 0
     right = round(pad * 2 + message_w)
-    total = left + right
+    width = left + right
 
-    rects = []
+    shapes = []
     if left:
-        rects.append(f'<rect width="{left}" height="{height}" fill="#{label_color}"/>')
-    rects.append(f'<rect x="{left}" width="{right}" height="{height}" fill="#{color}"/>')
-    parts = []
+        shapes.append(f'<rect width="{left}" height="{height}" fill="#{label_color}"/>')
+    shapes.append(f'<rect x="{left}" width="{right}" height="{height}" fill="#{color}"/>')
+
+    shadow = style in GRADIENTS
+    if shadow:
+        radius = 4 if style == "plastic" else 3
+        shapes.append(f'<rect width="{width}" height="{height}" fill="url(#s)"/>')
+        body = (GRADIENTS[style] + f'<clipPath id="r"><rect width="{width}" height="{height}" rx="{radius}" fill="#fff"/></clipPath>'
+                f'<g clip-path="url(#r)">{"".join(shapes)}</g>')
+    else:
+        body = f'<g shape-rendering="crispEdges">{"".join(shapes)}</g>'
+
+    def text(value, center, value_w, bg, bold):
+        fg = ink(bg)
+        extra = ' font-weight="bold"' if bold else ""
+        out = ""
+        if shadow:
+            shade = "010101" if fg == "fff" else "ccc"
+            out += text_svg(value, center, baseline + 1, value_w, shade, f' fill-opacity=".3" aria-hidden="true"{extra}')
+        return out + text_svg(value, center, baseline, value_w, fg, extra)
+
+    body += f'<g font-family="{FONT}" font-size="{size}" text-anchor="middle" text-rendering="geometricPrecision">'
     if logo:
-        parts.append(logo_svg(logo, logo_x, (height - 14) // 2, ink(label_color)))
+        body += logo_svg(logo, logo_x, (height - 14) // 2, ink(label_color))
     if label:
         start = logo_x + logo_w + gap if logo else pad
-        parts.append(text_svg(label, start + label_w / 2, baseline, label_w, size, ink(label_color), False))
-    parts.append(text_svg(message, left + right / 2, baseline, message_w, size, ink(color), big))
-
-    title = escape(f"{label}: {message}" if label else message)
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{total}" height="{height}" '
-            f'role="img" aria-label="{title}"><title>{title}</title>'
-            f'<g shape-rendering="crispEdges">{"".join(rects)}</g>'
-            f'<g font-family="{FONT}" text-anchor="middle" text-rendering="geometricPrecision">'
-            f'{"".join(parts)}</g></svg>\n')
+        body += text(label, start + label_w / 2, label_w, label_color, False)
+    body += text(message, left + right / 2, message_w, color, big)
+    body += "</g>"
+    return wrap(width, height, f"{label}: {message}" if label else message, body)
 
 
 def main():
