@@ -4,6 +4,8 @@ title: VS Code
 
 # VS Code
 
+There's a goome extension too, [vscode-goome](https://github.com/goome-ui/vscode-goome). It has snippets for all four languages, hover docs for `goome_*`, a "goome: New Project" command and a preview for `.goome.json` builder files. Grab the `.vsix` from its [releases](https://github.com/goome-ui/vscode-goome/releases/latest) and install it with Extensions > ... > Install from VSIX.
+
 | Language | Extensions |
 |:--|:--|
 | C | C/C++ (`ms-vscode.cpptools`), and CMake Tools (`ms-vscode.cmake-tools`) if you use CMake |
