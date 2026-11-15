@@ -8,18 +8,18 @@ Made something with goome? Put this in your README. It links back to [goome-ui](
 
 ## Small
 
-[![made with goome](https://img.shields.io/badge/made%20with-goome-6fdc5f?style=flat-square&labelColor=1b1d22)](https://github.com/goome-ui)
+[![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome.svg)](https://github.com/goome-ui)
 
 ```markdown
-[![made with goome](https://img.shields.io/badge/made%20with-goome-6fdc5f?style=flat-square&labelColor=1b1d22)](https://github.com/goome-ui)
+[![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome.svg)](https://github.com/goome-ui)
 ```
 
 ## Big
 
-[![made with goome](https://img.shields.io/badge/made%20with-goome-6fdc5f?style=for-the-badge&labelColor=1b1d22)](https://github.com/goome-ui)
+[![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-big.svg)](https://github.com/goome-ui)
 
 ```markdown
-[![made with goome](https://img.shields.io/badge/made%20with-goome-6fdc5f?style=for-the-badge&labelColor=1b1d22)](https://github.com/goome-ui)
+[![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-big.svg)](https://github.com/goome-ui)
 ```
 
 ## HTML
@@ -27,7 +27,7 @@ Made something with goome? Put this in your README. It links back to [goome-ui](
 For READMEs that center things with `<p align="center">`.
 
 ```html
-<a href="https://github.com/goome-ui"><img src="https://img.shields.io/badge/made%20with-goome-6fdc5f?style=flat-square&labelColor=1b1d22" alt="made with goome"></a>
+<a href="https://github.com/goome-ui"><img src="https://goome-ui.github.io/docs/assets/badges/made-with-goome.svg" alt="made with goome"></a>
 ```
 
 Post what you made in [Discussions](https://github.com/goome-ui/c-goome/discussions) too, I like seeing it.
