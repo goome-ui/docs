@@ -6,21 +6,9 @@ title: Badges
 
 Made something with goome? Put one of these in your README. They link back to [goome-ui](https://github.com/goome-ui).
 
-There's one for every shields.io style, so pick whichever matches the badges you already have. Flat square is the default.
+There's one for every shields.io style, so pick whichever matches the badges you already have. flat-square is the one goome uses.
 
-## Flat square
-
-[![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-flat-square.svg)](https://github.com/goome-ui)
-
-```markdown
-[![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-flat-square.svg)](https://github.com/goome-ui)
-```
-
-```html
-<a href="https://github.com/goome-ui"><img src="https://goome-ui.github.io/docs/assets/badges/made-with-goome-flat-square.svg" alt="made with goome"></a>
-```
-
-## Flat
+## flat
 
 [![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-flat.svg)](https://github.com/goome-ui)
 
@@ -32,7 +20,19 @@ There's one for every shields.io style, so pick whichever matches the badges you
 <a href="https://github.com/goome-ui"><img src="https://goome-ui.github.io/docs/assets/badges/made-with-goome-flat.svg" alt="made with goome"></a>
 ```
 
-## Plastic
+## flat-square
+
+[![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-flat-square.svg)](https://github.com/goome-ui)
+
+```markdown
+[![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-flat-square.svg)](https://github.com/goome-ui)
+```
+
+```html
+<a href="https://github.com/goome-ui"><img src="https://goome-ui.github.io/docs/assets/badges/made-with-goome-flat-square.svg" alt="made with goome"></a>
+```
+
+## plastic
 
 [![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-plastic.svg)](https://github.com/goome-ui)
 
@@ -44,7 +44,7 @@ There's one for every shields.io style, so pick whichever matches the badges you
 <a href="https://github.com/goome-ui"><img src="https://goome-ui.github.io/docs/assets/badges/made-with-goome-plastic.svg" alt="made with goome"></a>
 ```
 
-## For the badge
+## for-the-badge
 
 [![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-for-the-badge.svg)](https://github.com/goome-ui)
 
@@ -56,7 +56,7 @@ There's one for every shields.io style, so pick whichever matches the badges you
 <a href="https://github.com/goome-ui"><img src="https://goome-ui.github.io/docs/assets/badges/made-with-goome-for-the-badge.svg" alt="made with goome"></a>
 ```
 
-## Social
+## social
 
 [![made with goome](https://goome-ui.github.io/docs/assets/badges/made-with-goome-social.svg)](https://github.com/goome-ui)
 
