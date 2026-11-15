@@ -104,6 +104,7 @@ if (wantLang && names[wantLang]) {
 
 var toc = document.getElementById("toc");
 var heads = Array.prototype.slice.call(document.querySelectorAll(".content h2[id], .content h3[id]"));
+if (heads.length > 40) heads = heads.filter(function (h) { return h.tagName === "H2"; });
 if (toc && heads.length > 1) {
   var title = document.createElement("p");
   title.className = "toc-title";
@@ -205,8 +206,9 @@ function has(list, q) {
   return best;
 }
 
-function score(d, want, raw) {
+function score(d, want, raw, loose) {
   var total = 0;
+  var missed = 0;
   var fromCode = false;
   var codeHits = {};
   for (var i = 0; i < want.length; i++) {
@@ -225,10 +227,16 @@ function score(d, want, raw) {
     if (k > best) { best = k; where = "k"; }
     var x = has(d.x, q) * weights.x;
     if (x > best) { best = x; where = "x"; }
-    if (!best) return null;
+    if (!best && /^[0-9]+$/.test(q)) continue;
+    if (!best) {
+      if (!loose) return null;
+      missed++;
+      continue;
+    }
     if (where === "k") fromCode = true;
     total += best;
   }
+  if (missed && (want.length < 4 || missed * 3 > want.length)) return null;
   var low = raw.toLowerCase();
   if (d.sec.h.toLowerCase().indexOf(low) >= 0) total += 3;
   var codeLang = null;
@@ -252,9 +260,15 @@ function search(raw) {
   if (!want.length || !docs) return [];
   var found = [];
   docs.forEach(function (d) {
-    var r = score(d, want, raw);
+    var r = score(d, want, raw, false);
     if (r) found.push(r);
   });
+  if (!found.length) {
+    docs.forEach(function (d) {
+      var r = score(d, want, raw, true);
+      if (r) found.push(r);
+    });
+  }
   found.sort(function (a, b) { return b.score - a.score; });
   var perPage = {};
   return found.filter(function (r) {

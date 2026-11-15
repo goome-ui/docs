@@ -76,6 +76,10 @@ Goome g = Goome.open(new Options().backend(Goome.TEST)
 
 `test_frames`, `test_script` and `test_shots` match the env vars (`testFrames`, `testScript` and `testShots` in Java). If you set both, the one in code wins.
 
+## When it fails
+
+If the test backend or offscreen mode gives you an error, the text from `goome_error` is on [Error messages](errors.md#test-and-offscreen-backends) with what it means.
+
 ## Turning shots into PNGs
 
 With Pillow:

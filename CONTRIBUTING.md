@@ -52,7 +52,16 @@ Samples have to actually compile (C, C#) or run (Python) against the current rel
 
 <p align="center">
 <code>pages/api-*.md</code> gets made by <code>tools/apiref.py</code> from <code>goome.h</code> and its trailing <code>//</code> notes. Hand edits get wiped next time.<br> <br>
-Something wrong in there? Fix the note in <code>include/goome.h</code> in <a href="https://github.com/goome-ui/c-goome">c-goome</a> and I remake the pages after it lands.
+Something wrong in there? Fix the note in <code>include/goome.h</code> in <a href="https://github.com/goome-ui/c-goome">c-goome</a> and I remake the pages after it lands.<br> <br>
+<code>pages/errors.md</code> is the same deal. <code>tools/errors.py</code> pulls every error message out of c-goome's <code>src/*.c</code>, and the explanations live in <code>tools/errors-notes.json</code>. After goome changes, run it with a c-goome checkout next to this repo (or give it the path):
+</p>
+
+```sh
+python3 tools/errors.py ../c-goome
+```
+
+<p align="center">
+It prints any message that has no explanation yet, and notes for messages that are gone. Write those up in the json and run it again.
 </p>
 </details>
 

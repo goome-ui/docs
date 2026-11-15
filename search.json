@@ -14,7 +14,7 @@ permalink: /search.json
 {%- else -%}
 {%- assign anchor = part | split: '"' | first -%}
 {%- assign split_head = part | split: '</h2>' -%}
-{%- assign head = split_head | first | remove_first: anchor | remove_first: '">' | split: '<kbd>' | first | strip_html | normalize_whitespace | strip -%}
+{%- assign head = split_head | first | remove_first: anchor | remove_first: '">' | split: '<kbd>' | first | strip_html | replace: '&lt;', '<' | replace: '&gt;', '>' | replace: '&quot;', '"' | replace: '&#39;', "'" | replace: '&amp;', '&' | normalize_whitespace | strip -%}
 {%- assign body = part | remove_first: split_head[0] | remove_first: '</h2>' -%}
 {%- endif -%}
 {%- assign blocks = body | split: '<div class="language-' -%}
