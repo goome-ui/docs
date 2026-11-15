@@ -1,0 +1,74 @@
+---
+title: Templates and goome new
+---
+
+# Templates and goome new <kbd>0.4</kbd>
+
+Theres a template repo for every language. Each one is a tiny app that already builds: a normal window, and one toggle turns it into an overlay over everything. CI is set up too, it runs the app on the [test backend](testing.md) on every desktop OS.
+
+| Language | Template |
+|:--|:--|
+| C | [goome-app-template-c](https://github.com/goome-ui/goome-app-template-c) |
+| C# | [goome-app-template-csharp](https://github.com/goome-ui/goome-app-template-csharp) |
+| Python | [goome-app-template-python](https://github.com/goome-ui/goome-app-template-python) |
+| Java | [goome-app-template-java](https://github.com/goome-ui/goome-app-template-java) |
+| Godot | [goome-app-template-godot](https://github.com/goome-ui/goome-app-template-godot) |
+
+Hit **Use this template** on any of them and you get your own copy. Or use `goome new`, it does the same but puts your name in everywhere.
+
+## goome new
+
+[goome-cli](https://github.com/goome-ui/goome-cli) is one Python file, it only needs Python 3.8 or newer.
+
+```sh
+pip install git+https://github.com/goome-ui/goome-cli
+goome new my-overlay --lang python
+```
+
+Or skip installing, download the one file and run it the same way:
+
+```sh
+curl -fsSL -o goome.py https://raw.githubusercontent.com/goome-ui/goome-cli/main/goome.py
+python goome.py new my-overlay --lang c
+```
+
+On windows the download is `irm https://raw.githubusercontent.com/goome-ui/goome-cli/main/goome.py -OutFile goome.py` in PowerShell.
+
+The whole thing:
+
+```sh
+goome new <name> --lang c|csharp|python|java|godot [--template app|overlay|mod-menu|hud]
+goome list
+goome --version
+```
+
+`--dir` picks the folder (the name if you leave it out), `--ref` a branch or tag of the template repo, and `--from` a template folder or .tar.gz you already have so nothing gets downloaded. It wont write into a folder that already has stuff in it.
+
+The name gets used in every form it needs. `cool hud` turns into "Cool Hud" in titles, `cool-hud` for the binary, `CoolHud` for the C# project and `coolhud` for the Java package. When its done it prints how to build and run it.
+
+## The four starting points
+
+| `--template` | What you get |
+|:--|:--|
+| `app` | the default, a normal window plus the overlay toggle |
+| `overlay` | a see-through overlay over the whole desktop, only the window takes clicks. alt+h hides it |
+| `mod-menu` | a menu with toggles and sliders over whatever game is running, alt+m opens and closes it |
+| `hud` | a little panel in the corner with the time and fps, clicks go straight through it |
+
+In Godot they all live inside the game instead of over the desktop, the overlay one is a goome window floating over your game and clicks next to it go to the game.
+
+In the template repos the other three are in `variants/`. By hand, copy the one you want over the main file (`main.c`, `Program.cs`, `main.py`, `Main.java` or `ui.gd`) and delete `variants/`.
+
+## Running what you made
+
+| Language | Run it |
+|:--|:--|
+| C | `cc -O2 -o my-overlay main.c goome.c` then `./my-overlay`, or the `CMakeLists.txt` |
+| C# | `dotnet run`, needs the .NET 8 SDK |
+| Python | `pip install -r requirements.txt` then `python main.py`, pip builds goome with your C compiler |
+| Java | `./gradlew run`, needs JDK 22+ |
+| Godot | `./get-goome.sh` grabs the addon, then open it in Godot 4.4+ and hit play |
+
+Every template pins one goome version. Thats `goome.h` in C, `GoomeVersion` in the csproj, the tag in `requirements.txt`, `goome_version` in `gradle.properties` and the version after `get-goome.sh` in Godot. Each template README says how to update it.
+
+From there the getting started pages have the rest: [C](start-c.md), [C#](start-csharp.md), [Python](start-python.md), [Java](start-java.md) and [Godot](start-godot.md).
