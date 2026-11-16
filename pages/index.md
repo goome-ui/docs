@@ -5,7 +5,7 @@ permalink: /
 
 # goome docs
 
-goome draws see-through, always on top overlays where only what you draw takes clicks. Hotkeys, screen grabs, fonts, images and a UI kit are in there too.
+See-through overlays, normal app windows, game mod menus and engine ui for any C program. One file, no dependencies, Linux, Windows, Mac. Hotkeys, screen grabs, fonts, images and a UI kit are in there too.
 
 One header (`goome.h`), nothing to link. Linux (X11 and Wayland), Windows 10 / 11 and macOS 14+, from C, C#, Python, Java, Rust, Node, Go, Zig or Lua. Theres a Godot addon and an OBS plugin too.
 

@@ -5,7 +5,7 @@
 <h1 align="center">🫠 goome docs 🫠</h1>
 
 <p align="center">
-<b>The docs for goome, the see-through overlay and ui library, plus all its bindings.</b>
+<b>The docs for goome. See-through overlays, normal app windows, game mod menus and engine ui for any C program. One file, no dependencies, Linux, Windows, Mac.</b>
 </p>
 
 <p align="center">
