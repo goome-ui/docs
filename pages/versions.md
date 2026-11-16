@@ -8,13 +8,14 @@ The getting started pages get you the newest goome. If you want one exact versio
 
 | Version | Whats in it |
 |:--|:--|
+| 0.5.1 | fixed install steps: Python, C# and Java come from PyPI, NuGet and Maven Central, Node and Lua from their release files, the editor plugins from their marketplaces, plus a Windows installer for the [OBS plugin](obs.md) |
 | 0.5 | [Rust](start-rust.md), [Node](start-node.md), [Go](start-go.md), [Zig](start-zig.md) and [Lua](start-lua.md), [animations](animations.md), [emoji and RTL](emoji-rtl.md), [IME](ime.md), [screen readers](accessibility.md), the [OBS plugin](obs.md), real goome in the [builder](ui-builder.md), the GNOME late hit rect fix |
 | 0.4 | [apps to download](downloads.md), [template repos and goome new](templates.md), the [Compare](compare.md) page, [Discussions and good first issues](community.md) |
 | 0.3 | the mods and customization update: Java and Godot, goome inside games, custom widgets, icons and skins, simple themes, the UI builder |
 | 0.2 | window mode and offscreen mode, Unity, menus, modals, tables, trees, a text editor, plots and drag and drop |
 | 0.1 | the first one: overlay mode, drawing, the ui kit basics, screen capture and hotkeys, from C, C# and Python |
 
-Pages and functions that came in 0.2, 0.3, 0.4 or 0.5 have a little <kbd>0.2</kbd>, <kbd>0.3</kbd>, <kbd>0.4</kbd> or <kbd>0.5</kbd> next to them, so if you stay on an older version skip those. The commands below use 0.5.0, swap in the one you want.
+Pages and functions that came in 0.2, 0.3, 0.4 or 0.5 have a little <kbd>0.2</kbd>, <kbd>0.3</kbd>, <kbd>0.4</kbd> or <kbd>0.5</kbd> next to them, so if you stay on an older version skip those. The commands below use the newest one, swap in the one you want.
 
 ## C
 
@@ -43,12 +44,18 @@ Theres also `goome-backends-0.5.0.zip` there (from 0.3.0 on), thats the `backend
 
 ## C#
 
-Every release from 0.2.0 on has a .nupkg with the native lib for every OS inside. Download it into a folder and add it from there:
+NuGet has 0.4.0 and up:
+
+```sh
+dotnet add package GoomeSharp --version 0.5.1
+```
+
+For 0.2.0 and 0.3.0 grab the .nupkg from the [releases](https://github.com/goome-ui/csharp-goome/releases), it has the native lib for every OS inside, and add it from a folder:
 
 ```sh
 mkdir goome-pkgs
-curl -fsSL -o goome-pkgs/GoomeSharp.0.5.0.nupkg https://github.com/goome-ui/csharp-goome/releases/download/v0.5.0/GoomeSharp.0.5.0.nupkg
-dotnet add package GoomeSharp --version 0.5.0 --source ./goome-pkgs
+curl -fsSL -o goome-pkgs/GoomeSharp.0.3.0.nupkg https://github.com/goome-ui/csharp-goome/releases/download/v0.3.0/GoomeSharp.0.3.0.nupkg
+dotnet add package GoomeSharp --version 0.3.0 --source ./goome-pkgs
 ```
 
 ## Unity
@@ -63,29 +70,31 @@ Or grab `com.goome-ui.goome-0.5.0.tgz` from the [0.5.0 release](https://github.c
 
 ## Python
 
-From the tag, this still builds the lib with your C compiler:
+PyPI has 0.4.0 and up:
 
 ```sh
-pip install git+https://github.com/goome-ui/python-goome@v0.5.0
+pip install goome==0.5.1
 ```
 
-Or skip the build with a wheel from the [releases](https://github.com/goome-ui/python-goome/releases), theres one for linux x86_64, windows, and both kinds of Mac:
+Older ones come from the tag, that builds the lib with your C compiler:
 
 ```sh
-pip install https://github.com/goome-ui/python-goome/releases/download/v0.5.0/goome-0.5.0-py3-none-linux_x86_64.whl
+pip install git+https://github.com/goome-ui/python-goome@v0.3.0
 ```
 
 ## Java
 
-Java starts at 0.3.0. Download `goome-0.5.0.jar` from the [release](https://github.com/goome-ui/java-goome/releases/tag/v0.5.0), it has the native lib for every OS inside. Put it in `libs/` and:
+Java starts at 0.3.0. Maven Central has 0.4.0 and up:
 
 ```groovy
 dependencies {
-    implementation files('libs/goome-0.5.0.jar')
+    implementation 'io.github.goome-ui:goome:0.5.0'
 }
 ```
 
-The rest of the Gradle and Maven setup is on [Getting started in Java](start-java.md#install). The same release has `goome-fabric-0.5.0.jar` and `goome-neoforge-0.5.0.jar`, those are the [Minecraft](mods-minecraft.md) mods.
+For 0.3.0 download `goome-0.3.0.jar` from the [release](https://github.com/goome-ui/java-goome/releases/tag/v0.3.0), it has the native lib for every OS inside, and use `implementation files('libs/goome-0.3.0.jar')`.
+
+The rest of the Gradle and Maven setup is on [Getting started in Java](start-java.md#install). Every release has `goome-fabric-<version>.jar` and `goome-neoforge-<version>.jar` too, those are the [Minecraft](mods-minecraft.md) mods.
 
 ## Godot
 
@@ -93,7 +102,7 @@ Godot starts at 0.3.0. Download `godot-goome-0.5.0.zip` from the [release](https
 
 ## Rust
 
-Rust starts at 0.5.0. Put the tag on the git dependency:
+Rust starts at 0.5.0. Its not on crates.io, put the tag on the git dependency:
 
 ```toml
 [dependencies]
@@ -102,7 +111,13 @@ goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.0" }
 
 ## Node
 
-Node starts at 0.5.0. npm takes the tag after a `#`:
+Node starts at 0.5.0. Its not on npm, install the package from the release, it has the addon built already:
+
+```sh
+npm install https://github.com/goome-ui/node-goome/releases/download/v0.5.0/goome-0.5.0.tgz
+```
+
+Or from git with the tag after a `#`, that builds the addon with node-gyp:
 
 ```sh
 npm install github:goome-ui/node-goome#v0.5.0
@@ -126,17 +141,15 @@ zig fetch --save git+https://github.com/goome-ui/zig-goome#v0.5.0
 
 ## Lua
 
-Lua starts at 0.5.0. Clone the tag and build it like normal:
+Lua starts at 0.5.0. Its not on luarocks.org, LuaRocks takes the rock from the release:
 
 ```sh
-git clone --branch v0.5.0 https://github.com/goome-ui/lua-goome
-cd lua-goome
-luarocks make goome-dev-1.rockspec
+luarocks install https://github.com/goome-ui/lua-goome/releases/download/v0.5.0/goome-0.5.0-1.src.rock
 ```
 
 ## OBS
 
-The plugin starts at 0.5.0. Every file is on the [0.5.0 release](https://github.com/goome-ui/obs-goome/releases/tag/v0.5.0), with the version in the name like `obs-goome-0.5.0-windows-x64.zip`. Install steps are on the [OBS plugin](obs.md#install) page.
+The plugin starts at 0.5.0. Every file is on the [0.5.0 release](https://github.com/goome-ui/obs-goome/releases/tag/v0.5.0), with the version in the name like `obs-goome-0.5.0-windows-x64.zip`. From 0.5.1 Windows also gets `obs-goome-0.5.1-windows-x64-installer.exe`. Install steps are on the [OBS plugin](obs.md#install) page.
 
 ## goome new
 
