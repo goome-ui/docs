@@ -23,7 +23,7 @@ Offline or on VSCodium, grab the `.vsix` from its [releases](https://github.com/
 
 The rest:
 
-- Snippets - type `goome` in C, C#, Python or Java. `goome-overlay` and `goome-app` are a whole program, `goome-loop` is the poll loop, and theres one for every common widget
+- Snippets - type `goome` in C, C#, Python or Java. `goome-overlay` and `goome-app` are a whole program, `goome-loop` is the poll loop, and theres one for every common widget. The 0.5 ones are `goome-anim`, `goome-anim-color`, `goome-ease`, `goome-text-input`, `goome-a11y`, `goome-font-fallback` and `goome-text-dir` <kbd>0.5</kbd>
 - goome: New Project - runs [goome new](templates.md). If its not on your PATH it downloads goome.py and runs it with Python
 - Preview - open a `.goome.json` and hit the preview button top right. It draws with the builders own code and updates while you type. The C, C#, Python and Java buttons copy the code out
 - Hover - any `goome_*` function in C for its signature, the note from goome.h and a docs link
