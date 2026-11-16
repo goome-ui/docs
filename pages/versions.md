@@ -140,7 +140,7 @@ The plugin starts at 0.5.0. Every file is on the [0.5.0 release](https://github.
 
 ## goome new
 
-The cli is there from 0.5.0 on:
+The cli is there from 0.4.0 on:
 
 ```sh
 pip install git+https://github.com/goome-ui/goome-cli@v0.5.0
