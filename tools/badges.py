@@ -69,6 +69,12 @@ BADGES = [
     ("cgo-one-file", "cgo", "one file", DARK, GREEN, "flat-square", None),
     ("zig-package", "zig fetch", "build.zig.zon", DARK, GREEN, "flat-square", None),
     ("love2d-ready", "LOVE", "drop in", DARK, GREEN, "flat-square", None),
+    ("pypi-goome", "PyPI", "goome", GREEN, GREEN, "flat-square", "python"),
+    ("nuget-goomesharp", "NuGet", "GoomeSharp", GREEN, GREEN, "flat-square", "dotnet"),
+    ("maven-central", "Maven Central", "io.github.goome-ui", GREEN, GREEN, "flat-square", "openjdk"),
+    ("vscode-marketplace", "VS Code", "Marketplace", GREEN, GREEN, "flat-square", None),
+    ("jetbrains-marketplace", "JetBrains", "Marketplace", GREEN, GREEN, "flat-square", None),
+    ("go-get", "go get", "go-goome", GREEN, GREEN, "flat-square", "go"),
 ] + [
     (f"join-{team}", "join", team, GREEN, DARK, "for-the-badge", None)
     for team in ["c", "csharp", "python", "java", "godot", "rust", "node", "go", "zig", "lua", "docs", "maintainers"]
