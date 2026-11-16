@@ -4,7 +4,7 @@ title: "API: capture and hotkeys"
 
 # API: capture and hotkeys
 
-Made from `goome.h` 0.5.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.2 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 Guide: [capture](capture.md).
 
