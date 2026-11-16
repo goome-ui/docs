@@ -60,7 +60,7 @@ uploadTexture(frame.pixels, frame.w, frame.h);
 ## Install
 
 ```sh
-npm install github:goome-ui/node-goome
+npm install github:goome-ui/node-goome#v0.5.0
 ```
 
 Its not on npm yet, so it comes from GitHub. Installing builds the addon with node-gyp, which needs a C compiler and Python, a few seconds once:

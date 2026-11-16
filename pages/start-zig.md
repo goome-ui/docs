@@ -78,7 +78,7 @@ More on [Offscreen mode](offscreen-mode.md).
 In your project:
 
 ```sh
-zig fetch --save git+https://github.com/goome-ui/zig-goome#dev
+zig fetch --save git+https://github.com/goome-ui/zig-goome#v0.5.0
 ```
 
 Then in `build.zig`:
@@ -88,7 +88,7 @@ const goome = b.dependency("goome", .{ .target = target, .optimize = optimize })
 exe.root_module.addImport("goome", goome.module("goome"));
 ```
 
-build.zig compiles goome.h with zigs own C compiler, so theres nothing else to install, not even on Windows. If you only want the C side, `goome.artifact("goome")` is a static lib with goome.h next to it. For a release tag instead of dev see [Versions](versions.md).
+build.zig compiles goome.h with zigs own C compiler, so theres nothing else to install, not even on Windows. If you only want the C side, `goome.artifact("goome")` is a static lib with goome.h next to it. For another version see [Versions](versions.md).
 
 ## Your first overlay
 
@@ -126,7 +126,7 @@ Names are the C ones without `goome_`, in camelCase, on the type they work on. W
 _ = ui.slider("Volume", &volume, 0, 1, "%.2f");
 ```
 
-Checkboxes and toggles take `*bool`, radios, combos and tabs `*i32`, text boxes a `[]u8` buffer (`goome.text(&buf)` reads it, `goome.setText(&buf, "x")` writes it). Begin and end pairs are the same as C, `window` / `windowEnd` and so on. The short constants are `goome.key.esc`, `goome.win.move` and friends, everything else is `goome.c.GOOME_*`.
+Checkboxes and toggles take `*bool`, radios, combos and tabs `*i32`, text boxes a `[]u8` buffer (`goome.text(&buf)` reads it, `goome.setText(&buf, "x")` writes it). Begin and end pairs are the same as C, `window` / `windowEnd` and so on. The short constants are `goome.key.esc`, `goome.win.move` and friends. Eases, roles and text directions are enums, so `ui.anim("x", 1, 200, .out)`, `ui.a11yRole(.slider, "Hue")` and `goome.textDir(.rtl)`. Everything else is `goome.c.GOOME_*`.
 
 ## Editors
 

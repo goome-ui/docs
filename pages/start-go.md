@@ -76,7 +76,7 @@ uploadTexture(frame.Pixels(), frame.W(), frame.H())
 ## Install
 
 ```sh
-go get github.com/goome-ui/go-goome@dev
+go get github.com/goome-ui/go-goome@v0.5.0
 ```
 
 The first build compiles goome with your C compiler, after that Go caches it:
@@ -85,7 +85,7 @@ The first build compiles goome with your C compiler, after that Go caches it:
 - Mac: `xcode-select --install`
 - Windows: [mingw-w64](https://www.mingw-w64.org/) gcc on your PATH
 
-If cgo is off (`CGO_ENABLED=0`, or no compiler found on Windows) turn it on with `CGO_ENABLED=1`. For a release tag instead of dev see [Versions](versions.md).
+If cgo is off (`CGO_ENABLED=0`, or no compiler found on Windows) turn it on with `CGO_ENABLED=1`. For another version see [Versions](versions.md).
 
 ## Your first overlay
 

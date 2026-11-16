@@ -69,7 +69,7 @@ In LÖVE `g:frame_copy` writes straight into an `ImageData:getPointer()`. `examp
 With [LuaRocks](https://luarocks.org/), from the repo:
 
 ```sh
-git clone https://github.com/goome-ui/lua-goome
+git clone --branch v0.5.0 https://github.com/goome-ui/lua-goome
 cd lua-goome
 luarocks make goome-dev-1.rockspec
 ```
@@ -87,7 +87,7 @@ You need a C compiler and the Lua headers:
 - Mac: `xcode-select --install`
 - Windows: [mingw-w64](https://www.mingw-w64.org/) from git bash, with `LUA_LIB` pointing at your `lua54.dll` or `lua51.dll`
 
-On Linux and Mac the module never links Lua, one build works for any interpreter that matches the headers it was built with. For a release tag see [Versions](versions.md).
+On Linux and Mac the module never links Lua, one build works for any interpreter that matches the headers it was built with. For another version see [Versions](versions.md).
 
 ## Your first overlay
 

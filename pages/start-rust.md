@@ -58,6 +58,8 @@ fn main() -> goome::Result<()> {
 ### Inside a game engine
 
 ```rust
+use goome::Draw;
+
 let mut g = goome::Goome::offscreen(320, 200, 1.0)?;
 if let Some(mut c) = g.begin(0) {
     c.round_rect(20.0, 20.0, 280.0, 160.0, 16.0, 0xFF6FDC5F);
@@ -72,7 +74,7 @@ upload_texture(frame.pixels(), frame.w(), frame.h());
 
 ```toml
 [dependencies]
-goome = { git = "https://github.com/goome-ui/rust-goome" }
+goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.0" }
 ```
 
 Its not on crates.io yet, so it comes from git. The first build compiles goome.h with your C compiler, a few seconds once. Cargo already needs one for a lot of crates so you probably have it:
