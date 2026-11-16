@@ -6,7 +6,7 @@ title: Getting started in Go
 
 Go 1.23+ with cgo on. [go-goome](https://github.com/goome-ui/go-goome) compiles goome.h with cgo, no `-l` flags, no pkg-config and nothing to ship next to your exe.
 
-Theres no template or `goome new` for Go yet.
+To start from a project that already builds, `goome new my-app --lang go` makes one from the [Go template](https://github.com/goome-ui/goome-app-template-go), see [Templates and goome new](templates.md) <kbd>0.5.1</kbd>.
 
 ## Pick what you are making
 
