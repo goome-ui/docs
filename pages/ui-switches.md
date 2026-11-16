@@ -59,6 +59,72 @@ ui.sameLine();
 size = ui.radio("Large", size, 2);
 ```
 
+```rust
+let (mut grid, mut notify, mut wifi, mut size) = (true, false, true, 1);
+ui.checkbox("Show grid", &mut grid);
+ui.same_line();
+ui.checkbox("Notifications", &mut notify);
+ui.toggle("Wi-Fi", &mut wifi);
+ui.radio("Small", &mut size, 0);
+ui.same_line();
+ui.radio("Medium", &mut size, 1);
+ui.same_line();
+ui.radio("Large", &mut size, 2);
+```
+
+```go
+grid, notify, wifi, size := true, false, true, 1
+ui.Checkbox("Show grid", &grid)
+ui.SameLine()
+ui.Checkbox("Notifications", &notify)
+ui.Toggle("Wi-Fi", &wifi)
+ui.Radio("Small", &size, 0)
+ui.SameLine()
+ui.Radio("Medium", &size, 1)
+ui.SameLine()
+ui.Radio("Large", &size, 2)
+```
+
+```zig
+var grid = true;
+var notify = false;
+var wifi = true;
+var size: i32 = 1;
+_ = ui.checkbox("Show grid", &grid);
+ui.sameLine();
+_ = ui.checkbox("Notifications", &notify);
+_ = ui.toggle("Wi-Fi", &wifi);
+_ = ui.radio("Small", &size, 0);
+ui.sameLine();
+_ = ui.radio("Medium", &size, 1);
+ui.sameLine();
+_ = ui.radio("Large", &size, 2);
+```
+
+```lua
+grid = ui:checkbox("Show grid", grid)
+ui:same_line()
+notify = ui:checkbox("Notifications", notify)
+wifi = ui:toggle("Wi-Fi", wifi)
+size = ui:radio("Small", size, 0)
+ui:same_line()
+size = ui:radio("Medium", size, 1)
+ui:same_line()
+size = ui:radio("Large", size, 2)
+```
+
+```js
+grid = ui.checkbox("Show grid", grid);
+ui.sameLine();
+notify = ui.checkbox("Notifications", notify);
+wifi = ui.toggle("Wi-Fi", wifi);
+size = ui.radio("Small", size, 0);
+ui.sameLine();
+size = ui.radio("Medium", size, 1);
+ui.sameLine();
+size = ui.radio("Large", size, 2);
+```
+
 Checkboxes and toggles flip an int between 0 and 1 and return 1 the frame it changed. A toggle is a checkbox that looks like a switch.
 
 Radios share one int. Each sets it to its own `value` when clicked and shows picked while the int equals it.

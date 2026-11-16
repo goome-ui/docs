@@ -25,12 +25,12 @@ phone.addEventListener("change", function () {
   if (!phone.matches) setDrawer(false);
 });
 
-var names = { c: "C", csharp: "C#", python: "Python", java: "Java" };
+var names = { c: "C", csharp: "C#", python: "Python", java: "Java", rust: "Rust", go: "Go", zig: "Zig", lua: "Lua", js: "Node" };
 var saved = null;
 try { saved = localStorage.getItem("goome-lang"); } catch (e) {}
 
 function lang(el) {
-  var m = el.className.match(/language-(c|csharp|python|java)\b/);
+  var m = el.className.match(/language-(c|csharp|python|java|rust|go|zig|lua|js)(?![\w-])/);
   return m ? m[1] : null;
 }
 

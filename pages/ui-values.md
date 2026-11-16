@@ -39,6 +39,46 @@ ui.progress(-1);
 color = ui.color("Highlight", color);
 ```
 
+```rust
+ui.slider_fmt("Volume", &mut volume, 0.0, 1.0, Some("%.2f"));
+ui.slider_int("Count", &mut count, 0, 100);
+ui.progress(0.65, Some("65%"));
+ui.progress(-1.0, None);
+ui.color("Highlight", &mut color);
+```
+
+```go
+ui.SliderFmt("Volume", &volume, 0, 1, "%.2f")
+ui.SliderInt("Count", &count, 0, 100)
+ui.Progress(0.65, "65%")
+ui.Progress(-1, "")
+ui.Color("Highlight", &color)
+```
+
+```zig
+_ = ui.slider("Volume", &volume, 0, 1, "%.2f");
+_ = ui.sliderInt("Count", &count, 0, 100);
+ui.progress(0.65, "65%");
+ui.progress(-1, null);
+_ = ui.color("Highlight", &color);
+```
+
+```lua
+volume = ui:slider("Volume", volume, 0, 1, "%.2f")
+count = ui:slider_int("Count", count, 0, 100)
+ui:progress(0.65, "65%")
+ui:progress(-1)
+color = ui:color("Highlight", color)
+```
+
+```js
+volume = ui.slider("Volume", volume, 0, 1, "%.2f");
+count = ui.sliderInt("Count", count, 0, 100);
+ui.progress(0.65, "65%");
+ui.progress(-1);
+color = ui.color("Highlight", color);
+```
+
 ![two sliders, a progress bar, a busy bar and a color picker](../assets/shots/ui-values.png)
 
 The slider format is printf style, only for the number on the right. NULL shows it plain.
