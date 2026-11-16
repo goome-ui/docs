@@ -55,3 +55,7 @@ cc -std=c99 -O2 -I../../vendor main.c ../../vendor/goome.c -o goome-hud
 ```
 
 `scripts/package-apps.sh` builds all four and makes the same zips the release has. To make your own app like these, [Templates and goome new](templates.md) gets you going in a minute.
+
+## OBS plugin
+
+The [OBS plugin](obs.md) <kbd>0.5</kbd> is a download too, on the [obs-goome releases](https://github.com/goome-ui/obs-goome/releases/latest). Windows has an installer since 0.5.1 (`obs-goome-…-windows-x64-installer.exe`), Mac a .pkg and Ubuntu / Debian a .deb. The [OBS plugin](obs.md#install) page has the steps.
