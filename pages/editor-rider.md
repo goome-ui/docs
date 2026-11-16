@@ -4,6 +4,8 @@ title: Rider
 
 # Rider
 
+Theres a goome plugin for Rider (and the other JetBrains IDEs), [jetbrains-goome](https://github.com/goome-ui/jetbrains-goome). It adds `goome` live templates for C# and C++, a "goome: New Project" action and a preview for `.goome.json` builder files. Get the `.zip` from its [releases](https://github.com/goome-ui/jetbrains-goome/releases/latest), then Settings > Plugins > gear > Install Plugin from Disk.
+
 For C#. Rider can open CMake projects but for C just use [CLion](editor-clion.md).
 
 ## Open csharp-goome
