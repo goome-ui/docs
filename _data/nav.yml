@@ -1,5 +1,6 @@
 - title: Start
   pages:
+    - { page: try, title: Try it in your browser, since: "0.5.2" }
     - { page: index, title: Home }
     - { page: versions, title: Versions }
     - { page: start-java, title: Getting started in Java, since: "0.3" }
