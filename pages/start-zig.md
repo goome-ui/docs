@@ -6,7 +6,7 @@ title: Getting started in Zig
 
 Zig 0.15.2. [zig-goome](https://github.com/goome-ui/zig-goome) is a Zig package, the module brings goomes C with it and links libc. Nothing else gets linked on any OS.
 
-Theres no template or `goome new` for Zig yet.
+To start from a project that already builds, `goome new my-app --lang zig` makes one from the [Zig template](https://github.com/goome-ui/goome-app-template-zig), see [Templates and goome new](templates.md) <kbd>0.5.1</kbd>.
 
 ## Pick what you are making
 

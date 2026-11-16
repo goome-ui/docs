@@ -6,7 +6,7 @@ title: Getting started in Rust
 
 Rust 1.77+. [rust-goome](https://github.com/goome-ui/rust-goome) is two crates: `goome-sys` builds the C library from the vendored goome.h with the `cc` crate, and `goome` wraps it so you never touch a raw pointer.
 
-Theres no template or `goome new` for Rust yet, `cargo new` and the dependency below is all it takes.
+To start from a project that already builds, `goome new my-app --lang rust` makes one from the [Rust template](https://github.com/goome-ui/goome-app-template-rust), see [Templates and goome new](templates.md) <kbd>0.5.1</kbd>. Or `cargo new` and the dependency below is all it takes.
 
 ## Pick what you are making
 

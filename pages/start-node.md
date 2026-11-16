@@ -6,7 +6,7 @@ title: Getting started in Node
 
 Node 18+. [node-goome](https://github.com/goome-ui/node-goome) is a plain N-API addon. node-gyp compiles goome.h right into `goome.node`, so theres no separate library to find at runtime. It has TypeScript types in `index.d.ts`.
 
-Theres no template or `goome new` for Node yet.
+To start from a project that already builds, `goome new my-app --lang node` makes one from the [Node template](https://github.com/goome-ui/goome-app-template-node), see [Templates and goome new](templates.md) <kbd>0.5.1</kbd>.
 
 ## Pick what you are making
 
