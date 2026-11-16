@@ -41,8 +41,8 @@ ui.fallback(Font.system("Noto Color Emoji"));
 
 ```rust
 let mut ui = goome::Font::load("Inter.ttf")?;
-ui.fallback(goome::Font::load("NotoSansJP-Regular.otf")?);
-ui.fallback(goome::Font::system(Some("Noto Color Emoji"))?);
+ui.fallback(&goome::Font::load("NotoSansJP-Regular.otf")?);
+ui.fallback(&goome::Font::system(Some("Noto Color Emoji"))?);
 ```
 
 ```go
@@ -125,7 +125,7 @@ goome_text_dir(GOOME_DIR_AUTO);
 ```
 
 ```csharp
-Goome.TextDir(TextDir.Rtl);
+Font.Direction = TextDirection.Rtl;
 ```
 
 ```python
@@ -133,7 +133,7 @@ goome.text_dir(goome.DIR_RTL)
 ```
 
 ```java
-Goome.textDir(Goome.DIR_RTL);
+Font.textDir(Font.DIR_RTL);
 ```
 
 ```rust
@@ -141,11 +141,11 @@ goome::text_dir(goome::DIR_RTL);
 ```
 
 ```go
-goome.TextDir(goome.DirRTL)
+goome.SetTextDir(goome.DirRTL)
 ```
 
 ```zig
-goome.textDir(goome.c.GOOME_DIR_RTL);
+goome.textDir(.rtl);
 ```
 
 ```lua
