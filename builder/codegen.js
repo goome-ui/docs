@@ -2940,6 +2940,9 @@
     return { code: finish(L.join("\n"), "gd", project), files: ctx.files.size ? [...ctx.files].map((f) => "res://" + f) : [], file: GM.ident(project.name || "ui", "ui") + ".gd" };
   }
 
+  X.langs = {};
+  X.H = { GM, camel, pascal, bytes, cut, strq, num, floats, Out, names, WFLAGS, EFLAGS, TFLAGS, AFLAGS, IFLAGS, THC, finish };
+
   X.generate = (project, lang) => {
     const warnings = [];
     const seen = new Set();
@@ -2950,11 +2953,13 @@
       warnings.push({ id, msg });
     };
     const pj = GM.normProject(GM.clone(project));
-    const r = lang === "cs" ? genCS(pj, warn) : lang === "py" ? genPy(pj, warn) : lang === "java" ? genJava(pj, warn) : lang === "gd" ? genGd(pj, warn) : genC(pj, warn);
+    const ext = X.langs[lang];
+    const r = ext ? ext.generate(pj, warn, X.H) : lang === "cs" ? genCS(pj, warn) : lang === "py" ? genPy(pj, warn) : lang === "java" ? genJava(pj, warn) : lang === "gd" ? genGd(pj, warn) : genC(pj, warn);
     return { code: r.code, warnings, files: r.files, file: r.file };
   };
 
   X.hint = (project, lang) => {
+    if (X.langs[lang]) return X.langs[lang].hint(GM.normProject(GM.clone(project)));
     if (lang === "cs") return "dotnet new console -n ui, reference GoomeSharp, paste this over Program.cs, dotnet run";
     if (lang === "py") return "PYTHONPATH=path/to/python-goome python3 ui.py";
     if (lang === "java") {
