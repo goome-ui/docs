@@ -829,12 +829,14 @@
       else box.appendChild(h("div", { class: "muted", style: { padding: "20px" }, text: "element editor didnt load" }));
       return;
     }
+    if (window.GMWasm && GMWasm.stage(wrapEl)) return;
     const bar = h("div", { class: "stage-bar" });
     bar.appendChild(h("span", { text: P.mode === "app" ? "app window " + P.app.w + " x " + P.app.h : "overlay, the grey is your desktop" }));
     bar.appendChild(h("span", { class: "grow" }));
     if (S.sel.length > 1) bar.appendChild(h("span", { text: S.sel.length + " picked" }));
     bar.appendChild(h("div", { class: "seg", title: "where dropped widgets go inside a window" }, h("button", { class: S.dropMode !== "flow" ? "on" : "", onclick: () => ((S.dropMode = "exact"), renderStage()), text: "Drop exactly there" }), h("button", { class: S.dropMode === "flow" ? "on" : "", onclick: () => ((S.dropMode = "flow"), renderStage()), text: "In line" })));
     bar.appendChild(h("button", { class: "chip" + (S.multi ? " on" : ""), onclick: () => ((S.multi = !S.multi), renderStage()), title: "tap more than one thing" }, "Pick many"));
+    if (window.GMWasm) bar.appendChild(GMWasm.toggle());
     wrapEl.appendChild(bar);
     const ctx = { modals: [], rootType: P.mode === "app" ? "app" : "overlay" };
     let surf;

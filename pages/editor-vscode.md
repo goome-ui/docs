@@ -4,13 +4,45 @@ title: VS Code
 
 # VS Code
 
-There's a goome extension too, [vscode-goome](https://github.com/goome-ui/vscode-goome). It has snippets for all four languages, hover docs for `goome_*`, a "goome: New Project" command and a preview for `.goome.json` builder files. Grab the `.vsix` from its [releases](https://github.com/goome-ui/vscode-goome/releases/latest) and install it with Extensions > ... > Install from VSIX.
+## The goome extension
+
+[vscode-goome](https://github.com/goome-ui/vscode-goome) is on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=goome-ui.vscode-goome). Search **goome** in Extensions, or:
+
+```sh
+code --install-extension goome-ui.vscode-goome
+```
+
+Offline or on VSCodium, grab the `.vsix` from its [releases](https://github.com/goome-ui/vscode-goome/releases/latest) and use Extensions > ... > Install from VSIX.
+
+**The side panel** <kbd>0.5</kbd>. Click the goome icon in the activity bar. It has:
+
+- quick actions: New Project, Open UI builder, Search docs, Open docs
+- every `.goome.json` and `.goome-theme.json` in your workspace, click one to preview it. The same list sits in the Explorer under your files
+- the templates for each language, click one and New Project starts with it picked
+- a snippet cheat sheet, click one and it goes into the file you have open
+
+The rest:
+
+- Snippets - type `goome` in C, C#, Python or Java. `goome-overlay` and `goome-app` are a whole program, `goome-loop` is the poll loop, and theres one for every common widget. The 0.5 ones are `goome-anim`, `goome-anim-color`, `goome-ease`, `goome-text-input`, `goome-a11y`, `goome-font-fallback` and `goome-text-dir` <kbd>0.5</kbd>
+- goome: New Project - runs [goome new](templates.md). If its not on your PATH it downloads goome.py and runs it with Python
+- Preview - open a `.goome.json` and hit the preview button top right. It draws with the builders own code and updates while you type. The C, C#, Python and Java buttons copy the code out
+- Hover - any `goome_*` function in C for its signature, the note from goome.h and a docs link
+- Schemas - `.goome.json` and `.goome-theme.json` get checked while you type
+
+Settings: `goome.cli` points at your own `goome` or `goome.py`, `goome.python` picks the Python.
+
+## Per language
 
 | Language | Extensions |
 |:--|:--|
 | C | C/C++ (`ms-vscode.cpptools`), and CMake Tools (`ms-vscode.cmake-tools`) if you use CMake |
 | C# | C# Dev Kit (`ms-dotnettools.csdevkit`) |
 | Python | Python (`ms-python.python`) |
+| Rust <kbd>0.5</kbd> | rust-analyzer (`rust-lang.rust-analyzer`), CodeLLDB (`vadimcn.vscode-lldb`) to debug. [More](start-rust.md#editors) |
+| Node <kbd>0.5</kbd> | nothing extra, the types come with the package. [More](start-node.md#editors) |
+| Go <kbd>0.5</kbd> | Go (`golang.go`). [More](start-go.md#editors) |
+| Zig <kbd>0.5</kbd> | Zig Language (`ziglang.vscode-zig`), CodeLLDB to debug. [More](start-zig.md#editors) |
+| Lua <kbd>0.5</kbd> | Lua (`sumneko.lua`). [More](start-lua.md#editors) |
 
 ## C, your own project
 

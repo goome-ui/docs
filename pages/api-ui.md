@@ -4,7 +4,7 @@ title: "API: ui kit"
 
 # API: ui kit
 
-Made from `goome.h` 0.2.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 Guide: [ui](ui.md).
 
@@ -69,14 +69,6 @@ sends the frame with every widgets hit area
 ```c
 void goome_ui_hit(goome_ui *u, double x, double y, double w, double h);
 ```
-
-### goome_ui_animating
-
-```c
-int goome_ui_animating(goome_ui *u);
-```
-
-1 while something still moves, draw again soon
 
 ### goome_ui_window
 

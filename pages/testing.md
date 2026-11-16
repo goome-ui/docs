@@ -26,6 +26,8 @@ screen 1920x1080 2     # size and scale when there are no frames
 7 scroll 400,300 -1    # one notch up
 8 hotkey alt+h         # a grabbed combo comes back as GOOME_HOTKEY
 9 send hide            # a control fifo line
+10 text 日本            # an IME finished some text, GOOME_TEXT (0.5)
+11 preedit にほ 6       # composing text with the caret at byte 6 (0.5)
 end 12                 # GOOME_QUIT after frame 12
 ```
 

@@ -99,6 +99,116 @@ try (Ui ui = g.ui()) {
 }
 ```
 
+```rust
+let mut ui = goome::Options::new().title("settings").open()?.ui()?;
+let mut win = goome::WindowState::new(40.0, 40.0, 300.0, 0.0);
+let (mut volume, mut muted, mut running) = (0.5, false, true);
+while running {
+    for ev in ui.pump(16) {
+        if ev.kind == goome::QUIT {
+            running = false;
+        }
+    }
+    let Some(mut f) = ui.begin(0) else { continue };
+    let mut w = f.window("Settings", &mut win, goome::WIN_MOVE | goome::WIN_COLLAPSE);
+    if w.shown() {
+        if w.button("Say hi") {
+            println!("hi");
+        }
+        w.slider("Volume", &mut volume, 0.0, 1.0);
+        w.toggle("Muted", &mut muted);
+    }
+}
+```
+
+```go
+ui, _ := g.NewUI()
+defer ui.Free()
+win := goome.NewWindow(40, 40, 300, 0)
+volume, muted := 0.5, false
+for running := true; running; {
+	for ev := range g.Events(16) {
+		if ev.Type == goome.EventQuit {
+			running = false
+		}
+		ui.Feed(ev)
+	}
+	if ui.Begin(0) != nil {
+		if ui.Window("Settings", win, goome.WinMove|goome.WinCollapse) {
+			if ui.Button("Say hi") {
+				fmt.Println("hi")
+			}
+			ui.SliderFmt("Volume", &volume, 0, 1, "%.2f")
+			ui.Toggle("Muted", &muted)
+		}
+		ui.End()
+	}
+	ui.End()
+}
+```
+
+```zig
+const ui = try g.ui();
+defer ui.deinit();
+var win: goome.Window = .{ .x = 40, .y = 40, .w = 300 };
+var volume: f64 = 0.5;
+var muted = false;
+while (true) {
+    while (try g.poll(16)) |ev| {
+        if (ev.kind == .quit) return;
+        _ = ui.feed(ev);
+    }
+    _ = ui.begin(0) orelse continue;
+    if (ui.window("Settings", &win, goome.win.move | goome.win.collapse)) {
+        if (ui.button("Say hi")) std.debug.print("hi\n", .{});
+        _ = ui.slider("Volume", &volume, 0, 1, "%.2f");
+        _ = ui.toggle("Muted", &muted);
+    }
+    ui.windowEnd();
+    ui.end();
+}
+```
+
+```lua
+local ui = g:ui()
+local win = {x = 40, y = 40, w = 300, h = 0}
+local volume, muted, running = 0.5, false, true
+while running do
+  for ev in g:events(16) do
+    if ev.type == goome.QUIT then running = false end
+    ui:feed(ev)
+  end
+  if ui:begin(0) then
+    if ui:window("Settings", win, goome.WIN_MOVE + goome.WIN_COLLAPSE) then
+      if ui:button("Say hi") then print("hi") end
+      volume = ui:slider("Volume", volume, 0, 1, "%.2f")
+      muted = ui:toggle("Muted", muted)
+    end
+    ui:window_end()
+    ui:finish()
+  end
+end
+```
+
+```js
+const ui = g.ui();
+const win = { x: 40, y: 40, w: 300 };
+let volume = 0.5, muted = false, running = true;
+while (running) {
+  for (const ev of g.events(16)) {
+    if (ev.type === goome.QUIT) running = false;
+    ui.feed(ev);
+  }
+  ui.frame(0, () => {
+    ui.window("Settings", win, goome.WIN_MOVE | goome.WIN_COLLAPSE, () => {
+      if (ui.button("Say hi")) console.log("hi");
+      volume = ui.slider("Volume", volume, 0, 1, "%.2f");
+      muted = ui.toggle("Muted", muted);
+    });
+  });
+}
+```
+
 Every frame:
 
 1. feed it every event with `goome_ui_feed`. It returns 1 when the UI used the event
@@ -110,7 +220,7 @@ Every frame:
 
 The slider doesnt own `volume`, you do. Change it anywhere and the slider shows it next frame. Same with window `x`, `y`, `w`, `h`, save them and pass them back next run to restore the layout.
 
-Widgets that change something return 1 on the frame they changed it (C# returns `true`, Python sets `ui.changed`). Java widgets give back the new value and `ui.changed()` says if the last one changed.
+Widgets that change something return 1 on the frame they changed it (C#, Rust, Go and Zig return `true`, Python and Node set `ui.changed`). Java, Python, Node and Lua widgets give back the new value instead, Java has `ui.changed()` and Lua gives back if it changed as a second value.
 
 ## Ids
 
@@ -130,7 +240,7 @@ for (int i = 0; i < n; i++) {
 
 ## Drawing less
 
-Only draw after an event or while `goome_ui_animating(u)` says somethings still moving (a hover fading in, a toggle sliding over). See [Frames, damage and pacing](frames.md).
+Only draw after an event or while `goome_ui_animating(u)` says somethings still moving (a hover fading in, a toggle sliding over, your own [animations](animations.md) <kbd>0.5</kbd>). See [Frames, damage and pacing](frames.md).
 
 ## Widgets
 
@@ -148,5 +258,7 @@ Only draw after an event or while `goome_ui_animating(u)` says somethings still 
 - [Plots, drag and more](ui-more.md) <kbd>0.2</kbd>
 - [Custom everything](ui-custom.md) <kbd>0.3</kbd>
 - [Change anything](ui-anything.md) <kbd>0.3</kbd>
+- [Animations](animations.md) <kbd>0.5</kbd>
+- [Screen readers](accessibility.md) <kbd>0.5</kbd>
 
 `#define GOOME_NO_UI` before the implementation leaves the UI kit out.

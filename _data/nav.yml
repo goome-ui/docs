@@ -8,6 +8,11 @@
     - { page: start-csharp, title: Getting started in C# }
     - { page: start-python, title: Getting started in Python }
     - { page: start-unity, title: Getting started in Unity, since: "0.2" }
+    - { page: start-rust, title: Getting started in Rust, since: "0.5" }
+    - { page: start-node, title: Getting started in Node, since: "0.5" }
+    - { page: start-go, title: Getting started in Go, since: "0.5" }
+    - { page: start-zig, title: Getting started in Zig, since: "0.5" }
+    - { page: start-lua, title: Getting started in Lua, since: "0.5" }
     - { page: examples, title: Examples }
     - { page: downloads, title: Downloads, since: "0.4" }
     - { page: templates, title: Templates and goome new, since: "0.4" }
@@ -37,10 +42,12 @@
     - { page: frames, title: Frames, damage and pacing }
     - { page: events, title: Events }
     - { page: input-capture, title: Taking input from the game, since: "0.3" }
+    - { page: ime, title: Typing other languages, since: "0.5" }
 - title: Drawing
   pages:
     - { page: drawing, title: Shapes and clipping }
     - { page: images-fonts, title: Images and fonts }
+    - { page: emoji-rtl, title: "Emoji, fonts and RTL", since: "0.5" }
 - title: UI kit
   pages:
     - { page: ui, title: How the ui kit works }
@@ -58,6 +65,8 @@
     - { page: ui-more, title: Plots, drag and more, since: "0.2" }
     - { page: ui-custom, title: Custom everything, since: "0.3" }
     - { page: ui-anything, title: Change anything, since: "0.3" }
+    - { page: animations, title: Animations, since: "0.5" }
+    - { page: accessibility, title: Screen readers, since: "0.5" }
 - title: UI builder
   pages:
     - { page: ui-builder, title: How the builder works, since: "0.3" }
@@ -72,6 +81,7 @@
     - { page: mods-minecraft, title: Minecraft, since: "0.3" }
     - { page: mods-godot, title: Godot, since: "0.3" }
     - { page: mods-engines, title: Other engines, since: "0.3" }
+    - { page: obs, title: OBS plugin, since: "0.5" }
 - title: Other stuff
   pages:
     - { page: capture, title: Screen capture }
@@ -96,4 +106,7 @@
     - { page: api-ui-app, title: UI app and menus }
     - { page: api-ui-more, title: More UI widgets }
     - { page: api-ui-custom, title: Styles and custom widgets }
+    - { page: api-anim, title: Animations, since: "0.5" }
+    - { page: api-ime, title: Typing and the IME, since: "0.5" }
+    - { page: api-a11y, title: Accessibility, since: "0.5" }
     - { page: api-types, title: Types and constants }

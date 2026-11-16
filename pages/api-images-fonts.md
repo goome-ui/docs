@@ -4,7 +4,7 @@ title: "API: images and fonts"
 
 # API: images and fonts
 
-Made from `goome.h` 0.2.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 Guide: [images fonts](images-fonts.md).
 
@@ -119,3 +119,19 @@ double goome_text_measure(goome_font *f, double size, const char *utf8, double *
 ```c
 double goome_text_line_height(goome_font *f, double size);
 ```
+
+### goome_font_fallback <kbd>0.5</kbd>
+
+```c
+void goome_font_fallback(goome_font *f, goome_font *fallback);
+```
+
+tried in order for chars f doesnt have, f doesnt free it. `goome_font_system` adds the emoji font by itself
+
+### goome_text_dir <kbd>0.5</kbd>
+
+```c
+void goome_text_dir(int dir);
+```
+
+paragraph direction for all text, AUTO = from the first strong letter of each line

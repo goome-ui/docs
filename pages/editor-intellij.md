@@ -6,6 +6,8 @@ title: IntelliJ IDEA
 
 Community edition is enough.
 
+Theres a goome plugin for the JetBrains IDEs with a tool window <kbd>0.5</kbd>, live templates and a `.goome.json` preview. Get it from the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/36174-goome) or from disk, the [Rider page](editor-rider.md#the-goome-plugin) has both ways and everything it does.
+
 ## New project
 
 1. File > New > Project, pick Java, build system Gradle, DSL Groovy. For the JDK take 22 or newer, the dropdown can download one.

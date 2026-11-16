@@ -4,7 +4,7 @@ title: "API: types and constants"
 
 # API: types and constants
 
-Made from `goome.h` 0.2.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 
 ## Structs
@@ -214,6 +214,19 @@ typedef struct {
 } goome_ui_config;
 ```
 
+### goome_a11y_node <kbd>0.5</kbd>
+
+```c
+typedef struct {
+    int role, parent, states;
+    double x, y, w, h;
+    char label[96], value[64];
+    uint32_t id;
+    double num, min, max;
+    int caret;
+} goome_a11y_node;
+```
+
 ## Enums
 
 ### GOOME_*
@@ -270,7 +283,9 @@ enum {
 };
 ```
 
-New in 0.2: `GOOME_CAP_WINDOW`, `GOOME_CAP_CLIPBOARD`, `GOOME_CAP_CURSOR`, `GOOME_CAP_GRAB`.
+New in 0.2: `GOOME_CAP_WINDOW`, `GOOME_CAP_CLIPBOARD`, `GOOME_CAP_CURSOR`.
+
+New in 0.3: `GOOME_CAP_GRAB`.
 
 ### GOOME_WANT_* <kbd>0.3</kbd>
 
@@ -287,10 +302,14 @@ enum {
     GOOME_CLOSE, // window close button / alt-f4 / cmd-w, the app decides
     GOOME_FOCUS, // id = 1 gained, 0 lost
     GOOME_DROP,  // a file dropped on the window, msg = path (cut at 63 bytes, goome_drop_path has all of it), x,y = where
+    GOOME_TEXT,    // an ime, dead key or compose finished some text, msg = it (cut at 63 bytes, goome_event_text has all of it)
+    GOOME_PREEDIT, // the text being composed changed, msg = it, id = caret byte offset in it. empty = composing ended
 };
 ```
 
 New in 0.2: `GOOME_CLOSE`, `GOOME_FOCUS`, `GOOME_DROP`.
+
+New in 0.5: `GOOME_TEXT`, `GOOME_PREEDIT`.
 
 ### GOOME_CURSOR_* <kbd>0.2</kbd>
 
@@ -330,13 +349,19 @@ enum {
 enum { GOOME_SHIFT = 0x100, GOOME_CTRL = 0x200, GOOME_ALT = 0x400, GOOME_SUPER = 0x800 };
 ```
 
-### GOOME_FMT_* <kbd>0.2</kbd>
+### GOOME_FMT_* <kbd>0.3</kbd>
 
 ```c
 enum { GOOME_FMT_BGRA_PREMUL, GOOME_FMT_RGBA_PREMUL, GOOME_FMT_BGRA, GOOME_FMT_RGBA };
 ```
 
 byte order in memory, the non premul ones unpremultiply
+
+### GOOME_DIR_* <kbd>0.5</kbd>
+
+```c
+enum { GOOME_DIR_AUTO, GOOME_DIR_LTR, GOOME_DIR_RTL };
+```
 
 ### GOOME_ICON_* <kbd>0.3</kbd>
 
@@ -408,8 +433,10 @@ enum { GOOME_ALIGN_AUTO, GOOME_ALIGN_LEFT, GOOME_ALIGN_CENTER, GOOME_ALIGN_RIGHT
 ### GOOME_EASE_* <kbd>0.3</kbd>
 
 ```c
-enum { GOOME_EASE_SMOOTH, GOOME_EASE_LINEAR, GOOME_EASE_OUT, GOOME_EASE_IN_OUT, GOOME_EASE_BACK, GOOME_EASE_CUSTOM };
+enum { GOOME_EASE_SMOOTH, GOOME_EASE_LINEAR, GOOME_EASE_OUT, GOOME_EASE_IN_OUT, GOOME_EASE_BACK, GOOME_EASE_CUSTOM, GOOME_EASE_IN, GOOME_EASE_SPRING, GOOME_EASE_BOUNCE };
 ```
+
+New in 0.5: `GOOME_EASE_IN`, `GOOME_EASE_SPRING`, `GOOME_EASE_BOUNCE`.
 
 ### GOOME_SKIN_* <kbd>0.3</kbd>
 
@@ -452,4 +479,20 @@ enum {
     GOOME_CUR_COLUMN, GOOME_CUR_DRAG_DROP, GOOME_CUR_CUSTOM_X, GOOME_CUR_CUSTOM_Y, GOOME_CUR_CUSTOM_XY,
     GOOME_CUR_COUNT
 };
+```
+
+### GOOME_ROLE_* <kbd>0.5</kbd>
+
+```c
+enum {
+    GOOME_ROLE_NONE, GOOME_ROLE_WINDOW, GOOME_ROLE_BUTTON, GOOME_ROLE_CHECKBOX, GOOME_ROLE_RADIO, GOOME_ROLE_SLIDER, GOOME_ROLE_TEXT,
+    GOOME_ROLE_INPUT, GOOME_ROLE_COMBO, GOOME_ROLE_LIST, GOOME_ROLE_ITEM, GOOME_ROLE_TAB, GOOME_ROLE_MENU, GOOME_ROLE_MENUITEM,
+    GOOME_ROLE_TABLE, GOOME_ROLE_TREE, GOOME_ROLE_PROGRESS, GOOME_ROLE_IMAGE, GOOME_ROLE_GROUP, GOOME_ROLE_DIALOG,
+};
+```
+
+### GOOME_A11Y_* <kbd>0.5</kbd>
+
+```c
+enum { GOOME_A11Y_FOCUSED = 1, GOOME_A11Y_CHECKED = 2, GOOME_A11Y_DISABLED = 4, GOOME_A11Y_EXPANDED = 8, GOOME_A11Y_SELECTED = 16 };
 ```
