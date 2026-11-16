@@ -32,6 +32,7 @@ No system wide key grabs on Wayland, see [Hotkeys and the control fifo](hotkeys.
 | `GOOME_CAP_WINDOW` <kbd>0.2</kbd> | window mode works here |
 | `GOOME_CAP_CLIPBOARD` <kbd>0.2</kbd> | the clipboard functions reach the real clipboard |
 | `GOOME_CAP_CURSOR` <kbd>0.2</kbd> | `goome_cursor` changes the real cursor |
+| `GOOME_CAP_GRAB` <kbd>0.3</kbd> | `goome_grab` gets a real pointer grab, see [Taking input from the game](input-capture.md) |
 
 ## How it picks on Linux
 
