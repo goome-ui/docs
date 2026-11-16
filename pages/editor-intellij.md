@@ -11,9 +11,8 @@ Theres a goome plugin for the JetBrains IDEs with a tool window <kbd>0.5</kbd>, 
 ## New project
 
 1. File > New > Project, pick Java, build system Gradle, DSL Groovy. For the JDK take 22 or newer, the dropdown can download one.
-2. Make a `libs` folder in the project and drop `goome-0.2.0.jar` in it (where to get it is on [Getting started in Java](start-java.md#install)).
-3. Swap `build.gradle` for the one on [Getting started in Java](start-java.md#gradle) and hit the Load Gradle Changes button that pops up (or the refresh in the Gradle tool window).
-4. Paste the overlay from [Getting started in Java](start-java.md#your-first-overlay) into `src/main/java/Main.java`.
+2. Swap `build.gradle` for the one on [Getting started in Java](start-java.md#gradle), it pulls goome from Maven Central, and hit the Load Gradle Changes button that pops up (or the refresh in the Gradle tool window).
+3. Paste the overlay from [Getting started in Java](start-java.md#your-first-overlay) into `src/main/java/Main.java`.
 
 ## Running it
 

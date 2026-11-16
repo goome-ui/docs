@@ -10,7 +10,7 @@ To start from a project that already builds, `goome new my-app --lang godot` mak
 
 ## Get the addon
 
-Download the **godot-goome** artifact from the latest green [CI run](https://github.com/goome-ui/godot-goome/actions) and unzip it into your project, so you end up with `res://addons/goome/` and the libs in `bin/`. Building it yourself is on [Godot](mods-godot.md#get-it).
+Its not on the Godot Asset Library. Download `godot-goome-0.5.0.zip` from the [releases page](https://github.com/goome-ui/godot-goome/releases/latest) and unzip it into your project, so you end up with `res://addons/goome/` and the libs in `bin/`. Building it yourself is on [Godot](mods-godot.md#get-it).
 
 For one exact version instead of the newest, see [Versions](versions.md).
 

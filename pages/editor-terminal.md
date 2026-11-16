@@ -31,16 +31,16 @@ See [One file and building](building.md#building-goome-itself).
 
 ```sh
 cd csharp-goome && ./build.sh && dotnet run --project examples/Hello
-pip install git+https://github.com/goome-ui/python-goome
+pip install goome
 python examples/hello.py                  # from a clone of python-goome, or your own script
 ```
 
 Java 22+ runs one file straight from source. With more files, `javac` first:
 
 ```sh
-java --enable-native-access=ALL-UNNAMED -cp goome-0.2.0.jar Main.java
-javac -cp goome-0.2.0.jar -d out *.java
-java --enable-native-access=ALL-UNNAMED -cp goome-0.2.0.jar:out Main      # ; instead of : on windows
+java --enable-native-access=ALL-UNNAMED -cp goome-0.5.0.jar Main.java
+javac -cp goome-0.5.0.jar -d out *.java
+java --enable-native-access=ALL-UNNAMED -cp goome-0.5.0.jar:out Main      # ; instead of : on windows
 ```
 
 Debugging Java from the terminal is `jdb`, or start it with `-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005` and attach an IDE. See [Getting started in Java](start-java.md) for the jar.

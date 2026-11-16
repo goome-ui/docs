@@ -8,7 +8,7 @@ title: Rider
 
 [jetbrains-goome](https://github.com/goome-ui/jetbrains-goome) works in Rider, CLion, IntelliJ IDEA and PyCharm, 2024.3 or newer. Its on the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/36174-goome) as **goome** (`io.github.goomeui.goome`): Settings > Plugins > Marketplace, search goome, Install.
 
-The Marketplace page can still be waiting on JetBrains to approve it. If it doesnt show up yet, install it from disk: grab `jetbrains-goome-x.y.z.zip` from the [releases](https://github.com/goome-ui/jetbrains-goome/releases/latest), dont unzip it, then Settings > Plugins > gear > Install Plugin from Disk and restart.
+Or install it from disk: grab `jetbrains-goome-x.y.z.zip` from the [releases](https://github.com/goome-ui/jetbrains-goome/releases/latest), dont unzip it, then Settings > Plugins > gear > Install Plugin from Disk and restart.
 
 **The tool window** <kbd>0.5</kbd>. The goome icon on the left stripe, right by Project. It has:
 
@@ -43,8 +43,8 @@ Rider can open CMake projects but for C just use [CLion](editor-clion.md).
 
 1. File > New Solution, Console, .NET 8 or newer.
 2. Add goome:
-   - right click the solution, Add > Existing Project, `src/GoomeSharp/GoomeSharp.csproj`, then reference it from your app
-   - or add the nupkg folder as a NuGet source (Settings > NuGet > Sources) and install GoomeSharp
+   - right click the project, Manage NuGet Packages, search GoomeSharp on nuget.org and install it
+   - or from a csharp-goome clone, right click the solution, Add > Existing Project, `src/GoomeSharp/GoomeSharp.csproj`, then reference it from your app
 3. Paste the overlay from [Getting started in C#](start-csharp.md) into `Program.cs` and run.
 
 Add `GOOME_BACKEND=test` and `GOOME_TEST_SHOTS=shots/` to the run config's environment to get every frame as a .ppm in `shots/` without touching your screen ([Testing without a screen](testing.md)).

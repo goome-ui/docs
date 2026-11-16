@@ -91,20 +91,11 @@ public class Panel implements AutoCloseable {
 
 ## Install
 
-Its not on Maven Central. Every CI run on the [Actions tab](https://github.com/goome-ui/java-goome/actions) has a `jars` artifact with `goome-0.2.0.jar` in it, and that jar has the native lib for every OS inside. Or build it yourself, that needs a C compiler and a JDK 25:
-
-```sh
-git clone https://github.com/goome-ui/java-goome
-cd java-goome
-./build.sh test
-./gradlew :goome:jar     # goome/build/libs/goome-0.2.0.jar
-```
+Its on [Maven Central](https://central.sonatype.com/artifact/io.github.goome-ui/goome) as `io.github.goome-ui:goome`, and the jar has the native lib for every OS inside, both Macs too.
 
 For one exact version instead of the newest, see [Versions](versions.md).
 
 ### Gradle
-
-Put the jar in `libs/` next to `build.gradle`:
 
 ```groovy
 plugins {
@@ -116,7 +107,7 @@ repositories {
 }
 
 dependencies {
-    implementation files('libs/goome-0.2.0.jar')
+    implementation 'io.github.goome-ui:goome:0.5.0'
 }
 
 application {
@@ -134,19 +125,11 @@ application {
 
 ### Maven
 
-Install the jar into your local repo once:
-
-```sh
-mvn install:install-file -Dfile=goome-0.2.0.jar -DgroupId=io.github.goome-ui -DartifactId=goome -Dversion=0.2.0 -Dpackaging=jar
-```
-
-Then its a normal dependency:
-
 ```xml
 <dependency>
     <groupId>io.github.goome-ui</groupId>
     <artifactId>goome</artifactId>
-    <version>0.2.0</version>
+    <version>0.5.0</version>
 </dependency>
 ```
 
@@ -154,10 +137,21 @@ For Java 17 or 21 add `org.lwjgl:lwjgl` the same way, plus a second one with `<c
 
 ### No build tool
 
-Java 22+ runs a single source file straight away:
+Grab `goome-0.5.0.jar` from the [releases page](https://github.com/goome-ui/java-goome/releases) or Maven Central. Java 22+ runs a single source file straight away:
 
 ```sh
-java --enable-native-access=ALL-UNNAMED -cp goome-0.2.0.jar Main.java
+java --enable-native-access=ALL-UNNAMED -cp goome-0.5.0.jar Main.java
+```
+
+### From source
+
+Needs a C compiler and a JDK 25:
+
+```sh
+git clone https://github.com/goome-ui/java-goome
+cd java-goome
+./build.sh test
+./gradlew :goome:jar     # goome/build/libs/goome-<version>.jar
 ```
 
 ## Your first overlay

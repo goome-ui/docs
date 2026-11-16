@@ -21,7 +21,7 @@ cd minecraft/fabric && ../../gradlew build
 cd ../neoforge && ../../gradlew build
 ```
 
-`./build.sh` makes the native lib for your OS and needs a C compiler, Gradle needs a JDK 25. You get `build/libs/goome-fabric-0.2.0.jar` and `build/libs/goome-neoforge-0.2.0.jar`, drop the one for your loader in `.minecraft/mods`. The jars from CI have the native libs for every OS in them, the ones you build only have yours.
+`./build.sh` makes the native lib for your OS and needs a C compiler, Gradle needs a JDK 25. You get `build/libs/goome-fabric-<version>.jar` and `build/libs/goome-neoforge-<version>.jar`, drop the one for your loader in `.minecraft/mods`. The jars from CI have the native libs for every OS in them, the ones you build only have yours.
 
 The mods use java-goome's LWJGL path since Minecraft already loads LWJGL, so theres no JNI glue and no native access warning.
 

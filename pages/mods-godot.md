@@ -8,7 +8,7 @@ title: Godot
 
 ## Get it
 
-Easy way: download the **godot-goome** artifact from the latest green [CI run](https://github.com/goome-ui/godot-goome/actions) and unzip it into your project. You get `res://addons/goome/` with the libs already in `bin/`, and `GoomeView` shows up in Add Node.
+Easy way: download `godot-goome-<version>.zip` from the [releases page](https://github.com/goome-ui/godot-goome/releases/latest) and unzip it into your project. Its not on the Godot Asset Library. You get `res://addons/goome/` with the libs already in `bin/`, and `GoomeView` shows up in Add Node.
 
 Or build it, you only need a C compiler:
 

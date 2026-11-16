@@ -81,15 +81,14 @@ Theres already a `.vscode` folder, open the repo and install the extensions it a
 
 ## C#
 
-1. Build the native lib once in your csharp-goome clone (`./build.sh`, see [Getting started in C#](start-csharp.md)).
-2. `dotnet new console -o MyApp`, open the folder.
-3. `dotnet add reference ../csharp-goome/src/GoomeSharp/GoomeSharp.csproj`, or add the local nupkg as a source and `dotnet add package GoomeSharp`.
-4. F5, C# Dev Kit makes the launch config.
+1. `dotnet new console -o MyApp`, open the folder.
+2. `dotnet add package GoomeSharp` in the terminal. Working on a csharp-goome clone instead? `./build.sh` there and `dotnet add reference ../csharp-goome/src/GoomeSharp/GoomeSharp.csproj`.
+3. F5, C# Dev Kit makes the launch config.
 
 ## Python
 
 1. Python: Create Environment in the command palette, pick it as the interpreter.
-2. `pip install git+https://github.com/goome-ui/python-goome` in the terminal
+2. `pip install goome` in the terminal
 3. F5 on your script.
 
 Add `"env": {"GOOME_BACKEND": "test", "GOOME_TEST_SHOTS": "shots/"}` to the launch config for the test backend.

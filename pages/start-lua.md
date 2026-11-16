@@ -66,15 +66,13 @@ In LÖVE `g:frame_copy` writes straight into an `ImageData:getPointer()`. `examp
 
 ## Install
 
-With [LuaRocks](https://luarocks.org/), from the repo:
+Its not on the luarocks.org server, so [LuaRocks](https://luarocks.org/) takes the rock from the [releases page](https://github.com/goome-ui/lua-goome/releases):
 
 ```sh
-git clone --branch v0.5.0 https://github.com/goome-ui/lua-goome
-cd lua-goome
-luarocks make goome-dev-1.rockspec
+luarocks install https://github.com/goome-ui/lua-goome/releases/download/v0.5.0/goome-0.5.0-1.src.rock
 ```
 
-Add `--lua-version 5.1` for a LuaJIT tree. Its not on the luarocks.org server yet. Or without LuaRocks:
+Add `--lua-version 5.1` for a LuaJIT tree. Or without LuaRocks:
 
 ```sh
 LUA_INC=/usr/include/lua5.4 ./build.sh test
