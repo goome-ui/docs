@@ -59,6 +59,8 @@ for (Event ev : g.events(wait)) {
 | `GOOME_CLOSE` <kbd>0.2</kbd> | | the window's close button, alt+f4 or cmd+w |
 | `GOOME_FOCUS` <kbd>0.2</kbd> | `id` | the window got (1) or lost (0) focus |
 | `GOOME_DROP` <kbd>0.2</kbd> | `x`, `y`, `msg` | a file got dropped on the window, full path from `goome_drop_path` |
+| `GOOME_TEXT` <kbd>0.5</kbd> | `msg` | an IME, dead key or compose finished some text, all of it from `goome_event_text`. See [Typing other languages](ime.md) |
+| `GOOME_PREEDIT` <kbd>0.5</kbd> | `msg`, `id` | the text being composed changed, `id` is the caret byte offset |
 
 ## Keys
 

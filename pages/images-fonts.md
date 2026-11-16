@@ -77,5 +77,6 @@ try (Font f = Font.system(null)) {
 - `y` is the top of the text, not the baseline. `goome_text_line_height` gives you the line height for a size.
 - Kerning and utf-8 work. Glyphs get cached per size.
 - NULL font = the built in bitmap fonts, those work with no fonts installed at all.
+- Emoji come out in color, missing letters come from fallback fonts, and Arabic and Hebrew go right to left <kbd>0.5</kbd>. Thats on [Emoji, fonts and RTL](emoji-rtl.md).
 
 The rasterizer is integer only, same pixels on every machine.
