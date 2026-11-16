@@ -72,8 +72,10 @@ BADGES = [
     ("pypi-goome", "PyPI", "goome", GREEN, GREEN, "flat-square", "python"),
     ("nuget-goomesharp", "NuGet", "GoomeSharp", GREEN, GREEN, "flat-square", "dotnet"),
     ("maven-central", "Maven Central", "io.github.goome-ui", GREEN, GREEN, "flat-square", "openjdk"),
+    ("crates-io-goome", "crates.io", "goome", GREEN, GREEN, "flat-square", "rust"),
     ("vscode-marketplace", "VS Code", "Marketplace", GREEN, GREEN, "flat-square", None),
     ("jetbrains-marketplace", "JetBrains", "Marketplace", GREEN, GREEN, "flat-square", None),
+    ("open-vsx", "Open VSX", "goome-ui", GREEN, GREEN, "flat-square", None),
     ("go-get", "go get", "go-goome", GREEN, GREEN, "flat-square", "go"),
 ] + [
     (f"join-{team}", "join", team, GREEN, DARK, "for-the-badge", None)

@@ -76,7 +76,48 @@ Goome g = Goome.open(new Options().backend(Goome.TEST)
     .testShots("shots/"));
 ```
 
-`test_frames`, `test_script` and `test_shots` match the env vars (`testFrames`, `testScript` and `testShots` in Java). If you set both, the one in code wins.
+```rust
+let g = goome::Options::new()
+    .backend(goome::TEST)
+    .test_script("screen 640x360 1; 1 click 20,20; 2 key hi; end 5")
+    .test_shots("shots/")
+    .open()?;
+```
+
+```js
+const g = goome.open({
+  backend: "test",
+  testScript: "screen 640x360 1; 1 click 20,20; 2 key hi; end 5",
+  testShots: "shots/",
+});
+```
+
+```go
+g, err := goome.Open(goome.Options{
+	Backend:    goome.BackendTest,
+	TestScript: "screen 640x360 1; 1 click 20,20; 2 key hi; end 5",
+	TestShots:  "shots/",
+})
+```
+
+```zig
+const g = try goome.Goome.open(.{
+    .backend = .@"test",
+    .test_script = "screen 640x360 1; 1 click 20,20; 2 key hi; end 5",
+    .test_shots = "shots/",
+});
+defer g.deinit();
+```
+
+```lua
+local g = assert(goome.open{
+  backend = "test",
+  test_script = "screen 640x360 1; 1 click 20,20; 2 key hi; end 5",
+  test_shots = "shots/",
+})
+```
+
+`test_frames`, `test_script` and `test_shots` match the env vars (`testFrames`, `testScript` and `testShots` in Java and Node, `TestFrames`, `TestScript` and `TestShots` in Go). If you set both, the one in code wins.
 
 ## When it fails
 

@@ -74,10 +74,10 @@ upload_texture(frame.pixels(), frame.w(), frame.h());
 
 ```toml
 [dependencies]
-goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.0" }
+goome = "0.5"
 ```
 
-Its not on crates.io, it comes from git. The `.crate` files are on the [releases page](https://github.com/goome-ui/rust-goome/releases) too. The first build compiles goome.h with your C compiler, a few seconds once. Cargo already needs one for a lot of crates so you probably have it:
+Its on [crates.io](https://crates.io/crates/goome). For the git version put the tag on a git dependency instead: `goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.0" }`. The `.crate` files are on the [releases page](https://github.com/goome-ui/rust-goome/releases) too. The first build compiles goome.h with your C compiler, a few seconds once. Cargo already needs one for a lot of crates so you probably have it:
 
 - Debian / Ubuntu: `sudo apt install build-essential`
 - Mac: `xcode-select --install`

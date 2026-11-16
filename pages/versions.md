@@ -102,7 +102,7 @@ Godot starts at 0.3.0. Download `godot-goome-0.5.0.zip` from the [release](https
 
 ## Rust
 
-Rust starts at 0.5.0. Its not on crates.io, put the tag on the git dependency:
+Rust starts at 0.5.0 and is on [crates.io](https://crates.io/crates/goome), so `goome = "0.5"` is all you need. For one exact version put the tag on the git dependency:
 
 ```toml
 [dependencies]

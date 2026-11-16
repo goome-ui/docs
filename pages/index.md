@@ -50,7 +50,7 @@ The languages and accessibility update, anything with <kbd>0.5</kbd> on it came 
 - [screen readers](accessibility.md) through AT-SPI2, UI Automation and NSAccessibility, and `goome_a11y_tree` for engines
 - an [OBS plugin](obs.md) with a timer, now playing, a goal bar, a clock and chat, or your own builder file, clickable through Interact. Windows got an installer in 0.5.1
 - the [builder](ui-builder.md#real-goome-preview-05) preview is real goome now, built to WebAssembly
-- the [VS Code extension](editor-vscode.md) got a side panel and is on the Marketplace, the [JetBrains plugin](editor-rider.md) got a tool window and is on the JetBrains Marketplace
+- the [VS Code extension](editor-vscode.md) got a side panel and is on the Marketplace and Open VSX, the [JetBrains plugin](editor-rider.md) got a tool window and is on the JetBrains Marketplace
 
 And a GNOME fix: an overlay that showed up before it had any hit rects never took clicks, which is also why clicks died after a hotkey brought a hidden overlay back. Both work now.
 
@@ -75,7 +75,7 @@ Anything with <kbd>0.2</kbd> on it came here. Mainly [window mode](window-mode.m
 | [python-goome](https://github.com/goome-ui/python-goome) | Python bindings over ctypes |
 | [java-goome](https://github.com/goome-ui/java-goome) | Java bindings and the Minecraft mods |
 | [godot-goome](https://github.com/goome-ui/godot-goome) | goome as a Godot 4.4+ addon |
-| [rust-goome](https://github.com/goome-ui/rust-goome) | Rust crates, `goome` and `goome-sys` <kbd>0.5</kbd> |
+| [rust-goome](https://github.com/goome-ui/rust-goome) | Rust crates, `goome` and `goome-sys`, on crates.io <kbd>0.5</kbd> |
 | [node-goome](https://github.com/goome-ui/node-goome) | a Node N-API addon with TypeScript types <kbd>0.5</kbd> |
 | [go-goome](https://github.com/goome-ui/go-goome) | Go bindings over cgo <kbd>0.5</kbd> |
 | [zig-goome](https://github.com/goome-ui/zig-goome) | a Zig package <kbd>0.5</kbd> |
