@@ -51,9 +51,9 @@ while (g.Poll(out var ev, 16))
 g.text_input(focused, (x + caret_x, y, 2, 20))
 for ev in g.events(16):
     if ev.type == goome.TEXT:
-        insert(g.event_text())
+        insert(g.event_text)
     if ev.type == goome.PREEDIT:
-        show_composing(g.event_text(), g.preedit_cursor())
+        show_composing(g.event_text, g.preedit_cursor)
 ```
 
 ```java
