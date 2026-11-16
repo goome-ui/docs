@@ -65,7 +65,7 @@ for (Event e : g.events(16)) {
 ```
 
 ```rust
-g.text_input(focused, Some(goome::Rect::new(x + caret_x, y, 2.0, 20.0)))?;
+g.text_input(focused, Some(goome::Rect::new(x + caret_x, y, 2, 20)))?;
 for ev in g.events(16) {
     if ev.kind == goome::TEXT {
         insert(&g.event_text());

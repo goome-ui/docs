@@ -37,7 +37,7 @@ ui.A11y(true)
 ```
 
 ```zig
-ui.a11y(true);
+ui.a11yOn(true);
 ```
 
 ```lua
@@ -112,7 +112,7 @@ if it.clicked:
 ```
 
 ```java
-ui.a11yRole(Ui.ROLE_SLIDER, "Hue");
+ui.a11yRole(A11yNode.ROLE_SLIDER, "Hue");
 ui.a11yValue(String.format("%.0f degrees", hue));
 Item it = ui.custom("hue", 200, 24, ItemFlag.FOCUSABLE, ItemFlag.DRAG_X);
 if (it.clicked()) hue = 0;
@@ -138,7 +138,7 @@ if it.Clicked {
 
 ```zig
 var buf: [32]u8 = undefined;
-ui.a11yRole(goome.c.GOOME_ROLE_SLIDER, "Hue");
+ui.a11yRole(.slider, "Hue");
 ui.a11yValue(try std.fmt.bufPrintZ(&buf, "{d:.0} degrees", .{hue}));
 var it: goome.Item = undefined;
 _ = ui.custom("hue", 200, 24, goome.c.GOOME_ITEM_FOCUSABLE | goome.c.GOOME_ITEM_DRAG_X, &it);

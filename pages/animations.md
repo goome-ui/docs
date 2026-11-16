@@ -71,8 +71,8 @@ fade := ui.Anim("drawer fade", shown, 200, goome.EaseLinear)
 ```
 
 ```zig
-const x = ui.anim("drawer", if (open) 0 else -280, 260, goome.c.GOOME_EASE_OUT);
-const fade = ui.anim("drawer fade", if (open) 1 else 0, 200, goome.c.GOOME_EASE_LINEAR);
+const x = ui.anim("drawer", if (open) 0 else -280, 260, .out);
+const fade = ui.anim("drawer fade", if (open) 1 else 0, 200, .linear);
 ```
 
 ```lua
