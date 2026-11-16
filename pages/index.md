@@ -37,7 +37,7 @@ See [Offscreen mode](offscreen-mode.md). For Unity there's [a page](start-unity.
 
 Full programs are on [Getting started in C](start-c.md), [C#](start-csharp.md), [Python](start-python.md), [Java](start-java.md), [Rust](start-rust.md), [Node](start-node.md), [Go](start-go.md), [Zig](start-zig.md) and [Lua](start-lua.md). Or skip the setup with `goome new`, see [Templates and goome new](templates.md) <kbd>0.4</kbd>.
 
-The [UI builder](ui-builder.md) <kbd>0.3</kbd> lets you drag widgets around and copy out C, C#, Python, Java or GDScript. Its preview runs real goome now <kbd>0.5</kbd>.
+The [UI builder](ui-builder.md) <kbd>0.3</kbd> lets you drag widgets around and copy out C, C#, Python, Java, GDScript, Rust, Node, Go, Zig or Lua. Its preview runs real goome now <kbd>0.5</kbd>.
 
 ## 0.5
 

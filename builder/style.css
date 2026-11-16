@@ -99,6 +99,7 @@ input[type=checkbox] { accent-color: var(--c-acc); width: 20px; height: 20px; ma
 
 .dock { background: var(--c-pane); border-top: 1px solid var(--c-line); display: flex; flex-direction: column; min-height: 0; min-width: 0; }
 .dock-head { display: flex; align-items: center; gap: 6px; padding: 6px 8px; flex-wrap: wrap; }
+.dock-head .seg { flex-wrap: wrap; max-width: 100%; }
 .dock-head .seg button { min-width: 44px; }
 .dock-body { height: 300px; display: flex; flex-direction: column; min-height: 0; border-top: 1px solid var(--c-line); }
 .dock.shut .dock-body { display: none; }
