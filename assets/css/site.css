@@ -538,3 +538,13 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
 @media (prefers-reduced-motion: reduce) {
   .sidebar, .sidebar.open { transition: none; }
 }
+
+.demos { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; margin: 24px 0 32px; }
+.demo { margin: 0; flex: 1 1 320px; min-width: 0; }
+.demo-game { max-width: 420px; }
+.demo-app { max-width: 600px; }
+.demo iframe { display: block; width: 100%; border: 1px solid var(--line); border-radius: 12px; background: #181a20; }
+.demo-game iframe { height: 700px; }
+.demo-app iframe { height: 640px; }
+.demo figcaption { margin-top: 10px; font-size: 14px; color: var(--text-dim); }
+.demo figcaption span { margin: 0 6px; }
