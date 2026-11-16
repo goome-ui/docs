@@ -12,7 +12,7 @@ title: VS Code
 code --install-extension goome-ui.vscode-goome
 ```
 
-Offline or on VSCodium, grab the `.vsix` from its [releases](https://github.com/goome-ui/vscode-goome/releases/latest) and use Extensions > ... > Install from VSIX.
+On VSCodium and the other forks it is on [Open VSX](https://open-vsx.org/extension/goome-ui/vscode-goome), search **goome** there too. Offline, grab the `.vsix` from its [releases](https://github.com/goome-ui/vscode-goome/releases/latest) and use Extensions > ... > Install from VSIX.
 
 **The side panel** <kbd>0.5</kbd>. Click the goome icon in the activity bar. It has:
 
