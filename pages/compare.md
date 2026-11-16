@@ -29,7 +29,7 @@ None of these numbers except goome's were measured here. They're from the projec
 | | goome | Dear ImGui + GLFW | WinForms | Electron | Qt 6 Widgets | egui (eframe) |
 |:--|:--|:--|:--|:--|:--|:--|
 | Language | C, plus C#, Python, Java, Godot, Rust, Node, Go, Zig, Lua | C++ | C# / .NET | JavaScript, HTML, CSS | C++, Python | Rust |
-| OSes | Linux (X11, Wayland), Windows, macOS | anything GLFW runs on | Windows only | Linux, Windows, macOS | pretty much everywhere | Linux, Windows, macOS, web |
+| OSes | Linux (X11, Wayland), Windows, macOS, plus the [browser](browser.md) for apps | anything GLFW runs on | Windows only | Linux, Windows, macOS | pretty much everywhere | Linux, Windows, macOS, web |
 | Size of a hello | 764 KB, measured | not measured | needs the .NET runtime, trimming is off for WinForms [1] | the runtime zip is 95-110 MB [2] | Core + Gui + Widgets libs are about 26 MB installed on Ubuntu [3] | not measured |
 | Runtime deps | libc, the rest is optional and loaded at runtime | GLFW and an OpenGL driver [4] | .NET | its own Chromium + Node | the Qt libs | a GPU driver (glow or wgpu) |
 | Link flags | none | `-lGL` + `pkg-config --static --libs glfw3` on Linux in ImGui's example Makefile [4] | none, its .NET | none, its npm | `find_package(Qt6 ...)` + `Qt6::Widgets` | cargo does it |

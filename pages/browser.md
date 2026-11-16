@@ -2,7 +2,7 @@
 title: Run it in the browser
 ---
 
-# Run it in the browser <kbd>dev</kbd>
+# Run it in the browser <kbd>0.5.2</kbd>
 
 A goome app can run in a web page. It gets compiled to webassembly and the page is its window, so it only works for apps, a normal window. Overlays and mod menus draw over other programs and a browser cant do that, the build says so and stops.
 
@@ -13,9 +13,9 @@ goome build --web main.c
 goome serve web
 ```
 
-[goome-cli](templates.md) makes a folder with `index.html`, `goome.js` and `goome.wasm`. Put it on any static host. `goome serve` is a small local server for trying it, it prints the address.
+[goome-cli](templates.md#goome-new) makes a folder with `index.html`, `goome.js` and `goome.wasm`. Put it on any static host. `goome serve` is a small local server for trying it, it prints the address.
 
-Without the cli it is `wasm/web-build.sh app.c outdir` in the [c-goome](https://github.com/goome-ui/c-goome/tree/dev/wasm/web) repo.
+`goome build --web` takes the app as a file (`main.c` by default), `--out` picks the folder (`web` by default) and `--more a.c b.c` adds the other .c files of your app. `goome serve` takes `--port` (8000) and `--bind` (127.0.0.1). Without the cli it is `wasm/web-build.sh app.c outdir` in the [c-goome](https://github.com/goome-ui/c-goome/tree/main/wasm/web) repo.
 
 ## Split the loop
 
@@ -83,4 +83,4 @@ Mouse, wheel, keyboard, text typed in other languages ([IME](ime.md)), paste and
 - Overlay mode, [capture](capture.md), global hotkeys, [grab](input-capture.md), window moving and state, dropping files, the system font (only the built in one, load a .ttf with `goome_font_load_mem`), files and sockets.
 - The libc is a small one. Strings, `malloc`, `snprintf`, `strtol`, `qsort`, `math.h` and `printf` (it goes to the browser console) are there. `scanf`, `strtok`, `time` and the like fail at link time.
 
-The `.wasm` interface is written down in [wasm/web](https://github.com/goome-ui/c-goome/tree/dev/wasm/web), so the same page can run the output of other languages later.
+The `.wasm` interface is written down in [wasm/web](https://github.com/goome-ui/c-goome/tree/main/wasm/web), so the same page can run the output of other languages later.

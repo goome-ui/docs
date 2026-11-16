@@ -8,6 +8,7 @@ The getting started pages get you the newest goome. If you want one exact versio
 
 | Version | Whats in it |
 |:--|:--|
+| 0.5.2 | goome apps [run in the browser](browser.md) (`goome build --web`), the [builder](ui-builder.md) exports Rust, Node, Go, Zig and Lua, the `GOOME_WINDOW_NO_TITLEBAR` flag. Only c-goome and goome-cli have a 0.5.2, the other packages stay at 0.5.1 or 0.5.0 |
 | 0.5.1 | fixed install steps: Python, C# and Java come from PyPI, NuGet and Maven Central, Node and Lua from their release files, the editor plugins from their marketplaces, plus a Windows installer for the [OBS plugin](obs.md) |
 | 0.5 | [Rust](start-rust.md), [Node](start-node.md), [Go](start-go.md), [Zig](start-zig.md) and [Lua](start-lua.md), [animations](animations.md), [emoji and RTL](emoji-rtl.md), [IME](ime.md), [screen readers](accessibility.md), the [OBS plugin](obs.md), real goome in the [builder](ui-builder.md), the GNOME late hit rect fix |
 | 0.4 | [apps to download](downloads.md), [template repos and goome new](templates.md), the [Compare](compare.md) page, [Discussions and good first issues](community.md) |
@@ -22,25 +23,25 @@ Pages and functions that came in 0.2, 0.3, 0.4 or 0.5 have a little <kbd>0.2</kb
 Linux or Mac, put the version on the end:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/goome-ui/c-goome/main/get.sh | sh -s 0.5.0
-curl -fsSL https://raw.githubusercontent.com/goome-ui/c-goome/main/get.sh | GOOME_VERSION=0.5.0 sh
+curl -fsSL https://raw.githubusercontent.com/goome-ui/c-goome/main/get.sh | sh -s 0.5.2
+curl -fsSL https://raw.githubusercontent.com/goome-ui/c-goome/main/get.sh | GOOME_VERSION=0.5.2 sh
 ```
 
 Windows, in PowerShell:
 
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/goome-ui/c-goome/main/get.ps1))) -Version 0.5.0
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/goome-ui/c-goome/main/get.ps1))) -Version 0.5.2
 ```
 
-If you already have the script, its just `./get.sh 0.5.0`, `GOOME_VERSION=0.5.0 ./get.sh` or `.\get.ps1 -Version 0.5.0`. Without a version it gets the newest release.
+If you already have the script, its just `./get.sh 0.5.2`, `GOOME_VERSION=0.5.2 ./get.sh` or `.\get.ps1 -Version 0.5.2`. Without a version it gets the newest release.
 
 Or download goome.h for that version straight from the [releases](https://github.com/goome-ui/c-goome/releases):
 
 ```text
-https://github.com/goome-ui/c-goome/releases/download/v0.5.0/goome.h
+https://github.com/goome-ui/c-goome/releases/download/v0.5.2/goome.h
 ```
 
-Theres also `goome-backends-0.5.0.zip` there (from 0.3.0 on), thats the `backends/` folder for [mods](mods.md).
+Theres also `goome-backends-0.5.2.zip` there (from 0.3.0 on), thats the `backends/` folder for [mods](mods.md).
 
 ## C#
 
@@ -156,10 +157,10 @@ The plugin starts at 0.5.0. Every file is on the [0.5.0 release](https://github.
 The cli is there from 0.4.0 on:
 
 ```sh
-pip install git+https://github.com/goome-ui/goome-cli@v0.5.0
+pip install git+https://github.com/goome-ui/goome-cli@v0.5.2
 ```
 
-Or the one file from the [release](https://github.com/goome-ui/goome-cli/releases/tag/v0.5.0), then `python goome.py new my-app --lang c`.
+Or the one file from the [release](https://github.com/goome-ui/goome-cli/releases/tag/v0.5.2), then `python goome.py new my-app --lang c`.
 
 ## Templates
 
@@ -169,7 +170,7 @@ The [templates](templates.md) pin one goome version each, the template README sa
 
 | Where | How |
 |:--|:--|
-| C | `GOOME_VERSION` in goome.h, a string like `"0.5.0"` |
+| C | `GOOME_VERSION` in goome.h, a string like `"0.5.2"` |
 | C# | `Goome.Version` |
 | Python | `goome.VERSION`, or `goome.__version__` |
 | Java | `Goome.VERSION` |

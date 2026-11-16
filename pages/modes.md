@@ -37,3 +37,5 @@ goome *g = goome_open(&(goome_opts){.title = "notes", .mode = GOOME_MODE_WINDOW,
 - [Overlay mode](overlay-mode.md)
 - [Window mode](window-mode.md) <kbd>0.2</kbd>
 - [Offscreen mode](offscreen-mode.md) <kbd>0.2</kbd>
+
+Window mode apps can also [run in the browser](browser.md) <kbd>0.5.2</kbd>, compiled to webassembly.

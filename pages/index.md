@@ -39,6 +39,10 @@ Full programs are on [Getting started in C](start-c.md), [C#](start-csharp.md), 
 
 The [UI builder](ui-builder.md) <kbd>0.3</kbd> lets you drag widgets around and copy out C, C#, Python, Java, GDScript, Rust, Node, Go, Zig or Lua. Its preview runs real goome now <kbd>0.5</kbd>.
 
+## 0.5.2
+
+Goome apps [run in the browser](browser.md) now. `goome build --web main.c` compiles one to webassembly and `goome serve` tries it on localhost, no emscripten. The [builder](ui-builder.md) exports Rust, Node, Go, Zig and Lua too, and `goome_ui_app` has a `GOOME_WINDOW_NO_TITLEBAR` flag.
+
 ## 0.5
 
 The languages and accessibility update, anything with <kbd>0.5</kbd> on it came here.
