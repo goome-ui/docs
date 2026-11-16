@@ -45,6 +45,10 @@ java --enable-native-access=ALL-UNNAMED -cp goome-0.5.0.jar:out Main      # ; in
 
 Debugging Java from the terminal is `jdb`, or start it with `-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005` and attach an IDE. See [Getting started in Java](start-java.md) for the jar.
 
+## Rust, Node, Go, Zig and Lua
+
+Its the normal tool for each one: `cargo run`, `node main.js`, `go run .`, `zig build run` and `lua main.lua`. How to get goome into the project is on [Rust](start-rust.md#install), [Node](start-node.md#install), [Go](start-go.md#install), [Zig](start-zig.md#install) and [Lua](start-lua.md#install).
+
 ## Gotchas
 
 - `GOOME_BACKEND=x11 ./myapp` forces a backend (wayland, gnome, portal, x11, test), otherwise it picks Wayland or X11 itself. Wayland has no global hotkeys, use the [control fifo](hotkeys.md).

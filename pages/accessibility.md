@@ -58,6 +58,8 @@ ui.a11y(true);
 | Windows | UI Automation provider, from `WM_GETOBJECT` | Invoke, Toggle, Value, RangeValue, Selection, SelectionItem, ExpandCollapse, with focus and property change events |
 | Mac | NSAccessibility on the goome view | one element per widget, frames in screen coords, the usual notifications |
 
+Heads up, nobody has tried this with a real screen reader yet. The tests check the tree from the outside on all three (`tests/atspi.sh`, `tests/uia.ps1` and `tests/macax.sh` in c-goome), but Orca, NVDA, Narrator and VoiceOver havent been run against it by hand. If one of them acts weird please open an issue.
+
 On Wayland a window doesnt know where it is on screen, so the rects are right inside the window but not on the screen. Most screen readers dont care, magnifiers that follow focus do.
 
 ## Built in widgets

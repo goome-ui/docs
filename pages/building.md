@@ -66,3 +66,8 @@ Dont edit the root `goome.h`. `tools/single.py` makes it from `include/` and `sr
 - java-goome: `./build.sh` puts `libgoome.so` in `build/natives/<os>/`, `./gradlew :goome:jar` packs it into `goome/build/libs/goome-<version>.jar` with whatever natives are there. Gradle needs a JDK 25, the jar runs on 17+.
 - godot-goome: `./build.sh` builds the addon lib into `addons/goome/bin/`, `./build.sh win` the dll with mingw.
 - Python: `pip install` builds the lib with your C compiler. In a clone `./build.sh test` builds `goome/_native/libgoome.so` and runs the tests.
+- rust-goome: `cargo build`, `goome-sys` compiles goome.h with the `cc` crate. `cargo test` runs the tests.
+- node-goome: `npm install` and `npm run build`, node-gyp compiles goome.h into `goome.node`. `npm test` runs the tests.
+- go-goome: nothing to build first, cgo compiles goome.h. `go test ./...` runs the tests.
+- zig-goome: `zig build test`, and `zig build examples` builds the examples.
+- lua-goome: `LUA_INC=/usr/include/lua5.4 ./build.sh test` builds `goome.so` and runs the tests, `LUA=luajit` with the luajit headers for LuaJIT.
