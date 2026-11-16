@@ -4,7 +4,7 @@ title: "API: open, poll and frames"
 
 # API: open, poll and frames
 
-Made from `goome.h` 0.2.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 Guide: [frames](frames.md).
 

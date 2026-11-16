@@ -4,7 +4,7 @@ title: "API: windows, cursor and clipboard"
 
 # API: windows, cursor and clipboard
 
-Made from `goome.h` 0.2.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 Guide: [window mode](window-mode.md).
 
