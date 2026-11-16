@@ -29,6 +29,9 @@ BADGES = [
 ] + [
     ("c99", "", "C99", GREEN, GREEN, "flat-square", "c"),
     ("vscode-190", "VS Code", "1.90+", GREEN, GREEN, "flat-square", None),
+    ("jetbrains-2024-3", "JetBrains", "2024.3+", GREEN, GREEN, "flat-square", None),
+    ("langs-c-csharp-python-java", "", "C \u00b7 C# \u00b7 Python \u00b7 Java", DARK, GREEN, "flat-square", None),
+    ("license-gpl-3", "license", "GPL-3.0", DARK, GREEN, "flat-square", None),
     ("c", "", "C", GREEN, GREEN, "flat-square", "c"),
     ("csharp-net8-netstandard21", "C#", ".NET 8+ | netstandard2.1", GREEN, GREEN, "flat-square", "dotnet"),
     ("csharp-net8-plus", "C#", ".NET 8+", GREEN, GREEN, "flat-square", "dotnet"),
