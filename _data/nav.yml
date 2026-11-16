@@ -35,6 +35,7 @@
     - { page: overlay-mode, title: Overlay mode }
     - { page: window-mode, title: Window mode, since: "0.2" }
     - { page: offscreen-mode, title: Offscreen mode, since: "0.2" }
+    - { page: browser, title: Run it in the browser, since: "0.5.2" }
 - title: How it works
   pages:
     - { page: coords, title: Coords and monitors }

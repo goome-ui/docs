@@ -17,6 +17,8 @@ goome_opts o = {
 goome *g = goome_open(&o, NULL);
 ```
 
+An app made this way can also [run in a web page](browser.md) <kbd>0.5.2</kbd>.
+
 `width` and `height` are the logical client size. 0 gives you 960x640.
 
 ## How it differs from overlay mode

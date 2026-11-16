@@ -4,7 +4,7 @@ title: "API: types and constants"
 
 # API: types and constants
 
-Made from `goome.h` 0.5.0 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.2 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 
 ## Structs
@@ -248,9 +248,11 @@ enum { GOOME_MODE_OVERLAY, GOOME_MODE_WINDOW, GOOME_MODE_OFFSCREEN };
 ```c
 enum {
     GOOME_WINDOW_RESIZABLE = 1, GOOME_WINDOW_BORDERLESS = 2, GOOME_WINDOW_TRANSPARENT = 4,
-    GOOME_WINDOW_ON_TOP = 8, GOOME_WINDOW_HIDDEN = 16, GOOME_WINDOW_CENTER = 32,
+    GOOME_WINDOW_ON_TOP = 8, GOOME_WINDOW_HIDDEN = 16, GOOME_WINDOW_CENTER = 32, GOOME_WINDOW_NO_TITLEBAR = 64,
 };
 ```
+
+New in 0.5: `GOOME_WINDOW_NO_TITLEBAR`.
 
 ### GOOME_*
 

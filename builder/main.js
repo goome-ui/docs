@@ -2,8 +2,8 @@
   const A = window.GMApp;
   const { h, $, icon, S, note, snap, changed } = A;
   const P = () => S.project;
-  const LANGS = { c: "C", cs: "C#", py: "Python", java: "Java", gd: "GDScript" };
-  const EXT = { c: ".c", cs: ".cs", py: ".py", java: ".java", gd: ".gd" };
+  const LANGS = { c: "C", cs: "C#", py: "Python", java: "Java", gd: "GDScript", rust: "Rust", node: "Node", go: "Go", zig: "Zig", lua: "Lua" };
+  const EXT = { c: ".c", cs: ".cs", py: ".py", java: ".java", gd: ".gd", rust: ".rs", node: ".js", go: ".go", zig: ".zig", lua: ".lua" };
 
   const KW = {
     c: "if else for while return static const int double float char void unsigned uint32_t typedef struct sizeof break continue NULL",
@@ -11,6 +11,11 @@
     py: "if elif else for while return def class import from with as try except pass None True False not and or in is global lambda",
     java: "if else for while return static final int double float boolean String var new import try catch null true false class public void break continue this",
     gd: "if elif else for while return func var const class extends pass null true false not and or in is self",
+    rust: "fn let mut const static if else for while loop match return use mod struct enum impl pub as in ref self Self true false break continue unsafe move",
+    node: "const let var function if else for while return new try catch null undefined true false class break continue of in typeof this async await",
+    go: "package import func var const type struct if else for range return switch case default break continue nil true false go defer map chan interface",
+    zig: "const var fn pub if else for while return try catch switch break continue defer errdefer struct enum union null undefined true false and or orelse comptime inline",
+    lua: "local function if then else elseif end for while do repeat until return break nil true false not and or in",
   };
   function hl(code, lang) {
     const kw = new Set(KW[lang].split(" "));

@@ -43,11 +43,15 @@ The whole thing:
 
 ```sh
 goome new <name> --lang c|csharp|python|java|godot|rust|node|go|zig|lua [--template app|overlay|mod-menu|hud]
+goome build --web [main.c]
+goome serve [folder]
 goome list
 goome --version
 ```
 
 `--dir` picks the folder (the name if you leave it out), `--ref` a branch or tag of the template repo, and `--from` a template folder or .tar.gz you already have so nothing gets downloaded. It wont write into a folder that already has stuff in it.
+
+`goome build --web` and `goome serve` are for [running an app in the browser](browser.md) <kbd>0.5.2</kbd>, they need goome-cli 0.5.2 or newer.
 
 The name gets used in every form it needs. `cool hud` turns into "Cool Hud" in titles, `cool-hud` for the binary, `CoolHud` for the C# project and `coolhud` for the Java package. When its done it prints how to build and run it.
 
