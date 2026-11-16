@@ -32,6 +32,37 @@ try {
 }
 ```
 
+```rust
+if g.hotkey("alt+h", 1).is_err() {
+    println!("no global hotkeys here: {}", g.error());
+}
+```
+
+```js
+try {
+  g.hotkey("alt+h", 1);
+} catch (e) {
+  console.log(`no global hotkeys here: ${g.error}`);
+}
+```
+
+```go
+if err := g.Hotkey("alt+h", 1); err != nil {
+	fmt.Println("no global hotkeys here:", g.LastError())
+}
+```
+
+```zig
+g.hotkey("alt+h", 1) catch {
+    std.debug.print("no global hotkeys here: {s}\n", .{g.lastError()});
+};
+```
+
+```lua
+local ok, err = g:hotkey("alt+h", 1)
+if not ok then print("no global hotkeys here: " .. err) end
+```
+
 Works system wide, also when another app has focus. You get a `GOOME_HOTKEY` event with your `id`. Combos look like `alt+h`, `ctrl+shift+f5`, `super+space`. `goome_parse_combo` checks one without grabbing.
 
 | Where | Hotkeys |
