@@ -12,7 +12,7 @@ Every picture here is a real frame from the plugin, the tests made them.
 
 ## Install
 
-Needs OBS Studio 31 or newer. Close OBS first. The files are on the [releases page](https://github.com/goome-ui/obs-goome/releases). Before the first release, the newest green **Push** run on the [Actions tab](https://github.com/goome-ui/obs-goome/actions/workflows/push.yaml) has the same files at the bottom (you have to be logged in to GitHub to download them).
+Needs OBS Studio 31 or newer. Close OBS first. The files are on the [latest release](https://github.com/goome-ui/obs-goome/releases/latest).
 
 ### Windows
 
