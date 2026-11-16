@@ -50,7 +50,7 @@ The languages and accessibility update, anything with <kbd>0.5</kbd> on it came 
 - [screen readers](accessibility.md) through AT-SPI2, UI Automation and NSAccessibility, and `goome_a11y_tree` for engines
 - an [OBS plugin](obs.md) with a timer, now playing, a goal bar, a clock and chat, or your own builder file, clickable through Interact
 - the [builder](ui-builder.md#real-goome-preview-05) preview is real goome now, built to WebAssembly
-- the [VS Code extension](editor-vscode.md) got a side panel and is on the Marketplace, the [JetBrains plugin](editor-rider.md) got a tool window and is on its way to the JetBrains Marketplace
+- the [VS Code extension](editor-vscode.md) got a side panel and is on the Marketplace, the [JetBrains plugin](editor-rider.md) got a tool window and is on the JetBrains Marketplace
 
 And a GNOME fix: an overlay that showed up before it had any hit rects never took clicks, which is also why clicks died after a hotkey brought a hidden overlay back. Both work now.
 

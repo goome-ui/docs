@@ -7,7 +7,7 @@ title: Eclipse
 ## Plain Java project
 
 1. File > New > Java Project, JRE 22 or newer.
-2. Right click the project > Build Path > Add External Archives and pick `goome-0.2.0.jar` ([where to get it](start-java.md#install)).
+2. Right click the project > Build Path > Add External Archives and pick `goome-0.5.0.jar` ([where to get it](start-java.md#no-build-tool)).
 3. Paste the overlay from [Getting started in Java](start-java.md#your-first-overlay) into `Main.java` in the default package.
 4. Run > Run Configurations > Arguments, put `--enable-native-access=ALL-UNNAMED` in VM arguments, then Run.
 

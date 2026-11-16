@@ -12,14 +12,12 @@ Theres a goome plugin for the JetBrains IDEs with a tool window <kbd>0.5</kbd>, 
 2. In the Terminal tab (venv is already active):
 
 ```sh
-pip install git+https://github.com/goome-ui/python-goome
+pip install goome
 ```
 
 3. Paste the overlay from [Getting started in Python](start-python.md) into `main.py`, right click, Run 'main'.
 
-pip builds the C library on install so you need a C compiler once, [Getting started in Python](start-python.md) says which one.
-
-The Python Interpreter settings dialog only searches PyPI, so use the terminal for the git URL.
+Or Settings > Python Interpreter > + and search goome. The wheels have the C library inside, on other platforms pip builds it and you need a C compiler once, [Getting started in Python](start-python.md) says which one.
 
 ## Debugging
 

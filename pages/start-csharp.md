@@ -72,7 +72,13 @@ if (g.TryFrame(out var frame)) Goome.SavePpm("frame.ppm", frame);
 
 ## Get it
 
-Not on nuget.org. Clone it and build the native lib:
+```sh
+dotnet add package GoomeSharp
+```
+
+Its on [NuGet](https://www.nuget.org/packages/GoomeSharp) with the native lib for linux-x64, win-x64, osx-arm64 and osx-x64 inside, so theres nothing to build. Every [release](https://github.com/goome-ui/csharp-goome/releases) has the same .nupkg too if you want a local source.
+
+Or build it from source. Clone it and build the native lib:
 
 ```sh
 git clone https://github.com/goome-ui/csharp-goome
@@ -82,14 +88,7 @@ cd csharp-goome
 dotnet run --project examples/Hello
 ```
 
-Then reference `src/GoomeSharp/GoomeSharp.csproj` from your project. The native lib gets copied next to your app by itself.
-
-`dotnet pack src/GoomeSharp -c Release -o out` makes a .nupkg with every lib in `runtimes/`. CI builds one with linux-x64, win-x64, osx-arm64 and osx-x64 as the **nupkg** artifact, grab it from the latest run and add the folder as a local source:
-
-```sh
-dotnet nuget add source /path/to/folder/with/the/nupkg --name goome-local
-dotnet add package GoomeSharp --version 0.2.0
-```
+Then reference `src/GoomeSharp/GoomeSharp.csproj` from your project. The native lib gets copied next to your app by itself. `dotnet pack src/GoomeSharp -c Release -o out` makes your own .nupkg with every lib in `runtimes/`.
 
 For one exact version instead of the newest, see [Versions](versions.md).
 

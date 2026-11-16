@@ -16,7 +16,9 @@ Needs OBS Studio 31 or newer. Close OBS first. The files are on the [latest rele
 
 ### Windows
 
-Download `obs-goome-…-windows-x64.zip` and unzip it into `C:\ProgramData\obs-studio\plugins`, so you end up with:
+Download `obs-goome-…-windows-x64-installer.exe` <kbd>0.5.1</kbd> and run it. It installs to `C:\ProgramData\obs-studio\plugins\obs-goome`, the folder OBS looks in for plugins, and uninstalls from Settings > Apps. Its not signed, so if SmartScreen stops it click More info, then Run anyway.
+
+Or without the installer, download `obs-goome-…-windows-x64.zip` and unzip it into `C:\ProgramData\obs-studio\plugins`, so you end up with:
 
 ```text
 C:\ProgramData\obs-studio\plugins\obs-goome\bin\64bit\obs-goome.dll

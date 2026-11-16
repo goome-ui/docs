@@ -72,16 +72,20 @@ More on [Offscreen mode](offscreen-mode.md).
 ## Install
 
 ```sh
-pip install git+https://github.com/goome-ui/python-goome
+pip install goome
 ```
 
-Its from GitHub, not PyPI. pip needs a C compiler for the build:
+Its on [PyPI](https://pypi.org/project/goome/). The wheels for Linux x64, Windows x64 and both Macs already have the lib inside, so nothing gets built. Anywhere else pip builds it from the sdist, which needs a C compiler:
 
 - Debian / Ubuntu: `sudo apt install build-essential`
 - Mac: `xcode-select --install`
 - Windows: [mingw-w64](https://www.mingw-w64.org/) gcc, or Visual Studio (run pip from the developer prompt)
 
-`CC` picks a different compiler. To skip building, grab a wheel from the Actions tab (the lib is already in it) and `pip install` that. `GOOME_LIB=/path/to/libgoome.so` uses your own libgoome.
+`CC` picks a different compiler. `GOOME_LIB=/path/to/libgoome.so` uses your own libgoome. The newest code on dev comes straight from git:
+
+```sh
+pip install git+https://github.com/goome-ui/python-goome@dev
+```
 
 For one exact version instead of the newest, see [Versions](versions.md).
 

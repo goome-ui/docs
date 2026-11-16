@@ -22,7 +22,7 @@ File > Open > Folder on the repo. Pick Debug or Release at the top (from `CMakeP
 2. Open `csharp-goome.sln` (GoomeSharp, the tests, and the Hello, Grab and UiDemo examples).
 3. Right click Hello, Set as Startup Project, F5.
 
-For your own app add `src/GoomeSharp/GoomeSharp.csproj` to the solution and reference it, or install the nupkg from a local source (Tools > NuGet Package Manager > Package Manager Settings > Package Sources).
+For your own app right click the project, Manage NuGet Packages, and install GoomeSharp from nuget.org. Or add `src/GoomeSharp/GoomeSharp.csproj` to the solution and reference it.
 
 ## When it goes wrong
 

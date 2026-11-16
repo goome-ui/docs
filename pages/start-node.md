@@ -59,17 +59,23 @@ uploadTexture(frame.pixels, frame.w, frame.h);
 
 ## Install
 
+Its not on npm. Install the package from the [release](https://github.com/goome-ui/node-goome/releases), it has the addon already built for linux x64, windows x64 and both Macs:
+
+```sh
+npm install https://github.com/goome-ui/node-goome/releases/download/v0.5.0/goome-0.5.0.tgz
+```
+
+Or straight from git, that builds the addon with node-gyp, which needs a C compiler and Python, a few seconds once:
+
 ```sh
 npm install github:goome-ui/node-goome#v0.5.0
 ```
-
-Its not on npm yet, so it comes from GitHub. Installing builds the addon with node-gyp, which needs a C compiler and Python, a few seconds once:
 
 - Debian / Ubuntu: `sudo apt install build-essential python3`
 - Mac: `xcode-select --install`
 - Windows: the "Desktop development with C++" part of Visual Studio
 
-The `prebuilds/` from CI have it already built for linux x64, windows x64 and both Macs. Once the npm package is out those come with it. For one exact version see [Versions](versions.md).
+For one exact version see [Versions](versions.md).
 
 ## Your first overlay
 

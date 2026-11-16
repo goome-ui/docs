@@ -77,7 +77,7 @@ upload_texture(frame.pixels(), frame.w(), frame.h());
 goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.0" }
 ```
 
-Its not on crates.io yet, so it comes from git. The first build compiles goome.h with your C compiler, a few seconds once. Cargo already needs one for a lot of crates so you probably have it:
+Its not on crates.io, it comes from git. The `.crate` files are on the [releases page](https://github.com/goome-ui/rust-goome/releases) too. The first build compiles goome.h with your C compiler, a few seconds once. Cargo already needs one for a lot of crates so you probably have it:
 
 - Debian / Ubuntu: `sudo apt install build-essential`
 - Mac: `xcode-select --install`

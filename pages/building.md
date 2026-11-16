@@ -63,6 +63,6 @@ Dont edit the root `goome.h`. `tools/single.py` makes it from `include/` and `sr
 ## The bindings
 
 - csharp-goome: `./build.sh` puts `libgoome.so` / `libgoome.dylib` in `runtimes/<rid>/native/`, `./build.sh win` makes `goome.dll` with mingw, `dotnet pack src/GoomeSharp` makes the nupkg.
-- java-goome: `./build.sh` puts `libgoome.so` in `build/natives/<os>/`, `./gradlew :goome:jar` packs it into `goome/build/libs/goome-0.2.0.jar` with whatever natives are there. Gradle needs a JDK 25, the jar runs on 17+.
+- java-goome: `./build.sh` puts `libgoome.so` in `build/natives/<os>/`, `./gradlew :goome:jar` packs it into `goome/build/libs/goome-<version>.jar` with whatever natives are there. Gradle needs a JDK 25, the jar runs on 17+.
 - godot-goome: `./build.sh` builds the addon lib into `addons/goome/bin/`, `./build.sh win` the dll with mingw.
 - Python: `pip install` builds the lib with your C compiler. In a clone `./build.sh test` builds `goome/_native/libgoome.so` and runs the tests.
