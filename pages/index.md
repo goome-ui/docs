@@ -48,7 +48,7 @@ The languages and accessibility update, anything with <kbd>0.5</kbd> on it came 
 - [color emoji, fallback fonts and right to left text](emoji-rtl.md) for Arabic and Hebrew
 - [IME support](ime.md) on X11, Wayland, Windows and Mac, so Chinese, Japanese, Korean and dead keys work in inputs
 - [screen readers](accessibility.md) through AT-SPI2, UI Automation and NSAccessibility, and `goome_a11y_tree` for engines
-- an [OBS plugin](obs.md) with a timer, now playing, a goal bar, a clock and chat, or your own builder file, clickable through Interact
+- an [OBS plugin](obs.md) with a timer, now playing, a goal bar, a clock and chat, or your own builder file, clickable through Interact. Windows got an installer in 0.5.1
 - the [builder](ui-builder.md#real-goome-preview-05) preview is real goome now, built to WebAssembly
 - the [VS Code extension](editor-vscode.md) got a side panel and is on the Marketplace, the [JetBrains plugin](editor-rider.md) got a tool window and is on the JetBrains Marketplace
 
