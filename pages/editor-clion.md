@@ -6,6 +6,8 @@ title: CLion
 
 c-goome is a plain CMake project with presets, CLion opens it as is.
 
+Theres a goome plugin for the JetBrains IDEs with a tool window <kbd>0.5</kbd>, live templates and a `.goome.json` preview. Get it from the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/36174-goome) or from disk, the [Rider page](editor-rider.md#the-goome-plugin) has both ways and everything it does.
+
 ## c-goome itself
 
 File > Open, pick the repo folder. You get Debug and Release from `CMakePresets.json` (they build into `out/debug` and `out/release`) and run configs for `hello`, `grab`, `ui` and `unit`.
