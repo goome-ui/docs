@@ -18,6 +18,16 @@ goome picks the backend itself. `GOOME_BACKEND=x11` (or `wayland`, `gnome`, `por
 
 No system wide key grabs on Wayland, see [Hotkeys and the control fifo](hotkeys.md).
 
+## What CI actually ran
+
+The table says what each backend is meant to do. What a scripted CI run has checked, on machines with no GPU and no person ([Compare](compare.md#linux-window-managers-and-compositors) has the full tables):
+
+- **X11:** 11 of 11 window managers pass (i3, openbox, fluxbox, icewm, metacity, marco, xfwm4 with and without picom, mutter, kwin, and none). Hotkeys and screen grabs are checked there too
+- **Wayland:** sway (wlr-screencopy, grabs compared with grim, control fifo), labwc and mutter pass on Ubuntu and Arch, wayfire on Arch, kwin 5.27 on Ubuntu through the portal. Hyprland, river and niri never started in the harness, and COSMIC and Cinnamon were not tried, so those rows are what the code is written for, not something I saw run. weston and cage only half passed, see Compare
+- **GNOME grabs:** `tests/gnome.sh` in c-goome checks Mutter ScreenCast and the portal path against a headless gnome-shell and a fake portal, but it is not part of the CI workflow. The overlay on GNOME is in CI, the "no popup" grab is not
+- **Windows:** the runner is Windows Server 2025, not a 10 or 11 desktop. Layered windows, UI Automation, GDI grabs and hotkeys pass there
+- **macOS:** the runners are macOS 15 and 26, nothing ran on 14. The runners cant record the screen, so CI only checks that a grab comes back "not allowed" instead of hanging, ScreenCaptureKit never gave a picture. Global hotkeys were not tried on a Mac either
+
 `goome_caps(g)` says what actually works where you are, `goome_backend_name(g)` which backend you got. Java has `g.can(Goome.CAP_HOTKEYS)` and `g.backendName()`.
 
 ## The caps
@@ -54,4 +64,4 @@ Grabs need Screen Recording, hotkeys need Accessibility. macOS gives those to wh
 
 ## Old systems
 
-Linux builds work back to glibc 2.34. libwayland, libX11, xkbcommon, gio, gstreamer and fontconfig all load at runtime, if one is missing goome picks something else. Nothing to install to build.
+Linux builds are meant to work back to glibc 2.34. CI doesnt run on that old a glibc, it checks with `objdump` that the binaries dont use any symbol newer than 2.34. libwayland, libX11, xkbcommon, gio, gstreamer and fontconfig all load at runtime, if one is missing goome picks something else. Nothing to install to build the C library except a C compiler.
