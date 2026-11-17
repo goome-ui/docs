@@ -41,6 +41,10 @@ Full programs are on [Getting started in C](start-c.md), [C#](start-csharp.md), 
 
 The [UI builder](ui-builder.md) <kbd>0.3</kbd> lets you drag widgets around and copy out C, C#, Python, Java, GDScript, Rust, Node, Go, Zig or Lua. Its preview runs real goome now <kbd>0.5</kbd>.
 
+## 0.5.3
+
+`goome-cli` is on [PyPI](https://pypi.org/project/goome-cli/) now, `pipx install goome-cli` and you have `goome`. `goome update` keeps it current and it says when a newer one is out, `GOOME_NO_UPDATE_CHECK=1` turns that off. More on [Templates and goome new](templates.md#goome-new).
+
 ## 0.5.2
 
 Goome apps [run in the browser](browser.md) now, and you can [try two of them](try.md). `goome build --web main.c` compiles one to webassembly and `goome serve` tries it on localhost, no emscripten. The [builder](ui-builder.md) exports Rust, Node, Go, Zig and Lua too, and `goome_ui_app` has a `GOOME_WINDOW_NO_TITLEBAR` flag.
@@ -90,7 +94,7 @@ Anything with <kbd>0.2</kbd> on it came here. Mainly [window mode](window-mode.m
 | [vscode-goome](https://github.com/goome-ui/vscode-goome) | the VS Code extension |
 | [jetbrains-goome](https://github.com/goome-ui/jetbrains-goome) | the plugin for Rider, CLion, IntelliJ IDEA and PyCharm |
 | [examples](https://github.com/goome-ui/examples) | bigger example apps, one folder each, and the [downloadable apps](downloads.md) |
-| [goome-cli](https://github.com/goome-ui/goome-cli) | `goome new`, makes a project from a template |
+| [goome-cli](https://github.com/goome-ui/goome-cli) | `goome new`, makes a project from a template, on PyPI (`pipx install goome-cli`) <kbd>0.5.3</kbd> |
 | goome-app-template-* | a starting app for [each language](templates.md) |
 | [docs](https://github.com/goome-ui/docs) | this site |
 

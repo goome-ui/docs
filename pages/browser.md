@@ -9,6 +9,7 @@ A goome app can run in a web page. It gets compiled to webassembly and the page 
 You need `clang` with the wasm32 target, `wasm-ld` and bash. `sudo apt install clang lld` on Debian and Ubuntu, `brew install llvm lld` on a mac (apples own clang cant do wasm), `winget install LLVM.LLVM` on windows. No emscripten.
 
 ```sh
+pipx install goome-cli
 goome build --web main.c
 goome serve web
 ```

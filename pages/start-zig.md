@@ -78,8 +78,10 @@ More on [Offscreen mode](offscreen-mode.md).
 In your project:
 
 ```sh
-zig fetch --save git+https://github.com/goome-ui/zig-goome#v0.5.0
+zig fetch --save git+https://github.com/goome-ui/zig-goome#v0.5.2
 ```
+
+That writes the package into your `build.zig.zon`, the hash for 0.5.2 is `goome-0.5.2-JM4gI6GiFwBSQLnIdW8Bev3Lyu0rwU0OZYv8Wo65mXy1`.
 
 Then in `build.zig`:
 

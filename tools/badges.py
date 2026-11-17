@@ -71,6 +71,7 @@ BADGES = [
     ("zig-package", "zig fetch", "build.zig.zon", DARK, GREEN, "flat-square", None),
     ("love2d-ready", "LOVE", "drop in", DARK, GREEN, "flat-square", None),
     ("pypi-goome", "PyPI", "goome", GREEN, GREEN, "flat-square", "python"),
+    ("pypi-goome-cli", "PyPI", "goome-cli", GREEN, GREEN, "flat-square", "python"),
     ("nuget-goomesharp", "NuGet", "GoomeSharp", GREEN, GREEN, "flat-square", "dotnet"),
     ("maven-central", "Maven Central", "io.github.goome-ui", GREEN, GREEN, "flat-square", "openjdk"),
     ("crates-io-goome", "crates.io", "goome", GREEN, GREEN, "flat-square", "rust"),
