@@ -28,7 +28,7 @@ Compile it as C99 or newer. From C++ include the header normally, the implementa
 
 Nothing to link, not even libm. Linux dlopens libwayland-client, libX11, xkbcommon, gio and gstreamer when needed. Windows loads gdi32, shcore and the rest with LoadLibrary. Mac dlopens the frameworks and goes through the objc runtime, no .m file and no `-framework` flags.
 
-CI tests gcc, clang, mingw and MSVC.
+CI builds with gcc on Linux, Apple clang on macOS, and mingw and MSVC (`cl`) on Windows, always with warnings as errors. Plain clang on Linux isnt in the matrix.
 
 ## With CMake
 

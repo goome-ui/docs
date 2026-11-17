@@ -76,7 +76,7 @@ The page already has a tab and a window around the app, so goome leaves out the 
 
 ## What works
 
-Mouse, wheel, keyboard, text typed in other languages ([IME](ime.md)), paste and copy, the cursor shape, a window that resizes and a screen with a different pixel ratio. All of it goes through `goome.js`, about 300 lines you can read and change.
+Mouse, wheel, keyboard, text typed in other languages ([IME](ime.md)), paste and copy, the cursor shape, a window that resizes and a screen with a different pixel ratio. All of it goes through `goome.js`, about 300 lines you can read and change. CI checks those with fake browser objects under node (wheel, copy, paste, IME composition, resize, cursor), and that the wasm frames match the native ones. No real browser runs in CI, so a browser quirk (Safari, mobile keyboards) can still bite.
 
 ## What doesnt
 

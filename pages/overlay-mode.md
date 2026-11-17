@@ -20,7 +20,7 @@ The ui demo. Only the two windows take clicks, the grid behind is the "desktop" 
 | Windows 10 / 11 | one layered topmost window per monitor |
 | macOS 14+ | one borderless NSPanel per screen at screensaver level |
 
-Capture and hotkeys too: [Where it works](platforms.md).
+Capture and hotkeys too: [Where it works](platforms.md), which also says which of these desktops CI actually ran (Hyprland, river, niri, COSMIC and macOS 14 never did).
 
 ## Things to know
 

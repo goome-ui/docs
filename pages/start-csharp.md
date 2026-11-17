@@ -4,7 +4,7 @@ title: Getting started in C#
 
 # Getting started in C#
 
-[csharp-goome](https://github.com/goome-ui/csharp-goome) is the C library built as a shared lib and called with P/Invoke. Needs .NET 8+, and a C compiler the first time to build the native lib.
+[csharp-goome](https://github.com/goome-ui/csharp-goome) is the C library built as a shared lib and called with P/Invoke. Needs .NET 8+ (CI builds and tests on .NET 8 only), and a C compiler the first time to build the native lib.
 
 To start from a project that already builds, `goome new my-app --lang csharp` makes one from the [C# template](https://github.com/goome-ui/goome-app-template-csharp), see [Templates and goome new](templates.md) <kbd>0.4</kbd>.
 

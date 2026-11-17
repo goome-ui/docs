@@ -4,7 +4,7 @@ title: Visual Studio
 
 # Visual Studio
 
-2019 and 2022 both work.
+CI builds goome with `cl` from the Visual Studio on the GitHub runner (2026 at the moment) and runs the CMake build there. 2019 and 2022 should work the same, nobody has tried them lately.
 
 ## C, your own project
 
@@ -28,4 +28,4 @@ For your own app right click the project, Manage NuGet Packages, and install Goo
 
 - `DllNotFoundException: goome` means `goome.dll` isnt next to the exe. Rebuild after `build.sh`, or set `GOOME_NATIVE` to its folder.
 - Turn on Enable native code debugging in the project's debug settings and breakpoints in `goome_lib.c` work from C#.
-- Works on Windows 10 and 11, also in a VM with no GPU (layered windows are plain GDI).
+- Made for Windows 10 and 11, and it runs in a VM with no GPU (layered windows are plain GDI), thats what the CI runner is. The runner is Windows Server 2025, a 10 or 11 desktop edition isnt in CI.

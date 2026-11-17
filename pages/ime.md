@@ -4,7 +4,7 @@ title: Typing other languages
 
 # Typing other languages <kbd>0.5</kbd>
 
-Chinese, Japanese and Korean get typed through an IME: you type, a little candidate window pops up, you pick, and the finished text lands in the app. Dead keys (´ then e = é) and compose work the same way. goome talks to the IME on every desktop, so inputs and the text editor just work with it.
+Chinese, Japanese and Korean get typed through an IME: you type, a little candidate window pops up, you pick, and the finished text lands in the app. Dead keys (´ then e = é) and compose work the same way. goome talks to the IME on every desktop, so inputs and the text editor are meant to just work with it. How much of that has been seen working is at the [bottom](#what-got-tested), short version: one real IME setup (ibus with mozc on X11) has been checked end to end.
 
 ## In the ui kit
 
@@ -119,16 +119,18 @@ Calling it every frame is fine but the ui kit only calls it when the caret moved
 
 | Where | What goome uses | Notes |
 |:--|:--|:--|
-| X11 | XIM, from the libX11 it already loads | `XMODIFIERS` picks the IM (`@im=ibus`, `@im=fcitx`). With none it still does dead keys and compose. IBus and Fcitx both run an XIM server, so they work through this |
+| X11 | XIM, from the libX11 it already loads | `XMODIFIERS` picks the IM (`@im=ibus`, `@im=fcitx`). With none it still does dead keys and compose. IBus and Fcitx both run an XIM server, so they should work through this. ibus with mozc did in CI, fcitx5 did not (goome said "no X input method here" with fcitx5's XIM server running, I dont know yet which side is at fault) |
 | GNOME | same as X11, the overlay is an XWayland window | |
 | Wayland | `text-input-unstable-v3` | sway, KDE, Hyprland and GNOME have it. If the compositor doesnt, `goome_text_input` says `GOOME_ENOTSUP` |
-| Windows | IMM32 (`imm32.dll`, loaded at runtime) | Microsoft Pinyin, the Japanese and Korean IMEs and anything else that does IMM. goome hides the IMEs own composition window and draws it itself |
+| Windows | IMM32 (`imm32.dll`, loaded at runtime) | Meant for Microsoft Pinyin, the Japanese and Korean IMEs and anything else that does IMM, but Microsoft Pinyin on the CI runner gave no preedit at all, so only wines own IME has been seen working. goome hides the IMEs own composition window and draws it itself |
 | Mac | `NSTextInputClient` on the goome view | window mode only, overlays on Mac dont get it |
 | Offscreen | nothing, you push the events | see below |
 
 On X11 goome needs a real locale to open the IM. A C program sits in the "C" locale until it calls `setlocale`, so goome sets `LC_CTYPE` from the environment (or C.UTF-8) just while it opens the IM and puts yours back after. You dont have to call `setlocale`.
 
-What got tested, so you know:
+## What got tested
+
+So you know:
 
 - X11 on Xvfb with `@im=none` (compose and dead keys) and with a private ibus-daemon
 - Wayland on headless sway: text-input-v3 turns on and normal keys still type. Theres no IME in that setup, so a real composition didnt run there
@@ -136,6 +138,8 @@ What got tested, so you know:
 - Mac only builds in CI, the runners cant type into a window. The NSTextInputClient part hasnt been tried with a real Japanese or Chinese IME yet
 
 Fcitx5, the real Microsoft IMEs and the Mac IMEs havent been tried by hand. If one acts weird please open an issue.
+
+The `verify` workflow in c-goome (run by hand, not on every push) typed Japanese or Chinese through 12 real setups on 2026-11-17. Only ibus with mozc on X11 passed, the preedit and the committed text arrived. The others failed: ibus with libpinyin (ibus wouldnt switch engines in the job), fcitx5 on X11 and on sway, Microsoft Pinyin on Windows Server 2025, and the Mac Kotoeri and Pinyin sources (the runner refused to select them). Nothing showed that goome is at fault in those, nothing showed it isnt, so treat them as not tested. The [Compare](compare.md#typing-and-screen-readers) page has the details.
 
 ## Engines and offscreen
 

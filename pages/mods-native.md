@@ -4,7 +4,7 @@ title: Native DLL mods
 
 # Native DLL mods <kbd>0.3</kbd>
 
-Real mod menus for Windows games you dont have the source to. The DLL loads into the game, hooks the call that shows each frame and draws goome on top of everything the game drew, so it works in exclusive fullscreen too. Same idea as ReShade or a Dear ImGui mod menu. They live in the examples repo, [mods/native](https://github.com/goome-ui/examples/tree/main/mods/native). Read the [anti-cheat line](mods.md#anti-cheat) first.
+Real mod menus for Windows games you dont have the source to. The DLL loads into the game, hooks the call that shows each frame and draws goome on top of everything the game drew, so it should work in exclusive fullscreen too (the test games are windowed, I havent tried exclusive fullscreen). Same idea as ReShade or a Dear ImGui mod menu. They live in the examples repo, [mods/native](https://github.com/goome-ui/examples/tree/main/mods/native). Read the [anti-cheat line](mods.md#anti-cheat) first.
 
 | Folder | Hooks | For |
 |:--|:--|:--|
@@ -21,13 +21,13 @@ cd examples/mods/native
 bash build.sh dx11
 ```
 
-Swap `dx11` for `dx12`, `opengl` or `vulkan`. It needs `x86_64-w64-mingw32-gcc` (or set `CC`) and drops `build/dx11/version.dll`. The script fetches [MinHook](https://github.com/TsudaKageyu/minhook), and the Vulkan headers for the vulkan one, nothing is checked in. With MSVC the same sources build, you just need those two on your include path.
+Swap `dx11` for `dx12`, `opengl` or `vulkan`. It needs `x86_64-w64-mingw32-gcc` (or set `CC`) and drops `build/dx11/version.dll`. The script fetches [MinHook](https://github.com/TsudaKageyu/minhook), and the Vulkan headers for the vulkan one, nothing is checked in. With MSVC the same sources should build if you put those two on your include path, CI only builds them with mingw.
 
 Put `version.dll` next to the game's exe and start the game. Insert hides and shows the menu.
 
 ## How it loads
 
-Windows loads the mod as `version.dll` and the mod forwards every real call to the system one, the game never notices. Almost every game loads `version.dll` and it only has sixteen functions to pass on. A `dxgi.dll` or `winmm.dll` proxy works the same, `common/proxy.c` just lists other names.
+Windows loads the mod as `version.dll` and the mod forwards every real call to the system one, the game never notices. Plenty of games load `version.dll` and it only has sixteen functions to pass on. A `dxgi.dll` or `winmm.dll` proxy should work the same, `common/proxy.c` just lists other names (only the `version.dll` one is built and tested).
 
 Once its in it starts a thread, makes a throwaway device to read the swapchain vtable and hooks present with MinHook. From then on goome draws offscreen every frame and the matching [renderer backend](mods-renderers.md) puts it over the game's frame as one quad. dx12 also catches the game's command queue through `ExecuteCommandLists`, records its own command list and submits it there. vulkan hooks the create calls to find its device and swapchain, then records a pass over the image being shown.
 
@@ -60,4 +60,4 @@ bash build.sh
 RUNNER=native bash run.sh
 ```
 
-On Linux it runs under wine with Xvfb and mesa, `RUNNER=wine SKIP=vulkan bash run.sh`. CI runs all of them but vulkan on a real Windows runner and under wine. Vulkan only runs where theres a working swapchain.
+On Linux it runs under wine with Xvfb and mesa, `RUNNER=wine SKIP=vulkan bash run.sh`. CI skips vulkan everywhere, so the vulkan mod only gets compiled there. On the real Windows runner the log shows OpenGL and D3D11, under wine OpenGL, D3D11 and D3D12 all pass, and there is no D3D12 line in the Windows runner log. The runners have no GPU, so D3D runs on WARP, and none of it has run in a real game or against anti-cheat. Vulkan only runs where theres a working swapchain.

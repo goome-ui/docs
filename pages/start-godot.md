@@ -4,7 +4,7 @@ title: Getting started in Godot
 
 # Getting started in Godot <kbd>0.3</kbd>
 
-Godot 4.4+. [godot-goome](https://github.com/goome-ui/godot-goome) is an addon with one node, `GoomeView`, and you write the ui in GDScript every frame. No C# and no godot-cpp needed.
+Godot 4.4+ (CI runs it in 4.4.1 and 4.7.2, headless). [godot-goome](https://github.com/goome-ui/godot-goome) is an addon with one node, `GoomeView`, and you write the ui in GDScript every frame. No C# and no godot-cpp needed.
 
 To start from a project that already builds, `goome new my-app --lang godot` makes one from the [Godot template](https://github.com/goome-ui/goome-app-template-godot), see [Templates and goome new](templates.md) <kbd>0.4</kbd>.
 

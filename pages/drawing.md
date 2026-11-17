@@ -4,7 +4,7 @@ title: Shapes and clipping
 
 # Shapes and clipping
 
-You dont have to use this, writing pixels into `c->px` and calling `goome_damage` works fine. Shapes are anti-aliased, no libm or any other library, same pixels on every OS.
+You dont have to use this, writing pixels into `c->px` and calling `goome_damage` works fine. Shapes are anti-aliased, no libm or any other library, so the pixels come out the same on every OS (the unit tests hash them, and CI runs them on Linux, Windows and both Macs).
 
 ![every shape goome draws, real output from the test backend](../assets/shots/draw.png)
 

@@ -22,11 +22,11 @@ Yes, the header has `extern "C"`. Only the file with `GOOME_IMPLEMENTATION` has 
 
 ### Can I use it from Java or Kotlin?
 
-Java yes, see [Getting started in Java](start-java.md). Java 22+ needs no extra jars, 17 and 21 need LWJGL. Its a normal jar, so Kotlin on the JVM can call it too.
+Java yes, see [Getting started in Java](start-java.md). Java 22+ needs no extra jars, 17 and 21 need LWJGL (CI runs Java 17 and 25 only). Its a normal jar, so Kotlin on the JVM can call it too.
 
 ### Do I have to draw every frame?
 
-No, only when something changed or `goome_ui_animating` says something still moves. Idle its about 0% CPU.
+No, only when something changed or `goome_ui_animating` says something still moves. Idle it skips the frame, the benchmark in [Compare](compare.md) puts an unchanged 50 row frame at about 0.002 ms.
 
 ### Can I use goome from more than one thread?
 
@@ -34,7 +34,7 @@ No. Each `goome` stays on the thread that opened it, and on Mac thats the main t
 
 ### Does it work in fullscreen games?
 
-Borderless and windowed fullscreen yes. Exclusive fullscreen no, nothing can draw over that without hooking the game.
+Borderless and windowed fullscreen should work, though no CI run has put an overlay over a real fullscreen game. Exclusive fullscreen no, nothing can draw over that without hooking the game.
 
 ### Why do grabs ask for permission on KDE but not on GNOME?
 
@@ -42,7 +42,7 @@ On GNOME goome asks mutter directly. KDE and others go through the screen share 
 
 ### My overlay shows up in my own screenshots
 
-Always on Linux, check `img.has_self` and mask it with `goome_alpha_at`. Windows and Mac can leave it out with `hide_self`.
+Always on Linux, check `img.has_self` and mask it with `goome_alpha_at`. Windows can leave it out with `hide_self` (CI tests that), Mac is meant to as well but CI runners cant record the screen so it never ran there.
 
 ### Can I replace WinForms with it?
 

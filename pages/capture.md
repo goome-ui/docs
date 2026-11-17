@@ -69,3 +69,5 @@ On Windows (build 19041+) and Mac set `hide_self = 1` in `goome_opts` and the OS
 Capture only starts on the first grab, so an overlay that never grabs never gets a popup. `no_capture = 1` turns it off completely.
 
 Check `goome_caps(g) & GOOME_CAP_CAPTURE` before counting on it.
+
+What CI has grabbed for real: X11, sway (wlr-screencopy, compared with grim) and Windows (GDI), all exact. The GNOME and portal paths have a test script, `tests/gnome.sh` (a headless gnome-shell and a fake portal), that isnt part of CI, and on macOS the runners cant record the screen, so CI only sees a clean "not allowed". The `hide_self` part is tested on Windows only. More in [Where it works](platforms.md#what-ci-actually-ran).

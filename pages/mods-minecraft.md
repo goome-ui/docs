@@ -4,7 +4,7 @@ title: Minecraft
 
 # Minecraft <kbd>0.3</kbd>
 
-[java-goome](https://github.com/goome-ui/java-goome) has a Fabric mod and a NeoForge mod for Minecraft 26.3 in `minecraft/`, built by CI on every push. Both do the same thing:
+[java-goome](https://github.com/goome-ui/java-goome) has a Fabric mod and a NeoForge mod for Minecraft 26.3 in `minecraft/`, built by CI on every push. CI never starts Minecraft though, it builds the jars and checks what is inside them, so the screen, the keys and the input blocking below are only tested through the Minecraft free `GoomeView` layer. Both do the same thing:
 
 | Key | Does |
 |:--|:--|
@@ -21,7 +21,7 @@ cd minecraft/fabric && ../../gradlew build
 cd ../neoforge && ../../gradlew build
 ```
 
-`./build.sh` makes the native lib for your OS and needs a C compiler, Gradle needs a JDK 25. You get `build/libs/goome-fabric-<version>.jar` and `build/libs/goome-neoforge-<version>.jar`, drop the one for your loader in `.minecraft/mods`. The jars from CI have the native libs for every OS in them, the ones you build only have yours.
+`./build.sh` makes the native lib for your OS and needs a C compiler, Gradle needs a JDK 25. You get `build/libs/goome-fabric-<version>.jar` and `build/libs/goome-neoforge-<version>.jar`, drop the one for your loader in `.minecraft/mods`. The jars from CI have the native libs for Linux, Windows and macOS arm64 in them, the ones you build only have yours.
 
 The mods use java-goome's LWJGL path since Minecraft already loads LWJGL, so theres no JNI glue and no native access warning.
 

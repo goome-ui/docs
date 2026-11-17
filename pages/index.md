@@ -9,7 +9,7 @@ permalink: /
 
 See-through overlays, normal app windows, game mod menus and engine ui for any C program. One file, no dependencies, Linux, Windows, Mac. Hotkeys, screen grabs, fonts, images and a UI kit are in there too.
 
-One header (`goome.h`), nothing to link. Linux (X11 and Wayland), Windows 10 / 11 and macOS 14+, from C, C#, Python, Java, Rust, Node, Go, Zig or Lua. Theres a Godot addon and an OBS plugin too.
+One header (`goome.h`), nothing to link. Linux (X11 and Wayland), Windows 10 / 11 and macOS 14+, from C, C#, Python, Java, Rust, Node, Go, Zig or Lua. Theres a Godot addon and an OBS plugin too. The library itself needs nothing but libc, you still need a C compiler to build with it from C, and Go, Rust, Node and Lua compile it for you on install (C#, Java and the Python wheels ship it prebuilt). What CI has and hasnt run is on [Where it works](platforms.md#what-ci-actually-ran) and [Compare](compare.md#where-goome-works), the CI machines are Ubuntu 24.04, Windows Server 2025 and macOS 15 / 26.
 
 ## Getting going
 
@@ -56,7 +56,7 @@ The languages and accessibility update, anything with <kbd>0.5</kbd> on it came 
 - five new languages: [Rust](start-rust.md), [Node](start-node.md), [Go](start-go.md), [Zig](start-zig.md) and [Lua](start-lua.md), same pixels as C
 - [animations](animations.md) for your own stuff, `goome_ui_anim` slides a number and `goome_ui_anim_color` fades a color, plus in, spring and bounce eases
 - [color emoji, fallback fonts and right to left text](emoji-rtl.md) for Arabic and Hebrew
-- [IME support](ime.md) on X11, Wayland, Windows and Mac, so Chinese, Japanese, Korean and dead keys work in inputs
+- [IME support](ime.md) on X11, Wayland, Windows and Mac, so Chinese, Japanese, Korean and dead keys can be typed in inputs (checked end to end with one IME so far, ibus and mozc on X11)
 - [screen readers](accessibility.md) through AT-SPI2, UI Automation and NSAccessibility, and `goome_a11y_tree` for engines
 - an [OBS plugin](obs.md) with a timer, now playing, a goal bar, a clock and chat, or your own builder file, clickable through Interact. Windows got an installer in 0.5.1
 - the [builder](ui-builder.md#real-goome-preview-05) preview is real goome now, built to WebAssembly
@@ -89,7 +89,7 @@ Anything with <kbd>0.2</kbd> on it came here. Mainly [window mode](window-mode.m
 | [node-goome](https://github.com/goome-ui/node-goome) | a Node N-API addon with TypeScript types <kbd>0.5</kbd> |
 | [go-goome](https://github.com/goome-ui/go-goome) | Go bindings over cgo <kbd>0.5</kbd> |
 | [zig-goome](https://github.com/goome-ui/zig-goome) | a Zig package <kbd>0.5</kbd> |
-| [lua-goome](https://github.com/goome-ui/lua-goome) | a Lua 5.4 / LuaJIT module, works in LÖVE <kbd>0.5</kbd> |
+| [lua-goome](https://github.com/goome-ui/lua-goome) | a Lua 5.4 / LuaJIT module, tested on LuaJIT which is what LÖVE runs <kbd>0.5</kbd> |
 | [obs-goome](https://github.com/goome-ui/obs-goome) | the OBS Studio plugin <kbd>0.5</kbd> |
 | [vscode-goome](https://github.com/goome-ui/vscode-goome) | the VS Code extension |
 | [jetbrains-goome](https://github.com/goome-ui/jetbrains-goome) | the plugin for Rider, CLion, IntelliJ IDEA and PyCharm |

@@ -4,7 +4,7 @@ title: Getting started in Lua
 
 # Getting started in Lua <kbd>0.5</kbd>
 
-Lua 5.4 or LuaJIT, so LÖVE works too. [lua-goome](https://github.com/goome-ui/lua-goome) is one C module, `goome.so` (or `goome.dll`) with goome built in.
+Lua 5.4 or LuaJIT, which is what LÖVE runs. CI tests both standalone, not inside LÖVE (the [LÖVE example](mods-engines.md) uses the shared lib with ffi instead). [lua-goome](https://github.com/goome-ui/lua-goome) is one C module, `goome.so` (or `goome.dll`) with goome built in.
 
 To start from a project that already builds, `goome new my-app --lang lua` makes one from the [Lua template](https://github.com/goome-ui/goome-app-template-lua), see [Templates and goome new](templates.md) <kbd>0.5.1</kbd>.
 

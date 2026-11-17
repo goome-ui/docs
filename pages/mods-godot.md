@@ -4,7 +4,7 @@ title: Godot
 
 # Godot <kbd>0.3</kbd>
 
-[godot-goome](https://github.com/goome-ui/godot-goome) is goome as a Godot 4.4+ addon. Drop a `GoomeView` in your scene, write `_goome_frame(ui)`, and you get the whole UI kit on top of your game. goome draws offscreen into an ImageTexture, so it works with every Godot renderer. Its a GDExtension in plain C against Godot's own `gdextension_interface.h`, no godot-cpp and no C#.
+[godot-goome](https://github.com/goome-ui/godot-goome) is goome as a Godot 4.4+ addon. Drop a `GoomeView` in your scene, write `_goome_frame(ui)`, and you get the whole UI kit on top of your game. goome draws offscreen into an ImageTexture, so it doesnt care which Godot renderer you use. CI only runs Godot with `--headless` though (no window, no GPU, the texture is never drawn by Godot's renderer), so Forward+, Mobile and Compatibility have not been tried by it. Its a GDExtension in plain C against Godot's own `gdextension_interface.h`, no godot-cpp and no C#.
 
 ## Get it
 
@@ -87,4 +87,4 @@ Dont override `_gui_input`, `_has_point` or `_input` in a script that extends `G
 
 Only the changed rect gets copied into the Image, but Godot cant upload part of a texture, so on frames where something changed the whole texture goes up.
 
-Godot 4.4 and newer, single precision builds only. The zip has 64 bit linux and windows libs plus a universal mac one.
+Godot 4.4 and newer, single precision builds only. CI loads the addon in a real Godot 4.7.2 on Linux, Windows and macOS and in 4.4.1 on Linux, so 4.5 and 4.6 are untested. The zip has 64 bit linux and windows libs plus a universal mac one.

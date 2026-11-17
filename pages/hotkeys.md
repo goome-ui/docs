@@ -69,7 +69,7 @@ Works system wide, also when another app has focus. You get a `GOOME_HOTKEY` eve
 |:--|:--|
 | X11 | yes |
 | Windows | yes |
-| macOS | yes, with Accessibility on. goome cant tell if you have it, so it says OK either way |
+| macOS | yes, with Accessibility on. goome cant tell if you have it, so it says OK either way. CI cant test it, the runners have no Accessibility permission |
 | Wayland | no, use the control fifo |
 
 `GOOME_CAP_HOTKEYS` to know for sure.

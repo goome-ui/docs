@@ -4,7 +4,7 @@ title: Getting started in Unity
 
 # Getting started in Unity <kbd>0.2</kbd>
 
-Unity owns the window here, so goome runs in [offscreen mode](offscreen-mode.md). It draws into a pixel buffer, you upload that to a `Texture2D` every frame and feed it mouse and keyboard yourself. Looks exactly the same as on desktop.
+Unity owns the window here, so goome runs in [offscreen mode](offscreen-mode.md). It draws into a pixel buffer, you upload that to a `Texture2D` every frame and feed it mouse and keyboard yourself. The pixels are the same ones goome draws on a desktop. CI builds this package's C# against stand-in UnityEngine types and runs the same code through plain .NET, it never opens a real Unity, so the Unity side (texture upload, input, your Unity version) is untested. The package asks for Unity 2021.3 or newer.
 
 ## Add the package
 

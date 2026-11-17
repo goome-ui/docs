@@ -58,7 +58,7 @@ ui.a11y(true);
 | Windows | UI Automation provider, from `WM_GETOBJECT` | Invoke, Toggle, Value, RangeValue, Selection, SelectionItem, ExpandCollapse, with focus and property change events |
 | Mac | NSAccessibility on the goome view | one element per widget, frames in screen coords, the usual notifications |
 
-Heads up, nobody has tried this with a real screen reader yet. The tests check the tree from the outside on all three (`tests/atspi.sh`, `tests/uia.ps1` and `tests/macax.sh` in c-goome), but Orca, NVDA, Narrator and VoiceOver havent been run against it by hand. If one of them acts weird please open an issue.
+Heads up, nobody has tried this with a real screen reader yet. The tests check the tree from the outside on all three (`tests/atspi.sh`, `tests/uia.ps1` and `tests/macax.sh` in c-goome), but Orca, NVDA, Narrator and VoiceOver havent been run against it by hand. A script did try them on CI runners once (2026-11-17, the `verify` workflow in c-goome): Orca 46.1 spoke the first field but nothing for the button or the check box, NVDA spoke the window title and nothing after, and Narrator and VoiceOver gave no usable result (no speech log, no audio, UI scripting refused). So a screen reader reading goome out loud is only partly seen, and not as a person using it. If one of them acts weird please open an issue.
 
 On Wayland a window doesnt know where it is on screen, so the rects are right inside the window but not on the screen. Most screen readers dont care, magnifiers that follow focus do.
 

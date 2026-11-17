@@ -45,7 +45,7 @@ Frames count your `goome_end` calls. No `end` line means it quits after 30 frame
 
 Clicks outside your hit rects get dropped like on a real screen, and keys only come in while the keyboard is on.
 
-Blending is integer only, so shots are byte for byte the same on Linux, Windows and Mac (goome's CI compares them). The UI kit runs on a fixed 16 ms clock here so animations land on the same pixels every run.
+Blending is integer only, so shots should come out byte for byte the same on Linux, Windows and Mac. CI checks that through hashes of the frames in the unit tests, which run on all four of its runners (Ubuntu, Windows, macOS arm64 and Intel), and the C# and Java bindings compare their frames with the C ones byte for byte on Linux. The UI kit runs on a fixed 16 ms clock here so animations land on the same pixels every run.
 
 ## From code
 

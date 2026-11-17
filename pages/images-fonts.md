@@ -79,4 +79,4 @@ try (Font f = Font.system(null)) {
 - NULL font = the built in bitmap fonts, those work with no fonts installed at all.
 - Emoji come out in color, missing letters come from fallback fonts, and Arabic and Hebrew go right to left <kbd>0.5</kbd>. Thats on [Emoji, fonts and RTL](emoji-rtl.md).
 
-The rasterizer is integer only, same pixels on every machine.
+The rasterizer is integer only, so the pixels are meant to be the same everywhere. The unit tests hash the output and run on Linux, Windows and both Macs in CI.

@@ -6,7 +6,7 @@ title: Rider
 
 ## The goome plugin
 
-[jetbrains-goome](https://github.com/goome-ui/jetbrains-goome) works in Rider, CLion, IntelliJ IDEA and PyCharm, 2024.3 or newer. Its on the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/36174-goome) as **goome** (`io.github.goomeui.goome`): Settings > Plugins > Marketplace, search goome, Install.
+[jetbrains-goome](https://github.com/goome-ui/jetbrains-goome) is made for Rider, CLion, IntelliJ IDEA and PyCharm, 2024.3 or newer. CI runs its 56 tests inside the IntelliJ Platform test fixture (2024.3.6) on Linux, Windows and macOS, and the Plugin Verifier checks it still loads against IC 2024.3, IU 2026.3, Rider 2024.3 and 2026.3, PyCharm 2026.3 and CLion 2026.3. CI never starts Rider, CLion or PyCharm with it, so for those three only the binary compatibility is checked, not the tool window or the live templates. Its on the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/36174-goome) as **goome** (`io.github.goomeui.goome`): Settings > Plugins > Marketplace, search goome, Install.
 
 Or install it from disk: grab `jetbrains-goome-x.y.z.zip` from the [releases](https://github.com/goome-ui/jetbrains-goome/releases/latest), dont unzip it, then Settings > Plugins > gear > Install Plugin from Disk and restart.
 

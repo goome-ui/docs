@@ -12,7 +12,7 @@ Your own game or an engine with no goome package of its own: nothing gets inject
 | `sdl_gl3` | SDL2 + OpenGL 3 | the `goome_sdl2` [platform backend](mods-platforms.md) + `goome_gl3`, the Dear ImGui style setup |
 | `love2d` | LÖVE (Lua) | LuaJIT ffi to a goome shared lib, the frame copied into a love Image |
 
-All of them keep input from the game while goome wants it. SDL3 works too, swap `goome_sdl2.h` for `goome_sdl3.h` and `sdl2` for `sdl3` in the names.
+All of them keep input from the game while goome wants it. CI builds each one and runs it for 8 seconds on Linux under Xvfb with a software GL, with no check on the picture or the input. The SDL2 backend itself has a test in c-goome that checks pixels and eaten input. SDL3: swap `goome_sdl2.h` for `goome_sdl3.h` and `sdl2` for `sdl3` in the names. CI never builds `goome_sdl3.h` (it skips the test when `libsdl3-dev` isnt in apt, which it isnt on Ubuntu 24.04). I ran c-goome's `sdl3_gl` test by hand on 2026-11-17 with SDL 3.4.2 from Ubuntu 26.04, gcc 15 and Mesa llvmpipe under Xvfb: it builds with `-Werror` and passes for gl3 and for GLES 3 (frame matches goome's, input eaten, text typed, GL state kept). That is one Linux run, not CI, and not Windows or macOS.
 
 ## raylib
 

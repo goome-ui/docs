@@ -11,7 +11,7 @@ These turn the host window's input into goome events and tell you which ones goo
 | `goome_win32.h` | any Win32 window, the usual way into a Windows game | `goome_win32_wndproc(..., &eaten)` |
 | `goome_glfw.h` | GLFW 3 | its own callbacks, or the `goome_glfw_*` functions |
 | `goome_sdl2.h` | SDL 2 | `goome_sdl2_event` |
-| `goome_sdl3.h` | SDL 3 | `goome_sdl3_event` |
+| `goome_sdl3.h` | SDL 3 (not built in CI, see below) | `goome_sdl3_event` |
 
 All of them have `_init`, `_set_ui`, `_frame` and `_shutdown`. `_frame` goes once a frame and picks up size changes. It also syncs the cursor shape and the clipboard. `_set_ui` hands it your `goome_ui`, without it the keyboard never counts as eaten.
 
@@ -71,7 +71,7 @@ while (SDL_PollEvent(&e))
 goome_sdl2_frame(g);
 ```
 
-SDL3 is the same with `sdl3` in the names.
+SDL3 is the same with `sdl3` in the names. CI never builds or runs `goome_sdl3.h`: it only installs `libsdl3-dev` when apt has it and Ubuntu 24.04 doesnt, so that test skips itself. I ran the `sdl3_gl` test by hand on 2026-11-17 (SDL 3.4.2, gcc 15, Mesa llvmpipe under Xvfb on Ubuntu 26.04) and it builds with `-Werror` and passes for gl3 and for GLES 3, so it works on that one setup, just not in CI. GLFW and SDL2 are tested on Linux only, Windows and macOS never build them in CI. Win32 runs on a real Windows runner and under wine.
 
 ## Your own input
 

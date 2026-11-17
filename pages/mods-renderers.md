@@ -25,6 +25,19 @@ These draw the goome frame on top of whatever the game drew. One header each in 
 
 Each one also has `_resize(g, w, h, scale)`, which calls `goome_resize` and remakes the texture, and `_shutdown(g)`.
 
+What CI ran, every one on a machine with no GPU, drawing offscreen and comparing the readback with goome's own software frame:
+
+| Backend | Where it ran |
+|:--|:--|
+| GL3 | Mesa llvmpipe on Linux (glfw and SDL2) and under wine. Skipped on the real Windows runner, its GL is 1.1. GLES 3 is not in CI, I ran it once by hand through the SDL3 test (Mesa llvmpipe, OpenGL ES 3.2) and it passed. Not built on macOS |
+| GL2 | llvmpipe on Linux, and the Windows runner's GL 1.1 software GL (so the "1.1 works too" part is tested) |
+| DX9 | the Windows runner, software vertex processing, no GPU |
+| DX11, DX12 | WARP, the software adapter |
+| Vulkan | lavapipe on Linux (with the validation layers) and on Windows (no validation there) |
+| Metal | the paravirtual GPU of the macOS runners, arm64 and Intel |
+
+The frames match with a worst pixel difference of 0, GL is 1 off. None of it has run on a real GPU or inside a real game, that is up to you.
+
 `render` goes after `goome_ui_end` and the game's own drawing. It only uploads the `goome_frame_dirty` part and draws one quad over the current viewport. Any state it touches gets saved and put back, the game's renderer doesnt notice.
 
 ## OpenGL
