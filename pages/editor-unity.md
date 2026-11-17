@@ -22,7 +22,7 @@ Add a tag to pin a version, like `...?path=/unity/com.goome-ui.goome#v0.2.0`. Or
 }
 ```
 
-It has GoomeSharp and the native libs for Windows x64, Linux x64 and both Macs, import settings already done.
+It has GoomeSharp and the native libs for Windows x64, Linux x64 and both Macs, with import settings in the `.meta` files (CI checks that the libs and their `.meta` files are there). It asks for Unity 2021.3 or newer. CI never starts Unity, it only compiles the package C# against stand-in UnityEngine types, so if the import settings or something else misbehaves in your editor, tell me which Unity version.
 
 ## Using it
 
