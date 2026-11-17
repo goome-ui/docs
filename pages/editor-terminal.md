@@ -38,9 +38,9 @@ python examples/hello.py                  # from a clone of python-goome, or you
 Java 22+ runs one file straight from source. With more files, `javac` first:
 
 ```sh
-java --enable-native-access=ALL-UNNAMED -cp goome-0.5.2.jar Main.java
-javac -cp goome-0.5.2.jar -d out *.java
-java --enable-native-access=ALL-UNNAMED -cp goome-0.5.2.jar:out Main      # ; instead of : on windows
+java --enable-native-access=ALL-UNNAMED -cp goome-0.5.3.jar Main.java
+javac -cp goome-0.5.3.jar -d out *.java
+java --enable-native-access=ALL-UNNAMED -cp goome-0.5.3.jar:out Main      # ; instead of : on windows
 ```
 
 Debugging Java from the terminal is `jdb`, or start it with `-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005` and attach an IDE. See [Getting started in Java](start-java.md) for the jar.

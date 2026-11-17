@@ -50,7 +50,7 @@ Every number on this page came from GitHub hosted runners, 4 jobs per run. There
 
 The libraries ran in four separate workflow runs (goome, the C ones, the LVGL / raygui / egui ones and the Qt / GTK / Electron / Tauri ones). Github gave each run its own machine. That is why the Linux CPU in the table changes, and it is the biggest source of noise. I ran the C libraries (ImGui, Nuklear, microui, Clay) twice on the same commit to see how big it is: Linux frame times matched within 2%, Windows moved up to 60% (Clay dash 0.220 and 0.138 ms), macOS arm64 up to 45% (microui 0.021 and 0.030 ms) and macOS x86_64 up to 2.6 times (Nuklear 0.467 and 1.217 ms). Sizes never changed by a byte. So a Linux number is good to a few percent, a Windows or Mac arm64 number to about a half and a macOS x86_64 timing is a rough hint. First frame and memory numbers are the median of 5 runs.
 
-Both result sets are on c-goome dev, see [how to run it yourself](#how-to-run-it-yourself).
+Both result sets are on c-goome, in the 0.5.3 tag, see [how to run it yourself](#how-to-run-it-yourself).
 
 ## The libraries
 
@@ -508,25 +508,25 @@ Where goome wins, in one place: single file with no libraries to link or install
 
 ## How to run it yourself
 
-Everything is in [c-goome](https://github.com/goome-ui/c-goome) on the `dev` branch until the next release (the links say `dev` for that reason, they will move to the tag):
+Everything is in [c-goome](https://github.com/goome-ui/c-goome), in the 0.5.3 release and on main:
 
-- [`tools/bench`](https://github.com/goome-ui/c-goome/tree/dev/tools/bench) is the benchmark: `run.py`, `setup.py`, the shared timer in `bench_util.h`, one file per library in `libs/` and the hello and dash programs in a folder per library
-- [`tools/verify`](https://github.com/goome-ui/c-goome/tree/dev/tools/verify) is the compositor, window manager, IME and screen reader checks plus `ci-facts.json` and `verify-results.json`, the raw 103 results the tables above came from
-- [`tools/bench/results/2026-11-17`](https://github.com/goome-ui/c-goome/tree/dev/tools/bench/results/2026-11-17) holds the result files of the runs on this page
-- [`.github/workflows/bench.yml`](https://github.com/goome-ui/c-goome/blob/dev/.github/workflows/bench.yml) and [`verify.yml`](https://github.com/goome-ui/c-goome/blob/dev/.github/workflows/verify.yml) only run by hand, they dont run on pushes
+- [`tools/bench`](https://github.com/goome-ui/c-goome/tree/v0.5.3/tools/bench) is the benchmark: `run.py`, `setup.py`, the shared timer in `bench_util.h`, one file per library in `libs/` and the hello and dash programs in a folder per library
+- [`tools/verify`](https://github.com/goome-ui/c-goome/tree/v0.5.3/tools/verify) is the compositor, window manager, IME and screen reader checks plus `ci-facts.json` and `verify-results.json`, the raw 103 results the tables above came from
+- [`tools/bench/results/2026-11-17`](https://github.com/goome-ui/c-goome/tree/v0.5.3/tools/bench/results/2026-11-17) holds the result files of the runs on this page
+- [`.github/workflows/bench.yml`](https://github.com/goome-ui/c-goome/blob/v0.5.3/.github/workflows/bench.yml) and [`verify.yml`](https://github.com/goome-ui/c-goome/blob/v0.5.3/.github/workflows/verify.yml) only run by hand, they dont run on pushes
 
 On GitHub, all libraries or just some, on all 4 OSes:
 
 ```sh
-gh workflow run bench.yml -R goome-ui/c-goome --ref dev -f libs="goome imgui nuklear microui clay lvgl raygui egui qt gtk4 electron tauri"
-gh workflow run verify.yml -R goome-ui/c-goome --ref dev
+gh workflow run bench.yml -R goome-ui/c-goome --ref main -f libs="goome imgui nuklear microui clay lvgl raygui egui qt gtk4 electron tauri"
+gh workflow run verify.yml -R goome-ui/c-goome --ref main
 gh run download <run id> -R goome-ui/c-goome -D out
 ```
 
 Locally, one library on your own machine (the competitors are cloned by the script, nothing of theirs is in the repo):
 
 ```sh
-git clone -b dev https://github.com/goome-ui/c-goome && cd c-goome
+git clone -b v0.5.3 https://github.com/goome-ui/c-goome && cd c-goome
 python3 tools/bench/setup.py imgui
 python3 tools/bench/run.py goome imgui --out bench.json
 ```

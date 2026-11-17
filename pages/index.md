@@ -41,7 +41,13 @@ Full programs are on [Getting started in C](start-c.md), [C#](start-csharp.md), 
 
 The [UI builder](ui-builder.md) <kbd>0.3</kbd> lets you drag widgets around and copy out C, C#, Python, Java, GDScript, Rust, Node, Go, Zig or Lua. Its preview runs real goome now <kbd>0.5</kbd>.
 
+## 0.5.4
+
+`goome-cli` 0.5.4 is out, the rest stays at 0.5.3.
+
 ## 0.5.3
+
+Every binding is at 0.5.3. Drawing is the same on newer gcc now, FMA contraction used to change pixels and CMake builds hash identical to the reference, and modals dont get wider than the window. The [browser demos](try.md) and the benchmark and verify tooling from [Compare](compare.md) are in the release.
 
 `goome-cli` is on [PyPI](https://pypi.org/project/goome-cli/) now, `pipx install goome-cli` and you have `goome`. `goome update` keeps it current and it says when a newer one is out, `GOOME_NO_UPDATE_CHECK=1` turns that off. More on [Templates and goome new](templates.md#goome-new).
 
