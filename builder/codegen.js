@@ -4709,7 +4709,7 @@
       label: "Rust",
       ext: ".rs",
       generate,
-      hint: () => 'cargo new ui, put goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.0" } under [dependencies] in Cargo.toml (rust 1.77+ and a C compiler), paste this over src/main.rs, cargo run',
+      hint: () => 'cargo new ui, put goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.2" } under [dependencies] in Cargo.toml (rust 1.77+ and a C compiler), paste this over src/main.rs, cargo run',
     };
   })();
 
@@ -6344,7 +6344,7 @@
       label: "Node",
       ext: ".js",
       generate,
-      hint: () => "node 18+: npm install https://github.com/goome-ui/node-goome/releases/download/v0.5.0/goome-0.5.0.tgz, save this as main.js and run node main.js",
+      hint: () => "node 18+: npm install https://github.com/goome-ui/node-goome/releases/download/v0.5.2/goome-0.5.2.tgz, save this as main.js and run node main.js",
     };
   })();
 
@@ -11624,7 +11624,7 @@
       label: "Lua",
       ext: ".lua",
       generate,
-      hint: () => "lua 5.4 or luajit: luarocks install --local https://github.com/goome-ui/lua-goome/releases/download/v0.5.0/goome-0.5.0-1.src.rock, then eval \"$(luarocks path)\" and lua ui.lua",
+      hint: () => "lua 5.4 or luajit: luarocks install --local https://github.com/goome-ui/lua-goome/releases/download/v0.5.2/goome-0.5.2-1.src.rock, then eval \"$(luarocks path)\" and lua ui.lua",
     };
   })();
 

@@ -9,7 +9,7 @@ The getting started pages get you the newest goome. If you want one exact versio
 | Version | Whats in it |
 |:--|:--|
 | 0.5.3 | `goome-cli` is on PyPI now, so `pipx install goome-cli` works, plus `goome update` and a once a day note when a newer cli is out. Only goome-cli has a 0.5.3, the rest stays at 0.5.2 |
-| 0.5.2 | goome apps [run in the browser](browser.md) (`goome build --web`), the [builder](ui-builder.md) exports Rust, Node, Go, Zig and Lua, the `GOOME_WINDOW_NO_TITLEBAR` flag. Every binding was updated to c-goome 0.5.2, only the NuGet package is still at 0.5.1 for now |
+| 0.5.2 | goome apps [run in the browser](browser.md) (`goome build --web`), the [builder](ui-builder.md) exports Rust, Node, Go, Zig and Lua, the `GOOME_WINDOW_NO_TITLEBAR` flag. Every binding was updated to c-goome 0.5.2 |
 | 0.5.1 | fixed install steps: Python, C# and Java come from PyPI, NuGet and Maven Central, Node and Lua from their release files, the editor plugins from their marketplaces, plus a Windows installer for the [OBS plugin](obs.md) |
 | 0.5 | [Rust](start-rust.md), [Node](start-node.md), [Go](start-go.md), [Zig](start-zig.md) and [Lua](start-lua.md), [animations](animations.md), [emoji and RTL](emoji-rtl.md), [IME](ime.md), [screen readers](accessibility.md), the [OBS plugin](obs.md), real goome in the [builder](ui-builder.md), the GNOME late hit rect fix |
 | 0.4 | [apps to download](downloads.md), [template repos and goome new](templates.md), the [Compare](compare.md) page, [Discussions and good first issues](community.md) |
@@ -46,10 +46,10 @@ Theres also `goome-backends-0.5.2.zip` there (from 0.3.0 on), thats the `backend
 
 ## C#
 
-NuGet has 0.4.0 and up. The 0.5.2 package is on the [release](https://github.com/goome-ui/csharp-goome/releases/tag/v0.5.2) but NuGet only lists up to 0.5.1 right now:
+NuGet has 0.4.0 and up, and the same package is on the [release](https://github.com/goome-ui/csharp-goome/releases/tag/v0.5.2) too:
 
 ```sh
-dotnet add package GoomeSharp --version 0.5.1
+dotnet add package GoomeSharp --version 0.5.2
 ```
 
 For 0.2.0 and 0.3.0 grab the .nupkg from the [releases](https://github.com/goome-ui/csharp-goome/releases), it has the native lib for every OS inside, and add it from a folder:
