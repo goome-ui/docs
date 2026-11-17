@@ -28,7 +28,7 @@ Make the folder if its not there yet, thats where OBS looks for plugins.
 
 ### Mac
 
-Download `obs-goome-…-macos-universal.pkg` and open it, it puts the plugin in the right spot. Its not signed yet, so if macOS blocks it right click it, pick Open, then Open again. Apple Silicon and Intel both work.
+Download `obs-goome-…-macos-universal.pkg` and open it, it puts the plugin in the right spot. Its not signed yet, so if macOS blocks it right click it, pick Open, then Open again. The pkg is one universal build for Apple Silicon and Intel.
 
 ### Linux
 
@@ -106,4 +106,4 @@ cmake --preset ubuntu-x86_64
 cmake --build --preset ubuntu-x86_64
 ```
 
-`tests/run.sh check` runs the real source against a fake libobs and checks every frame against pixel hashes. CI also loads the real plugin into libobs under Xvfb, clicks Start on the timer and checks the frame changed.
+`tests/run.sh check` runs the real source against a fake libobs and checks every frame against pixel hashes. On Linux, CI also loads the real plugin into libobs 32.2.0 (from the OBS PPA) under Xvfb, clicks Start on the timer and checks the frame changed. The OBS app itself is never started in CI, and the Windows and macOS builds only run against the fake libobs, so those two are built and packaged by CI (the Windows installer is silently installed and removed on the runner, the Mac pkg is never installed), not loaded by a real OBS there.
