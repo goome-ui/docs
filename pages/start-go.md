@@ -76,7 +76,7 @@ uploadTexture(frame.Pixels(), frame.W(), frame.H())
 ## Install
 
 ```sh
-go get github.com/goome-ui/go-goome@v0.5.0
+go get github.com/goome-ui/go-goome@v0.5.2
 ```
 
 The first build compiles goome with your C compiler, after that Go caches it:
