@@ -4,7 +4,7 @@ title: "API: ui kit"
 
 # API: ui kit
 
-Made from `goome.h` 0.5.2 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.3 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 Guide: [ui](ui.md).
 

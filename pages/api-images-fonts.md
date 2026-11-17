@@ -4,7 +4,7 @@ title: "API: images and fonts"
 
 # API: images and fonts
 
-Made from `goome.h` 0.5.2 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.3 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 Guide: [images fonts](images-fonts.md).
 
