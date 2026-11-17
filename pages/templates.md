@@ -23,12 +23,16 @@ Hit **Use this template** on any of them and you get your own copy. Or use `goom
 
 ## goome new
 
-[goome-cli](https://github.com/goome-ui/goome-cli) is one Python file, it only needs Python 3.8 or newer. Its not on PyPI, `pip install goome` there is the Python binding, so install it from git or just download the file.
+[goome-cli](https://github.com/goome-ui/goome-cli) is one Python file, it only needs Python 3.8 or newer. Its on PyPI as `goome-cli` (not `goome`, thats the Python binding), the command is `goome`.
+
+[![PyPI goome-cli](https://goome-ui.github.io/docs/assets/badges/pypi-goome-cli.svg)](https://pypi.org/project/goome-cli/)
 
 ```sh
-pip install git+https://github.com/goome-ui/goome-cli
+pipx install goome-cli
 goome new my-overlay --lang python
 ```
+
+No pipx? `pip install goome-cli` does the same.
 
 Or skip installing, download the one file and run it the same way:
 
@@ -45,6 +49,7 @@ The whole thing:
 goome new <name> --lang c|csharp|python|java|godot|rust|node|go|zig|lua [--template app|overlay|mod-menu|hud]
 goome build --web [main.c]
 goome serve [folder]
+goome update [--check]
 goome list
 goome --version
 ```
@@ -52,6 +57,8 @@ goome --version
 `--dir` picks the folder (the name if you leave it out), `--ref` a branch or tag of the template repo, and `--from` a template folder or .tar.gz you already have so nothing gets downloaded. It wont write into a folder that already has stuff in it.
 
 `goome build --web` and `goome serve` are for [running an app in the browser](browser.md) <kbd>0.5.2</kbd>, they need goome-cli 0.5.2 or newer.
+
+`goome update` <kbd>0.5.3</kbd> upgrades the cli. If you installed it with pip or pipx it runs the pip upgrade, if its a loose `goome.py` it replaces that file and keeps the old one next to it as `goome.py.bak`. `goome update --check` only prints the newest version and changes nothing. About once a day, when you run goome in a terminal, it also prints a quiet "a newer goome is out" line on stderr. Set `GOOME_NO_UPDATE_CHECK=1` and it never looks.
 
 The name gets used in every form it needs. `cool hud` turns into "Cool Hud" in titles, `cool-hud` for the binary, `CoolHud` for the C# project and `coolhud` for the Java package. When its done it prints how to build and run it.
 

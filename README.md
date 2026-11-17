@@ -39,7 +39,7 @@
 - [obs-goome](https://github.com/goome-ui/obs-goome) - the OBS Studio plugin
 - [vscode-goome](https://github.com/goome-ui/vscode-goome) and [jetbrains-goome](https://github.com/goome-ui/jetbrains-goome) - the editor extensions
 - [examples](https://github.com/goome-ui/examples) - bigger example apps, one folder each, plus the apps you can [download](pages/downloads.md)
-- [goome-cli](https://github.com/goome-ui/goome-cli) - `goome new`, makes a project from one of the `goome-app-template-*` repos
+- [goome-cli](https://github.com/goome-ui/goome-cli) - `goome new`, makes a project from one of the `goome-app-template-*` repos, `pipx install goome-cli`
 - [UI builder](https://goome-ui.github.io/docs/builder/) - drag a UI together in your browser and copy the code, source is in [builder/](builder/)
 
 ## Index
