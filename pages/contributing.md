@@ -10,6 +10,8 @@ Code: the org [contributing guide](https://github.com/goome-ui/.github/blob/main
 
 Docs: [CONTRIBUTING.md in the docs repo](https://github.com/goome-ui/docs/blob/dev/CONTRIBUTING.md). Typos and wrong samples help the most.
 
+The language repos get their goome.h bumped by a bot PR when c-goome releases, see [how the bindings stay up to date](versions.md#how-the-bindings-stay-up-to-date).
+
 Every PR goes against **dev**, a bot closes anything else.
 
 Security holes dont go in issues, read [SECURITY.md](https://github.com/goome-ui/.github/blob/main/SECURITY.md) and tell me privately.
