@@ -4,7 +4,7 @@ title: Getting started in Java
 
 # Getting started in Java <kbd>0.3</kbd>
 
-Needs Java 17+. [java-goome](https://github.com/goome-ui/java-goome) calls the C library directly, no JNI to build. On 22+ it uses FFM from the JDK. On 17 and 21 it goes through LWJGL, so put `org.lwjgl:lwjgl` 3.3+ on the classpath.
+Needs Java 17+. [java-goome](https://github.com/goome-ui/java-goome) calls the C library directly, no JNI to build. On 22+ it uses FFM from the JDK. On 17 and 21 it goes through LWJGL, so put `org.lwjgl:lwjgl` 3.3+ on the classpath. CI tests on Java 17 (LWJGL) and 25 (FFM and LWJGL 3.3), and with LWJGL 3.4.3 like Minecraft ships, so 21 and 22 to 24 are untested.
 
 To start from a project that already builds, `goome new my-app --lang java` makes one from the [Java template](https://github.com/goome-ui/goome-app-template-java), see [Templates and goome new](templates.md) <kbd>0.4</kbd>.
 

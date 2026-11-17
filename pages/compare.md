@@ -31,7 +31,7 @@ More about the thing itself, counted from the repo and the live docs site:
 | `goome.h` | 34,127 lines, 1,443,321 bytes. The whole library, the implementation is in the same file behind `GOOME_IMPLEMENTATION` |
 | Public API | 202 functions (111 of them are `goome_ui_*`) and 310 enum constants in `include/goome.h` |
 | Languages | 10: C, C#, Python, Java, Rust, Node, Go, Zig, Lua and GDScript through the Godot addon. The [builder](ui-builder.md) exports all 10 |
-| Window backends | X11, Wayland (layer-shell, XWayland, GNOME Mutter), Win32, macOS NSPanel. Renderer backends for games: DX9, DX11, DX12, GL2, GL3, Vulkan, Metal, plus GLFW, SDL2, SDL3 and Win32 platform backends |
+| Window backends | X11, Wayland (layer-shell, XWayland, GNOME Mutter), Win32, macOS NSPanel. Renderer backends for games: DX9, DX11, DX12, GL2, GL3, Vulkan, Metal, plus GLFW, SDL2, SDL3 and Win32 platform backends. CI never built the SDL3 one, see [below](#renderer-and-platform-backends-for-games-and-engines) |
 | Browser | `goome build --web` makes a `.wasm`. Brickout is 308,445 bytes (133,896 gzipped) and Tidy is 374,683 bytes (158,875 gzipped), see [Try it](try.md) |
 | Unit tests | 39,589 `CHECK` evaluations on Linux, 39,588 on Windows and on both Macs, all good |
 | Age | first commit 2026-11-02, 3 weeks. 0 GitHub stars on 2026-11-17 |
@@ -355,7 +355,7 @@ Run ids: the platform checks above are dev run 43976597087 (2026-11-16) and `too
 | Metal | offscreen render and readback, difference 0, with the Metal debug layer | the "Apple Paravirtual device" of the macOS runners, arm64 and x86_64 |
 | GLFW | Linux only | Xvfb + llvmpipe |
 | SDL2 | Linux only | Xvfb + llvmpipe |
-| SDL3 | **never compiled or run**. CI tries `apt-get install libsdl3-dev`, Ubuntu 24.04 has no such package, so the test skips itself. The `goome_sdl3.h` backend exists, I cant tell you it works | n/a |
+| SDL3 | **never compiled or run in CI**. CI tries `apt-get install libsdl3-dev`, Ubuntu 24.04 has no such package, so the test skips itself. Afterwards I ran the `sdl3_gl` test by hand on Ubuntu 26.04 (SDL 3.4.2, gcc 15): it builds with `-Werror` and passes for gl3 and GLES 3, 1 Linux run, not CI | Mesa llvmpipe under Xvfb, by hand |
 | Win32 | real Windows runner (tests, UI Automation, live desktop) and under wine | |
 
 Source: c-goome `ci.yml` and `tests/gfx`, dev run 44116261831 (2026-11-17), main run 43957463865 (2026-11-16), logs read by me. Nothing here ran on a real GPU, and DX9, DX11 and DX12 only ran on software devices.
@@ -400,7 +400,7 @@ This is the table where goome claims the most and CI proves the least. Read the 
 | LOVE2D | `engines/love2d` example (LuaJIT FFI) | `love` from apt ran it 8 seconds on Linux | no picture check |
 | Native DLL mods (Windows games) | `version.dll` mods for DX11, DX12, OpenGL, Vulkan in `examples/mods/native`. No DX9 mod | a test game with the mod loaded: menu visible in a framebuffer readback, a slider drag leaks 0 mouse messages to the game, a click on empty space still reaches it. Real Windows runner: OpenGL and D3D11. Under wine: OpenGL, D3D11 and D3D12 | the Vulkan mod only compiles, D3D12 has no log line on the Windows runner, no real game, no anti-cheat |
 
-Sources: the workflow files and logs of the repos named, read 2026-11-17: [csharp-goome](https://github.com/goome-ui/csharp-goome/actions), [godot-goome](https://github.com/goome-ui/godot-goome/actions), [java-goome](https://github.com/goome-ui/java-goome/actions), [obs-goome](https://github.com/goome-ui/obs-goome/actions), [vscode-goome](https://github.com/goome-ui/vscode-goome/actions), [jetbrains-goome](https://github.com/goome-ui/jetbrains-goome/actions), [examples](https://github.com/goome-ui/examples/actions). The [Unity mods](mods-unity.md) page says it works in every Unity version and on IL2CPP, and nothing in CI backs that up.
+Sources: the workflow files and logs of the repos named, read 2026-11-17: [csharp-goome](https://github.com/goome-ui/csharp-goome/actions), [godot-goome](https://github.com/goome-ui/godot-goome/actions), [java-goome](https://github.com/goome-ui/java-goome/actions), [obs-goome](https://github.com/goome-ui/obs-goome/actions), [vscode-goome](https://github.com/goome-ui/vscode-goome/actions), [jetbrains-goome](https://github.com/goome-ui/jetbrains-goome/actions), [examples](https://github.com/goome-ui/examples/actions). The [Unity mods](mods-unity.md) page used to say it works in every Unity version and on IL2CPP, which nothing in CI backed up. It now says it has never run in a real Unity.
 
 ### Linux window managers and compositors
 
@@ -504,7 +504,7 @@ Picking by what you are building, not by who has the most stars. The ones that f
 | A small app you can also put in a web page | **goome** (apps only), egui, Qt for WebAssembly | goome's Brickout is 308 KB as wasm (134 KB gzipped). egui and Qt also run in a browser, and ImGui and Clay do too |
 | A mod menu in someone else's game | **goome**, Dear ImGui | both do it. ImGui has the bigger pile of examples and tutorials, goome has [Unity, Minecraft and native DLL](mods.md) packages that are built, with the caveats in the engine table |
 
-Where goome wins, in one place: single file with no dependencies, window code included in a 427 to 584 KB executable, see-through overlays with per region click-through, app windows, overlays and offscreen from one library, 10 languages, and a browser build. Where it loses: 3 weeks old, 0 stars, the GPL, no docking, a small ecosystem, no designer, a little testing with real screen readers and real IMEs, and engine support that is built but mostly not run inside the engines.
+Where goome wins, in one place: single file with no libraries to link or install (you still need a C compiler), window code included in a 427 to 584 KB executable, see-through overlays with per region click-through, app windows, overlays and offscreen from one library, 10 languages, and a browser build. Where it loses: 3 weeks old, 0 stars, the GPL, no docking, a small ecosystem, no designer, a little testing with real screen readers and real IMEs, and engine support that is built but mostly not run inside the engines.
 
 ## How to run it yourself
 
