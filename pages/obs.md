@@ -67,7 +67,7 @@ After that open OBS, add a source and pick **goome overlay**.
 
 ## Your own UI from the builder
 
-1. Make it in the [builder](https://goome-ui.github.io/docs/builder/) and hit **Save project (.goome.json)** in the Project menu
+1. Make it in the [builder](https://goome.wtf/builder/) and hit **Save project (.goome.json)** in the Project menu
 2. In the source settings set **Show** to **A builder file** and pick that file
 3. Leave **Theme** on **From the builder file** to keep your theme, or pick a preset to swap it
 

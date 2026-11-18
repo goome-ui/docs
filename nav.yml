@@ -1,19 +1,18 @@
 - title: Start
   pages:
-    - { page: try, title: Try it in your browser, since: "0.5.2" }
     - { page: index, title: Home }
-    - { page: versions, title: Versions }
-    - { page: start-java, title: Getting started in Java, since: "0.3" }
-    - { page: start-godot, title: Getting started in Godot, since: "0.3" }
+    - { page: try, title: Try it in your browser, since: "0.5.2" }
     - { page: start-c, title: Getting started in C }
     - { page: start-csharp, title: Getting started in C# }
     - { page: start-python, title: Getting started in Python }
-    - { page: start-unity, title: Getting started in Unity, since: "0.2" }
+    - { page: start-java, title: Getting started in Java, since: "0.3" }
     - { page: start-rust, title: Getting started in Rust, since: "0.5" }
     - { page: start-node, title: Getting started in Node, since: "0.5" }
     - { page: start-go, title: Getting started in Go, since: "0.5" }
     - { page: start-zig, title: Getting started in Zig, since: "0.5" }
     - { page: start-lua, title: Getting started in Lua, since: "0.5" }
+    - { page: start-godot, title: Getting started in Godot, since: "0.3" }
+    - { page: start-unity, title: Getting started in Unity, since: "0.2" }
     - { page: examples, title: Examples }
     - { page: downloads, title: Downloads, since: "0.4" }
     - { page: templates, title: Templates and goome new, since: "0.4" }
@@ -92,6 +91,7 @@
     - { page: testing, title: Testing without a screen }
     - { page: building, title: One file and building }
     - { page: faq, title: FAQ }
+    - { page: versions, title: Versions and what changed }
     - { page: errors, title: Error messages, since: "0.4" }
     - { page: community, title: Community, since: "0.4" }
     - { page: badges, title: Badges, since: "0.4" }

@@ -4,7 +4,7 @@ title: The UI builder
 
 # The UI builder <kbd>0.3</kbd>
 
-[The builder](https://goome-ui.github.io/docs/builder/) lets you drag widgets around in your browser and copy out the C, C#, Python, Java, GDScript, Rust, Node, Go, Zig or Lua for it. Nothing to install and nothing gets uploaded, it all stays in your browser.
+[The builder](https://goome.wtf/builder/) lets you drag widgets around in your browser and copy out the C, C#, Python, Java, GDScript, Rust, Node, Go, Zig or Lua for it. Nothing to install and nothing gets uploaded, it all stays in your browser.
 
 **Templates.** Project, then New from template. Theres mod menus, a game HUD, a settings window, a notes app, an inventory, a login screen and a few more. Pick one and change it, thats faster than starting empty.
 

@@ -128,7 +128,7 @@ This is what goome is built around. A transparent window the OS lets clicks fall
 
 | | Transparent window | Click-through, whole window | Click-through, only where you didnt draw | Wayland |
 |:--|:--|:--|:--|:--|
-| goome | yes, overlay mode | yes, no hit rects means all of it | yes, built in. You send the hit rects with every frame and goome keeps the OS input region in step, see [Hit rects](hit-rects.md) | layer-shell, XWayland and GNOME all work, table [below](#wayland-compositors) |
+| goome | yes, overlay mode | yes, no hit rects means all of it | yes, built in. You send the hit rects with every frame and goome keeps the OS input region in step, see [Hit rects](hit-rects.md) | layer-shell, XWayland and GNOME all work, table [below](#linux-window-managers-and-compositors) |
 | Dear ImGui | no API. The docking branch uses `GLFW_MOUSE_PASSTHROUGH` only for dragged viewports | no | no | no |
 | Nuklear, microui, Clay, LVGL | no window code | no | no. Clay has element to element pass-through inside its layout, not at the OS | no |
 | raygui + raylib | yes, `FLAG_WINDOW_TRANSPARENT` | yes, `FLAG_WINDOW_MOUSE_PASSTHROUGH`, only on the GLFW and RGFW backends, the SDL backend logs not supported, needs an undecorated window | no | follows GLFW or RGFW, I didnt check |
