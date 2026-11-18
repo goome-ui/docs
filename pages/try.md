@@ -8,12 +8,12 @@ Two real goome apps, running in this page. Nothing is a video and nothing is a j
 
 <div class="demos">
 <figure class="demo demo-game">
-<iframe src="{{ '/demos/game/' | relative_url }}" title="Brickout, a breakout game made with goome" loading="lazy" allow="fullscreen"></iframe>
-<figcaption><a href="{{ '/demos/game/' | relative_url }}">Open full page</a> <span>&middot;</span> <a href="https://github.com/goome-ui/c-goome/blob/v0.5.3/examples/web_game.c">View the source</a></figcaption>
+<iframe src="https://goome.wtf/demos/game/" title="Brickout, a breakout game made with goome" loading="lazy" allow="fullscreen"></iframe>
+<figcaption><a href="https://goome.wtf/demos/game/">Open full page</a> <span>&middot;</span> <a href="https://github.com/goome-ui/c-goome/blob/v0.5.3/examples/web_game.c">View the source</a></figcaption>
 </figure>
 <figure class="demo demo-app">
-<iframe src="{{ '/demos/app/' | relative_url }}" title="Tidy, a task list made with goome" loading="lazy" allow="fullscreen"></iframe>
-<figcaption><a href="{{ '/demos/app/' | relative_url }}">Open full page</a> <span>&middot;</span> <a href="https://github.com/goome-ui/c-goome/blob/v0.5.3/examples/web_app.c">View the source</a></figcaption>
+<iframe src="https://goome.wtf/demos/app/" title="Tidy, a task list made with goome" loading="lazy" allow="fullscreen"></iframe>
+<figcaption><a href="https://goome.wtf/demos/app/">Open full page</a> <span>&middot;</span> <a href="https://github.com/goome-ui/c-goome/blob/v0.5.3/examples/web_app.c">View the source</a></figcaption>
 </figure>
 </div>
 
@@ -45,4 +45,4 @@ goome build --web web_game.c
 goome serve web
 ```
 
-The first one makes a `web` folder with the page, `goome.js` and `goome.wasm`, the second hosts it on localhost. If you would rather drag widgets around than write them, the [UI builder](https://goome-ui.github.io/docs/builder/) runs real goome in your browser too, [how it works is here](ui-builder.md).
+The first one makes a `web` folder with the page, `goome.js` and `goome.wasm`, the second hosts it on localhost. If you would rather drag widgets around than write them, the [UI builder](https://goome.wtf/builder/) runs real goome in your browser too, [how it works is here](ui-builder.md).

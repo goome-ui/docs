@@ -25,7 +25,7 @@ Hit **Use this template** on any of them and you get your own copy. Or use `goom
 
 [goome-cli](https://github.com/goome-ui/goome-cli) is one Python file, it only needs Python 3.8 or newer. Its on PyPI as `goome-cli` (not `goome`, thats the Python binding), the command is `goome`.
 
-[![PyPI goome-cli](https://goome-ui.github.io/docs/assets/badges/pypi-goome-cli.svg)](https://pypi.org/project/goome-cli/)
+[![PyPI goome-cli](https://goome.wtf/badges/pypi-goome-cli.svg)](https://pypi.org/project/goome-cli/)
 
 ```sh
 pipx install goome-cli

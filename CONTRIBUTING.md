@@ -11,7 +11,7 @@ Small PRs that fix one thing please. Typos, samples that dont compile and pages 
 <p align="center">
 • One fix or one new page per PR<br>
 • PRs go against <b>dev</b>, not main<br>
-• Run the Jekyll build before you send it<br>
+• Check your page renders in a markdown preview before you send it<br>
 • Screenshots are real goome output, never mockups or edited pictures<br>
 • Every code sample has to compile or run against the current release<br>
 • Dont hand edit the API reference pages, theyre generated<br>
@@ -69,25 +69,7 @@ It prints any message that has no explanation yet, and notes for messages that a
 <summary align="center"><b>👀 Previewing it 👀</b></summary>
 
 <p align="center">
-Its plain Jekyll, same as GitHub Pages. With Ruby:
-</p>
-
-```sh
-gem install github-pages
-jekyll serve --baseurl ""
-```
-
-<p align="center">
-Or with docker, using the image GitHub Pages builds with:
-</p>
-
-```sh
-docker run --rm -v "$PWD":/srv -w /srv --entrypoint jekyll ghcr.io/actions/jekyll-build-pages:v1.0.13 build --baseurl "" -d _site
-python3 -m http.server -d _site
-```
-
-<p align="center">
-It has to build without errors. Check your page in a phone sized window too.
+Everything here is plain markdown, so GitHubs preview shows it fine. goome.wtf builds its docs pages from these files, if you want to see yours on the real site, clone the <a href="https://github.com/goome-ui/website">website repo</a> and run <code>python3 build.py --docs path/to/this/checkout</code>. Check your page in a phone sized window too.
 </p>
 </details>
 
@@ -99,8 +81,6 @@ A bot closes the PR with a comment if it hits any of these. Fix it and open a ne
 • Not against dev<br>
 • Anything in <code>.github/</code> (CI and these rules)<br>
 • <code>tools/</code>, the scripts that make the API pages<br>
-• The site's look: <code>_config.yml</code>, <code>_layouts/</code>, <code>_includes/</code>, <code>_data/</code> outside of <code>nav.yml</code>, <code>assets/css/</code> and <code>assets/js/</code><br>
-• The UI builder in <code>builder/</code>, send builder fixes as an issue<br>
 • <code>assets/logo*</code> and <code>LICENSE</code><br>
 • The generated API pages, <code>pages/api-*.md</code> and <code>api/</code><br>
 • Any file over 1 MB<br> <br>

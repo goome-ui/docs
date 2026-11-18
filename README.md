@@ -9,12 +9,12 @@
 </p>
 
 <p align="center">
-  <img src="https://goome-ui.github.io/docs/assets/badges/docs-site.svg" alt="docs">
+  <img src="https://goome.wtf/badges/docs-site.svg" alt="docs">
   <img src="https://img.shields.io/badge/license-GPL--3.0-1b1d22?style=flat-square" alt="GPL-3.0">
 </p>
 
 <p align="center">
-  Guides and the API reference for goome. The site is at <a href="https://goome-ui.github.io/docs/">goome-ui.github.io/docs</a> but its all markdown so it works on GitHub too.<br> <br>
+  Guides and the API reference for goome. The site is at <a href="https://goome.wtf/docs/">goome.wtf/docs</a> but its all markdown so it works on GitHub too.<br> <br>
   A <kbd>0.5</kbd>, <kbd>0.4</kbd>, <kbd>0.3</kbd> or <kbd>0.2</kbd> next to something means it came in that version.
 </p>
 
@@ -40,7 +40,7 @@
 - [vscode-goome](https://github.com/goome-ui/vscode-goome) and [jetbrains-goome](https://github.com/goome-ui/jetbrains-goome) - the editor extensions
 - [examples](https://github.com/goome-ui/examples) - bigger example apps, one folder each, plus the apps you can [download](pages/downloads.md)
 - [goome-cli](https://github.com/goome-ui/goome-cli) - `goome new`, makes a project from one of the `goome-app-template-*` repos, `pipx install goome-cli`
-- [UI builder](https://goome-ui.github.io/docs/builder/) - drag a UI together in your browser and copy the code, source is in [builder/](builder/)
+- [UI builder](https://goome.wtf/builder/) - drag a UI together in your browser and copy the code, the source is in the [website repo](https://github.com/goome-ui/website)
 
 ## Index
 
@@ -109,7 +109,7 @@
   - [Screen readers](pages/accessibility.md) <kbd>0.5</kbd>
 - **UI builder**
   - [How the builder works](pages/ui-builder.md) <kbd>0.3</kbd>
-  - [Open the builder](https://goome-ui.github.io/docs/builder/) <kbd>0.3</kbd>
+  - [Open the builder](https://goome.wtf/builder/) <kbd>0.3</kbd>
 - **Mods and engines**
   - [How mods work](pages/mods.md) <kbd>0.3</kbd>
   - [Renderer backends](pages/mods-renderers.md) <kbd>0.3</kbd>
