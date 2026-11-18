@@ -41,46 +41,9 @@ Full programs are on [Getting started in C](start-c.md), [C#](start-csharp.md), 
 
 The [UI builder](ui-builder.md) <kbd>0.3</kbd> lets you drag widgets around and copy out C, C#, Python, Java, GDScript, Rust, Node, Go, Zig or Lua. Its preview runs real goome now <kbd>0.5</kbd>.
 
-## 0.5.4
+## What changed lately
 
-`goome-cli` 0.5.4 is out, the rest stays at 0.5.3.
-
-## 0.5.3
-
-Every binding is at 0.5.3. Drawing is the same on newer gcc now, FMA contraction used to change pixels and CMake builds hash identical to the reference, and modals dont get wider than the window. The [browser demos](try.md) and the benchmark and verify tooling from [Compare](compare.md) are in the release.
-
-`goome-cli` is on [PyPI](https://pypi.org/project/goome-cli/) now, `pipx install goome-cli` and you have `goome`. `goome update` keeps it current and it says when a newer one is out, `GOOME_NO_UPDATE_CHECK=1` turns that off. More on [Templates and goome new](templates.md#goome-new).
-
-## 0.5.2
-
-Goome apps [run in the browser](browser.md) now, and you can [try two of them](try.md). `goome build --web main.c` compiles one to webassembly and `goome serve` tries it on localhost, no emscripten. The [builder](ui-builder.md) exports Rust, Node, Go, Zig and Lua too, and `goome_ui_app` has a `GOOME_WINDOW_NO_TITLEBAR` flag.
-
-## 0.5
-
-The languages and accessibility update, anything with <kbd>0.5</kbd> on it came here.
-
-- five new languages: [Rust](start-rust.md), [Node](start-node.md), [Go](start-go.md), [Zig](start-zig.md) and [Lua](start-lua.md), same pixels as C
-- [animations](animations.md) for your own stuff, `goome_ui_anim` slides a number and `goome_ui_anim_color` fades a color, plus in, spring and bounce eases
-- [color emoji, fallback fonts and right to left text](emoji-rtl.md) for Arabic and Hebrew
-- [IME support](ime.md) on X11, Wayland, Windows and Mac, so Chinese, Japanese, Korean and dead keys can be typed in inputs (checked end to end with one IME so far, ibus and mozc on X11)
-- [screen readers](accessibility.md) through AT-SPI2, UI Automation and NSAccessibility, and `goome_a11y_tree` for engines
-- an [OBS plugin](obs.md) with a timer, now playing, a goal bar, a clock and chat, or your own builder file, clickable through Interact. Windows got an installer in 0.5.1
-- the [builder](ui-builder.md#real-goome-preview-05) preview is real goome now, built to WebAssembly
-- the [VS Code extension](editor-vscode.md) got a side panel and is on the Marketplace and Open VSX, the [JetBrains plugin](editor-rider.md) got a tool window and is on the JetBrains Marketplace
-
-And a GNOME fix: an overlay that showed up before it had any hit rects never took clicks, which is also why clicks died after a hotkey brought a hidden overlay back. Both work now.
-
-## 0.4
-
-The getting started update, anything with <kbd>0.4</kbd> on it came here. Theres four apps you can just [download](downloads.md) and use, a [template repo](templates.md) for every language, and `goome new` to make a project from one with your name already in it. The [Compare](compare.md) page puts goome next to the other UI libraries, from Dear ImGui to Electron. [Discussions and good first issues](community.md) are on now too, if you want to ask something or help out.
-
-## 0.3
-
-The mods and customization update, anything with <kbd>0.3</kbd> on it came here. goome works from **Java** now, see [Getting started in Java](start-java.md), and theres a **Godot** addon, see [Getting started in Godot](start-godot.md). It also goes inside games now, on [renderer backends](mods-renderers.md), [platform backends](mods-platforms.md), [native DLL mods](mods-native.md), [Unity mods](mods-unity.md), [Minecraft](mods-minecraft.md), [Godot](mods-godot.md) and [other engines](mods-engines.md), with [taking input from the game](input-capture.md) to keep clicks away from it. On the UI side theres [custom widgets and the style stack](ui-custom.md), [icons and skins](ui-icons.md), [change anything](ui-anything.md) for config and keys, [simple themes](ui-theme-easy.md), [password inputs](ui-text.md#passwords-and-hints-03), [reading back a frame](frames.md#reading-back-a-frame-03) and the [UI builder](ui-builder.md).
-
-## 0.2
-
-Anything with <kbd>0.2</kbd> on it came here. Mainly [window mode](window-mode.md), [offscreen mode](offscreen-mode.md), and a lot more UI kit: menus, modals, toasts, tables, trees, a text editor, plots, split panes and drag and drop. That starts at [App mode and menus](ui-app.md).
+The newest is 0.5.3 for the bindings, and 0.5.4 for `goome-cli`. Everything that came in a version has a little <kbd>0.5</kbd>-style tag next to it in the menu and on the page, and [Versions](versions.md#what-each-version-brought) lists what each release added.
 
 ## The repos
 
