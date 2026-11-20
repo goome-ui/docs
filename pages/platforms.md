@@ -16,6 +16,8 @@ goome picks the backend itself. `GOOME_BACKEND=x11` (or `wayland`, `gnome`, `por
 | Windows 10 / 11 | layered windows | GDI | yes |
 | macOS 14+ | NSPanel | ScreenCaptureKit | yes, with Accessibility on |
 
+> Only want your window on Windows, with no console box next to it? `GOOME_WINDOW_NO_CONSOLE` closes it for you, see [Hide the console on Windows](windows-console.md) <kbd>0.5.5</kbd>. It is off by default.
+
 No system wide key grabs on Wayland, see [Hotkeys and the control fifo](hotkeys.md).
 
 ## What CI actually ran

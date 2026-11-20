@@ -8,6 +8,8 @@ Rust 1.77+. [rust-goome](https://github.com/goome-ui/rust-goome) is two crates: 
 
 To start from a project that already builds, `goome new my-app --lang rust` makes one from the [Rust template](https://github.com/goome-ui/goome-app-template-rust), see [Templates and goome new](templates.md) <kbd>0.5.1</kbd>. Or `cargo new` and the dependency below is all it takes.
 
+> On Windows and only want your window, with no black console box? Add `GOOME_WINDOW_NO_CONSOLE`, see [Hide the console on Windows](windows-console.md) <kbd>0.5.5</kbd>. It is off by default.
+
 ## Pick what you are making
 
 `Options::new().open()` is the overlay, `App::new` a window, `Goome::offscreen` a buffer with no window.

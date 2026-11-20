@@ -2,6 +2,7 @@
   pages:
     - { page: index, title: Home }
     - { page: try, title: Try it in your browser, since: "0.5.2" }
+    - { page: windows-console, title: Hide the console on Windows, since: "0.5.5" }
     - { page: start-c, title: Getting started in C }
     - { page: start-csharp, title: Getting started in C# }
     - { page: start-python, title: Getting started in Python }

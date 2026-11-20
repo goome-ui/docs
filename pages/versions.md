@@ -8,6 +8,7 @@ The getting started pages get you the newest goome. If you want one exact versio
 
 | Version | Whats in it |
 |:--|:--|
+| 0.5.5 | the `GOOME_WINDOW_NO_CONSOLE` flag, [hide the console on Windows](windows-console.md) |
 | 0.5.4 | `goome-cli` only, a newer cli on PyPI, everything else stays at 0.5.3 |
 | 0.5.3 | every binding was released at 0.5.3. Drawing is the same on newer gcc now (FMA contraction used to change pixels, CMake builds hash identical to the reference), the modal width clamp, the [browser demos](try.md), and the benchmark and verify tooling on the [Compare](compare.md) page is in the release. The [VS Code extension](editor-vscode.md) stays at 0.5.2 |
 | 0.5.2 | goome apps [run in the browser](browser.md) (`goome build --web`), the [builder](ui-builder.md) exports Rust, Node, Go, Zig and Lua, the `GOOME_WINDOW_NO_TITLEBAR` flag. Every binding was updated to c-goome 0.5.2 |
@@ -21,6 +22,10 @@ The getting started pages get you the newest goome. If you want one exact versio
 Pages and functions that came in 0.2, 0.3, 0.4 or 0.5 have a little <kbd>0.2</kbd>, <kbd>0.3</kbd>, <kbd>0.4</kbd> or <kbd>0.5</kbd> next to them, so if you stay on an older version skip those. The commands below use the newest one, swap in the one you want.
 
 ## What each version brought
+
+### 0.5.5
+
+- new window flag `GOOME_WINDOW_NO_CONSOLE` <kbd>0.5.5</kbd>. On Windows it closes the console of a console exe, so double clicking it shows only your window. Off by default, does nothing on Linux and macOS, and leaves the terminal alone when you start it from cmd or PowerShell. All of it is on [Hide the console on Windows](windows-console.md)
 
 ### 0.5.4
 

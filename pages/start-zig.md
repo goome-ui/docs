@@ -8,6 +8,8 @@ Zig 0.15.2. [zig-goome](https://github.com/goome-ui/zig-goome) is a Zig package,
 
 To start from a project that already builds, `goome new my-app --lang zig` makes one from the [Zig template](https://github.com/goome-ui/goome-app-template-zig), see [Templates and goome new](templates.md) <kbd>0.5.1</kbd>.
 
+> On Windows and only want your window, with no black console box? Add `GOOME_WINDOW_NO_CONSOLE`, see [Hide the console on Windows](windows-console.md) <kbd>0.5.5</kbd>. It is off by default.
+
 ## Pick what you are making
 
 `goome.Goome.open` is the overlay, `openApp` a window, `openOffscreen` a buffer with no window.

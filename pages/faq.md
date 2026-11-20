@@ -16,6 +16,10 @@ Its off until `goome_keyboard(g, 1)`, otherwise the overlay would eat everything
 
 Probably Wayland, it doesnt let apps grab keys system wide. Use the [control fifo](hotkeys.md) and bind the key in your compositor.
 
+### How do I hide the console window on Windows?
+
+Add `GOOME_WINDOW_NO_CONSOLE` <kbd>0.5.5</kbd> to your window flags, or link your exe as a GUI app instead. Its off by default. Both ways, per language, are on [Hide the console on Windows](windows-console.md).
+
 ### Can I use it from C++?
 
 Yes, the header has `extern "C"`. Only the file with `GOOME_IMPLEMENTATION` has to be a `.c`.
