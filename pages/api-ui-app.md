@@ -4,7 +4,7 @@ title: "API: ui app, menus and popups"
 
 # API: ui app, menus and popups
 
-Made from `goome.h` 0.5.3 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.5 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 Guide: [ui app](ui-app.md).
 

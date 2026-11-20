@@ -8,6 +8,8 @@ title: Hide the console on Windows
 
 <br>
 
+The flag is in goome 0.5.5. C has it first, for the other languages use the 0.5.5 release of their binding once it is out, until then they are on 0.5.3 and dont know it.
+
 ```c
 goome_opts o = {
     .title = "my app",
