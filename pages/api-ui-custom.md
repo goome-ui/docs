@@ -4,7 +4,7 @@ title: "API: styles and custom widgets"
 
 # API: styles and custom widgets
 
-Made from `goome.h` 0.5.3 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
+Made from `goome.h` 0.5.5 by `tools/apiref.py`. Dont edit it by hand, fix the header in c-goome.
 
 Guide: [ui custom](ui-custom.md).
 

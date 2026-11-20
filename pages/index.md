@@ -43,7 +43,7 @@ The [UI builder](ui-builder.md) <kbd>0.3</kbd> lets you drag widgets around and 
 
 ## What changed lately
 
-The newest is 0.5.3 for the bindings, and 0.5.4 for `goome-cli`. Everything that came in a version has a little <kbd>0.5</kbd>-style tag next to it in the menu and on the page, and [Versions](versions.md#what-each-version-brought) lists what each release added.
+The newest is 0.5.5. C gets a version first, the bindings, the editor plugins and `goome-cli` follow a little later, so [Versions](versions.md) tells you which one each has. Everything that came in a version has a little <kbd>0.5</kbd>-style tag next to it in the menu and on the page, and [Versions](versions.md#what-each-version-brought) lists what each release added.
 
 ## The repos
 

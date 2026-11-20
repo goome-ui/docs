@@ -8,6 +8,7 @@ The getting started pages get you the newest goome. If you want one exact versio
 
 | Version | Whats in it |
 |:--|:--|
+| 0.5.5 | the `GOOME_WINDOW_NO_CONSOLE` flag, [hide the console on Windows](windows-console.md), numpad keys on Wayland with numlock off, every link points at goome.wtf, fixes |
 | 0.5.4 | `goome-cli` only, a newer cli on PyPI, everything else stays at 0.5.3 |
 | 0.5.3 | every binding was released at 0.5.3. Drawing is the same on newer gcc now (FMA contraction used to change pixels, CMake builds hash identical to the reference), the modal width clamp, the [browser demos](try.md), and the benchmark and verify tooling on the [Compare](compare.md) page is in the release. The [VS Code extension](editor-vscode.md) stays at 0.5.2 |
 | 0.5.2 | goome apps [run in the browser](browser.md) (`goome build --web`), the [builder](ui-builder.md) exports Rust, Node, Go, Zig and Lua, the `GOOME_WINDOW_NO_TITLEBAR` flag. Every binding was updated to c-goome 0.5.2 |
@@ -21,6 +22,14 @@ The getting started pages get you the newest goome. If you want one exact versio
 Pages and functions that came in 0.2, 0.3, 0.4 or 0.5 have a little <kbd>0.2</kbd>, <kbd>0.3</kbd>, <kbd>0.4</kbd> or <kbd>0.5</kbd> next to them, so if you stay on an older version skip those. The commands below use the newest one, swap in the one you want.
 
 ## What each version brought
+
+### 0.5.5
+
+- new window flag `GOOME_WINDOW_NO_CONSOLE` <kbd>0.5.5</kbd>. On Windows it closes the console of a console exe, so double clicking it shows only your window. Off by default, does nothing on Linux and macOS, and leaves the terminal alone when you start it from cmd or PowerShell. All of it is on [Hide the console on Windows](windows-console.md)
+- the numpad works on Wayland with numlock off, it sends the navigation keys (arrows, Home, End, Page Up, Page Down, Insert, Delete) like it should
+- every link in the library, the READMEs and the apps points at goome.wtf now, no more github.io
+
+C comes first, `goome.h` and `goome-backends-0.5.5.zip` are on the [c-goome release](https://github.com/goome-ui/c-goome/releases/tag/v0.5.5). The bindings, the OBS plugin and the Godot addon pick it up one by one as their own 0.5.5 releases come out, until then they stay on 0.5.3 and the flag is only in the C header. The install lines below say 0.5.3 for those, swap in 0.5.5 once its on the releases page.
 
 ### 0.5.4
 
@@ -68,25 +77,25 @@ Anything with <kbd>0.2</kbd> on it came here. Mainly [window mode](window-mode.m
 Linux or Mac, put the version on the end:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/goome-ui/c-goome/main/get.sh | sh -s 0.5.3
-curl -fsSL https://raw.githubusercontent.com/goome-ui/c-goome/main/get.sh | GOOME_VERSION=0.5.3 sh
+curl -fsSL https://raw.githubusercontent.com/goome-ui/c-goome/main/get.sh | sh -s 0.5.5
+curl -fsSL https://raw.githubusercontent.com/goome-ui/c-goome/main/get.sh | GOOME_VERSION=0.5.5 sh
 ```
 
 Windows, in PowerShell:
 
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/goome-ui/c-goome/main/get.ps1))) -Version 0.5.3
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/goome-ui/c-goome/main/get.ps1))) -Version 0.5.5
 ```
 
-If you already have the script, its just `./get.sh 0.5.3`, `GOOME_VERSION=0.5.3 ./get.sh` or `.\get.ps1 -Version 0.5.3`. Without a version it gets the newest release.
+If you already have the script, its just `./get.sh 0.5.5`, `GOOME_VERSION=0.5.5 ./get.sh` or `.\get.ps1 -Version 0.5.5`. Without a version it gets the newest release.
 
 Or download goome.h for that version straight from the [releases](https://github.com/goome-ui/c-goome/releases):
 
 ```text
-https://github.com/goome-ui/c-goome/releases/download/v0.5.3/goome.h
+https://github.com/goome-ui/c-goome/releases/download/v0.5.5/goome.h
 ```
 
-Theres also `goome-backends-0.5.3.zip` there (from 0.3.0 on), thats the `backends/` folder for [mods](mods.md).
+Theres also `goome-backends-0.5.5.zip` there (from 0.3.0 on), thats the `backends/` folder for [mods](mods.md).
 
 ## C#
 

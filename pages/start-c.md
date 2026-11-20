@@ -8,6 +8,8 @@ goome is one header. Drop `goome.h` in your project and compile the implementati
 
 To start from a project that already builds, `goome new my-app --lang c` makes one from the [C template](https://github.com/goome-ui/goome-app-template-c), see [Templates and goome new](templates.md) <kbd>0.4</kbd>.
 
+> On Windows and only want your window, with no black console box? Add `GOOME_WINDOW_NO_CONSOLE`, see [Hide the console on Windows](windows-console.md) <kbd>0.5.5</kbd>. It is off by default.
+
 ## Pick what you are making
 
 ### Overlay on top of everything

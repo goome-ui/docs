@@ -8,6 +8,8 @@ Python 3.8+. [python-goome](https://github.com/goome-ui/python-goome) calls the 
 
 To start from a project that already builds, `goome new my-app --lang python` makes one from the [Python template](https://github.com/goome-ui/goome-app-template-python), see [Templates and goome new](templates.md) <kbd>0.4</kbd>.
 
+> On Windows and only want your window, with no black console box? Add `GOOME_WINDOW_NO_CONSOLE`, see [Hide the console on Windows](windows-console.md) <kbd>0.5.5</kbd>. It is off by default.
+
 ## Pick what you are making
 
 `open` is the overlay, `open_app` a window, `open_offscreen` a buffer with no window.

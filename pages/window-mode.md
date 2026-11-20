@@ -39,6 +39,7 @@ Resizing sends `GOOME_MONITORS`, and so does moving to a screen with another DPI
 | `GOOME_WINDOW_ON_TOP` | stays above other windows |
 | `GOOME_WINDOW_HIDDEN` | starts hidden, show it with `goome_window_show(g, 1)` |
 | `GOOME_WINDOW_CENTER` | opens centered on the screen |
+| `GOOME_WINDOW_NO_CONSOLE` <kbd>0.5.5</kbd> | Windows only, closes the console of a console exe so you only see your window. Off by default, see [Hide the console on Windows](windows-console.md) |
 
 On Windows a transparent window has no title bar, use your own (`goome_ui_app` with `GOOME_APP_TITLEBAR`). Without `GOOME_WINDOW_TRANSPARENT` its opaque and anything see-through lands on black, so fill the background or let `goome_ui_app` do it.
 

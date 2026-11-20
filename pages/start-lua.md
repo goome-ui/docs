@@ -8,6 +8,8 @@ Lua 5.4 or LuaJIT, which is what LÖVE runs. CI tests both standalone, not insid
 
 To start from a project that already builds, `goome new my-app --lang lua` makes one from the [Lua template](https://github.com/goome-ui/goome-app-template-lua), see [Templates and goome new](templates.md) <kbd>0.5.1</kbd>.
 
+> On Windows and only want your window, with no black console box? Add `GOOME_WINDOW_NO_CONSOLE`, see [Hide the console on Windows](windows-console.md) <kbd>0.5.5</kbd>. It is off by default.
+
 ## Pick what you are making
 
 `goome.open` is the overlay, `goome.app` a window, `goome.open_offscreen` a buffer with no window. `end` is a Lua keyword, so `goome_end` and `goome_ui_end` are `g:finish(c)` and `ui:finish()` here.

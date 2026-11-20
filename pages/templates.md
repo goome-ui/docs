@@ -90,6 +90,6 @@ In the template repos the other three are in `variants/`. By hand, copy whats in
 | Zig | `zig build run`, needs Zig 0.15.2 and nothing else |
 | Lua | `luarocks install --local goome-0.5.0-1.rockspec`, then `eval "$(luarocks path)"` and `lua main.lua`, needs a C compiler |
 
-Every template pins one goome version. Thats `goome.h` in C, the GoomeSharp version in the csproj, `goome==` in `requirements.txt`, `goome_version` in `gradle.properties`, the version after `get-goome.sh` in Godot, the tag in `Cargo.toml`, the url in `package.json`, `go.mod`, `build.zig.zon` and the rockspec in Lua. Each template README says how to update it.
+Every template pins one goome version. Thats `goome.h` in C, the GoomeSharp version in the csproj, `goome==` in `requirements.txt`, `goome_version` in `gradle.properties`, the version after `get-goome.sh` in Godot, the tag in `Cargo.toml`, the url in `package.json`, `go.mod`, `build.zig.zon` and the rockspec in Lua. Each template README says how to update it. A template stays on the newest binding that is released, which can be older than the newest goome.
 
 From there the getting started pages have the rest: [C](start-c.md), [C#](start-csharp.md), [Python](start-python.md), [Java](start-java.md), [Godot](start-godot.md), [Rust](start-rust.md), [Node](start-node.md), [Go](start-go.md), [Zig](start-zig.md) and [Lua](start-lua.md).
