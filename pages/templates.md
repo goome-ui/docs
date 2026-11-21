@@ -88,7 +88,7 @@ In the template repos the other three are in `variants/`. By hand, copy whats in
 | Node | `npm install` then `node main.js`, needs Node 18+, goome comes from the node-goome release |
 | Go | `go run .`, needs Go 1.23+ with cgo and a C compiler |
 | Zig | `zig build run`, needs Zig 0.15.2 and nothing else |
-| Lua | `luarocks install --local goome-0.5.0-1.rockspec`, then `eval "$(luarocks path)"` and `lua main.lua`, needs a C compiler |
+| Lua | `luarocks install --local goome-0.5.5-1.rockspec`, then `eval "$(luarocks path)"` and `lua main.lua`, needs a C compiler |
 
 Every template pins one goome version. Thats `goome.h` in C, the GoomeSharp version in the csproj, `goome==` in `requirements.txt`, `goome_version` in `gradle.properties`, the version after `get-goome.sh` in Godot, the tag in `Cargo.toml`, the url in `package.json`, `go.mod`, `build.zig.zon` and the rockspec in Lua. Each template README says how to update it. A template stays on the newest binding that is released, which can be older than the newest goome.
 

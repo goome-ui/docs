@@ -4,6 +4,8 @@ title: Run it in the browser
 
 # Run it in the browser <kbd>0.5.2</kbd>
 
+**C apps only for now.** The web build compiles C to webassembly, so an app written in C#, Python, Java, Rust or any other language cant go in the browser yet, it has to be written in C. `goome build --web` and the editor buttons tell you so when they see another language. You can still [try the builder](https://goome.wtf/builder/) live.
+
 A goome app can run in a web page. It gets compiled to webassembly and the page is its window, so it only works for apps, a normal window. Want to see one first? [Try a game and an app in your browser](try.md). Overlays and mod menus draw over other programs and a browser cant do that, the build says so and stops.
 
 You need `clang` with the wasm32 target, `wasm-ld` and bash. `sudo apt install clang lld` on Debian and Ubuntu, `brew install llvm lld` on a mac (apples own clang cant do wasm), `winget install LLVM.LLVM` on windows. No emscripten.

@@ -8,7 +8,7 @@ The getting started pages get you the newest goome. If you want one exact versio
 
 | Version | Whats in it |
 |:--|:--|
-| 0.5.5 | the `GOOME_WINDOW_NO_CONSOLE` flag, [hide the console on Windows](windows-console.md), numpad keys on Wayland with numlock off, every link points at goome.wtf, fixes |
+| 0.5.5 | the `GOOME_WINDOW_NO_CONSOLE` flag in C, C#, Python, Java, Rust, Node, Go, Zig and Lua, [hide the console on Windows](windows-console.md), numpad keys on Wayland with numlock off, every link points at goome.wtf, `goome new` gets the 0.5.5 templates, the Lua macOS rock fix |
 | 0.5.4 | `goome-cli` only, a newer cli on PyPI, everything else stays at 0.5.3 |
 | 0.5.3 | every binding was released at 0.5.3. Drawing is the same on newer gcc now (FMA contraction used to change pixels, CMake builds hash identical to the reference), the modal width clamp, the [browser demos](try.md), and the benchmark and verify tooling on the [Compare](compare.md) page is in the release. The [VS Code extension](editor-vscode.md) stays at 0.5.2 |
 | 0.5.2 | goome apps [run in the browser](browser.md) (`goome build --web`), the [builder](ui-builder.md) exports Rust, Node, Go, Zig and Lua, the `GOOME_WINDOW_NO_TITLEBAR` flag. Every binding was updated to c-goome 0.5.2 |
@@ -28,8 +28,10 @@ Pages and functions that came in 0.2, 0.3, 0.4 or 0.5 have a little <kbd>0.2</kb
 - new window flag `GOOME_WINDOW_NO_CONSOLE` <kbd>0.5.5</kbd>. On Windows it closes the console of a console exe, so double clicking it shows only your window. Off by default, does nothing on Linux and macOS, and leaves the terminal alone when you start it from cmd or PowerShell. All of it is on [Hide the console on Windows](windows-console.md)
 - the numpad works on Wayland with numlock off, it sends the navigation keys (arrows, Home, End, Page Up, Page Down, Insert, Delete) like it should
 - every link in the library, the READMEs and the apps points at goome.wtf now, no more github.io
+- `goome new` downloads the 0.5.5 templates, all ten are tagged v0.5.5 and pin the 0.5.5 bindings
+- the Lua rock for macOS is fixed in 0.5.5, `luarocks install` of the release rock works there now
 
-C comes first, `goome.h` and `goome-backends-0.5.5.zip` are on the [c-goome release](https://github.com/goome-ui/c-goome/releases/tag/v0.5.5). The bindings, the OBS plugin and the Godot addon pick it up one by one as their own 0.5.5 releases come out, until then they stay on 0.5.3 and the flag is only in the C header. The install lines below say 0.5.3 for those, swap in 0.5.5 once its on the releases page.
+Every package is on 0.5.5 with the same version number: [c-goome](https://github.com/goome-ui/c-goome/releases/tag/v0.5.5), `goome` on PyPI, `GoomeSharp` on NuGet, `io.github.goome-ui:goome` on Maven Central, `goome` and `goome-sys` on crates.io, `go-goome` for Go, and the Node, Zig, Lua, Godot and OBS files on their GitHub releases. `goome-cli` is on PyPI at 0.5.5 as well. The install lines below say 0.5.5.
 
 ### 0.5.4
 
@@ -99,10 +101,10 @@ Theres also `goome-backends-0.5.5.zip` there (from 0.3.0 on), thats the `backend
 
 ## C#
 
-NuGet has 0.4.0 and up, and the same package is on the [release](https://github.com/goome-ui/csharp-goome/releases/tag/v0.5.3) too:
+NuGet has 0.4.0 and up, and the same package is on the [release](https://github.com/goome-ui/csharp-goome/releases/tag/v0.5.5) too:
 
 ```sh
-dotnet add package GoomeSharp --version 0.5.3
+dotnet add package GoomeSharp --version 0.5.5
 ```
 
 For 0.2.0 and 0.3.0 grab the .nupkg from the [releases](https://github.com/goome-ui/csharp-goome/releases), it has the native lib for every OS inside, and add it from a folder:
@@ -118,17 +120,17 @@ dotnet add package GoomeSharp --version 0.3.0 --source ./goome-pkgs
 The package is there from 0.2.0 on. Add package from git URL, with the tag on the end:
 
 ```text
-https://github.com/goome-ui/csharp-goome.git?path=/unity/com.goome-ui.goome#v0.5.3
+https://github.com/goome-ui/csharp-goome.git?path=/unity/com.goome-ui.goome#v0.5.5
 ```
 
-Or grab `com.goome-ui.goome-0.5.3.tgz` from the [0.5.3 release](https://github.com/goome-ui/csharp-goome/releases/tag/v0.5.3) and use Add package from tarball.
+Or grab `com.goome-ui.goome-0.5.5.tgz` from the [0.5.5 release](https://github.com/goome-ui/csharp-goome/releases/tag/v0.5.5) and use Add package from tarball.
 
 ## Python
 
 PyPI has 0.4.0 and up:
 
 ```sh
-pip install goome==0.5.3
+pip install goome==0.5.5
 ```
 
 Older ones come from the tag, that builds the lib with your C compiler:
@@ -143,7 +145,7 @@ Java starts at 0.3.0. Maven Central has 0.4.0 and up:
 
 ```groovy
 dependencies {
-    implementation 'io.github.goome-ui:goome:0.5.3'
+    implementation 'io.github.goome-ui:goome:0.5.5'
 }
 ```
 
@@ -153,7 +155,7 @@ The rest of the Gradle and Maven setup is on [Getting started in Java](start-jav
 
 ## Godot
 
-Godot starts at 0.3.0. Download `godot-goome-0.5.3.zip` from the [release](https://github.com/goome-ui/godot-goome/releases/tag/v0.5.3) and unzip it into your project, you get `res://addons/goome/` with the libs for every OS in `bin/`.
+Godot starts at 0.3.0. Download `godot-goome-0.5.5.zip` from the [release](https://github.com/goome-ui/godot-goome/releases/tag/v0.5.5) and unzip it into your project, you get `res://addons/goome/` with the libs for every OS in `bin/`.
 
 ## Rust
 
@@ -161,7 +163,7 @@ Rust starts at 0.5.0 and is on [crates.io](https://crates.io/crates/goome), so `
 
 ```toml
 [dependencies]
-goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.3" }
+goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.5" }
 ```
 
 ## Node
@@ -169,13 +171,13 @@ goome = { git = "https://github.com/goome-ui/rust-goome", tag = "v0.5.3" }
 Node starts at 0.5.0. Its not on npm, install the package from the release, it has the addon built already:
 
 ```sh
-npm install https://github.com/goome-ui/node-goome/releases/download/v0.5.3/goome-0.5.3.tgz
+npm install https://github.com/goome-ui/node-goome/releases/download/v0.5.5/goome-0.5.5.tgz
 ```
 
 Or from git with the tag after a `#`, that builds the addon with node-gyp:
 
 ```sh
-npm install github:goome-ui/node-goome#v0.5.3
+npm install github:goome-ui/node-goome#v0.5.5
 ```
 
 ## Go
@@ -183,7 +185,7 @@ npm install github:goome-ui/node-goome#v0.5.3
 Go starts at 0.5.0:
 
 ```sh
-go get github.com/goome-ui/go-goome@v0.5.3
+go get github.com/goome-ui/go-goome@v0.5.5
 ```
 
 ## Zig
@@ -191,48 +193,48 @@ go get github.com/goome-ui/go-goome@v0.5.3
 Zig starts at 0.5.0. The tag goes after the `#`:
 
 ```sh
-zig fetch --save git+https://github.com/goome-ui/zig-goome#v0.5.3
+zig fetch --save git+https://github.com/goome-ui/zig-goome#v0.5.5
 ```
 
 Or the tarball from the release, it ends up with the same hash:
 
 ```sh
-zig fetch --save https://github.com/goome-ui/zig-goome/releases/download/v0.5.3/zig-goome-0.5.3.tar.gz
+zig fetch --save https://github.com/goome-ui/zig-goome/releases/download/v0.5.5/zig-goome-0.5.5.tar.gz
 ```
 
-For 0.5.3 `build.zig.zon` gets `.hash = "goome-0.5.3-JM4gI7miFwD5fDN7M_WUseh3Y6LFk1kTDdz7xjhUU9b5"`, if yours says something else you got a different version.
+For 0.5.5 `build.zig.zon` gets `.hash = "goome-0.5.5-JM4gI06lFwB07WT4b9e-1HjOryuX7oDo_uqix47vWhcg"`, if yours says something else you got a different version.
 
 ## Lua
 
 Lua starts at 0.5.0. Its not on luarocks.org, LuaRocks takes the rock from the release:
 
 ```sh
-luarocks install https://github.com/goome-ui/lua-goome/releases/download/v0.5.3/goome-0.5.3-1.src.rock
+luarocks install https://github.com/goome-ui/lua-goome/releases/download/v0.5.5/goome-0.5.5-1.src.rock
 ```
 
 ## OBS
 
-The plugin starts at 0.5.0. Every file is on the [0.5.3 release](https://github.com/goome-ui/obs-goome/releases/tag/v0.5.3), with the version in the name like `obs-goome-0.5.3-windows-x64.zip`. From 0.5.1 Windows also gets `obs-goome-0.5.3-windows-x64-installer.exe`. Install steps are on the [OBS plugin](obs.md#install) page.
+The plugin starts at 0.5.0. Every file is on the [0.5.5 release](https://github.com/goome-ui/obs-goome/releases/tag/v0.5.5), with the version in the name like `obs-goome-0.5.5-windows-x64.zip`. From 0.5.1 Windows also gets `obs-goome-0.5.5-windows-x64-installer.exe`. Install steps are on the [OBS plugin](obs.md#install) page.
 
 ## goome new
 
 The cli is there from 0.4.0 on, and on PyPI from 0.5.3:
 
 ```sh
-pipx install goome-cli==0.5.4
+pipx install goome-cli==0.5.5
 ```
 
 Older ones come from git:
 
 ```sh
-pip install git+https://github.com/goome-ui/goome-cli@v0.5.4
+pip install git+https://github.com/goome-ui/goome-cli@v0.5.5
 ```
 
-Or the one file from the [release](https://github.com/goome-ui/goome-cli/releases/tag/v0.5.4), then `python goome.py new my-app --lang c`.
+Or the one file from the [release](https://github.com/goome-ui/goome-cli/releases/tag/v0.5.5), then `python goome.py new my-app --lang c`.
 
 ## Templates
 
-The [templates](templates.md) pin one goome version each, the template README says where. `goome new --ref v0.5.0` gets the template from that tag. The templates are not on the 0.5.3 bindings yet, they still pin 0.5.2 or older, so a project from `goome new` can be a version behind what this page lists.
+The [templates](templates.md) pin one goome version each, the template README says where. `goome new --ref v0.5.0` gets the template from that tag. All ten templates are tagged v0.5.5 and pin the 0.5.5 bindings.
 
 ## How the bindings stay up to date
 
@@ -242,7 +244,7 @@ Every binding repo has a little workflow, `update-native.yml`, that checks once 
 
 | Where | How |
 |:--|:--|
-| C | `GOOME_VERSION` in goome.h, a string like `"0.5.3"` |
+| C | `GOOME_VERSION` in goome.h, a string like `"0.5.5"` |
 | C# | `Goome.Version` |
 | Python | `goome.VERSION`, or `goome.__version__` |
 | Java | `Goome.VERSION` |

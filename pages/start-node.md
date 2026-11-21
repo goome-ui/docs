@@ -64,13 +64,13 @@ uploadTexture(frame.pixels, frame.w, frame.h);
 Its not on npm. Install the package from the [release](https://github.com/goome-ui/node-goome/releases), it has the addon already built for linux x64, windows x64 and both Macs:
 
 ```sh
-npm install https://github.com/goome-ui/node-goome/releases/download/v0.5.3/goome-0.5.3.tgz
+npm install https://github.com/goome-ui/node-goome/releases/download/v0.5.5/goome-0.5.5.tgz
 ```
 
 Or straight from git, that builds the addon with node-gyp, which needs a C compiler and Python, a few seconds once:
 
 ```sh
-npm install github:goome-ui/node-goome#v0.5.3
+npm install github:goome-ui/node-goome#v0.5.5
 ```
 
 - Debian / Ubuntu: `sudo apt install build-essential python3`

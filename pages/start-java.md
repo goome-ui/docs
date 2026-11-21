@@ -109,7 +109,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.github.goome-ui:goome:0.5.3'
+    implementation 'io.github.goome-ui:goome:0.5.5'
 }
 
 application {
@@ -131,7 +131,7 @@ application {
 <dependency>
     <groupId>io.github.goome-ui</groupId>
     <artifactId>goome</artifactId>
-    <version>0.5.3</version>
+    <version>0.5.5</version>
 </dependency>
 ```
 
@@ -139,10 +139,10 @@ For Java 17 or 21 add `org.lwjgl:lwjgl` the same way, plus a second one with `<c
 
 ### No build tool
 
-Grab `goome-0.5.3.jar` from the [releases page](https://github.com/goome-ui/java-goome/releases) or Maven Central. Java 22+ runs a single source file straight away:
+Grab `goome-0.5.5.jar` from the [releases page](https://github.com/goome-ui/java-goome/releases) or Maven Central. Java 22+ runs a single source file straight away:
 
 ```sh
-java --enable-native-access=ALL-UNNAMED -cp goome-0.5.3.jar Main.java
+java --enable-native-access=ALL-UNNAMED -cp goome-0.5.5.jar Main.java
 ```
 
 ### From source
